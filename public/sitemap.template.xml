@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace __SITE_URL__ with the real .com origin before production deployment. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>__SITE_URL__/en/</loc></url>
+  <url><loc>__SITE_URL__/en/products/</loc></url>
+  <url><loc>__SITE_URL__/en/industries/</loc></url>
+  <url><loc>__SITE_URL__/en/cases/</loc></url>
+  <url><loc>__SITE_URL__/en/resources/</loc></url>
+  <url><loc>__SITE_URL__/en/about/</loc></url>
+  <url><loc>__SITE_URL__/en/contact/</loc></url>
+  <url><loc>__SITE_URL__/ru/</loc></url>
+  <url><loc>__SITE_URL__/ru/products/</loc></url>
+  <url><loc>__SITE_URL__/ru/resources/</loc></url>
+  <url><loc>__SITE_URL__/ru/contact/</loc></url>
+  <url><loc>__SITE_URL__/zh/</loc></url>
+  <url><loc>__SITE_URL__/ja/</loc></url>
+  <url><loc>__SITE_URL__/es/</loc></url>
+</urlset>

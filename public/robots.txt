@@ -1,0 +1,45 @@
+User-agent: *
+Allow: /
+
+# Dedicated Direct Indexing for Generative Engine Optimization (GEO) & AI Search Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+Clean-param: ref /
+Clean-param: source /
+
+User-agent: Yandex
+Allow: /
+Clean-param: ref /
+Clean-param: source /
+
+User-agent: Googlebot
+Allow: /
+
+# LLM Machine Readable Index
+# https://llmstxt.org specification
+Sitemap: https://feichipower.com/sitemap.xml
+# LLMs.txt Context: https://feichipower.com/llms.txt

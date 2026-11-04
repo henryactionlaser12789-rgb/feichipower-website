@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Core Main Navigation Pages (English - Global Main) -->
+  <url>
+    <loc>https://feichipower.com/en/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://feichipower.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://feichipower.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://feichipower.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://feichipower.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://feichipower.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://feichipower.com/en/"/>
+  </url>
+  <url>
+    <loc>https://feichipower.com/en/products/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://feichipower.com/en/resources/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://feichipower.com/en/contact/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Core Product Line Pages -->
+  <url>
+    <loc>https://feichipower.com/en/products/box-substation</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://feichipower.com/en/products/mv-lv-switchgear</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://feichipower.com/en/products/prefabricated-cabins</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://feichipower.com/en/products/dry-type-transformers</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://feichipower.com/en/products/oil-immersed-transformers</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://feichipower.com/en/products/distribution-boxes</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://feichipower.com/en/products/psa-nitrogen-generator</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://feichipower.com/en/products/svg-statcom</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Industry Solutions -->
+  <url><loc>https://feichipower.com/en/industries/renewable-energy</loc><lastmod>2026-10-29</lastmod><priority>0.85</priority></url>
+  <url><loc>https://feichipower.com/en/industries/rail-transit</loc><lastmod>2026-10-29</lastmod><priority>0.85</priority></url>
+  <url><loc>https://feichipower.com/en/industries/industrial-manufacturing</loc><lastmod>2026-10-29</lastmod><priority>0.85</priority></url>
+  <url><loc>https://feichipower.com/en/industries/commercial-buildings</loc><lastmod>2026-10-29</lastmod><priority>0.85</priority></url>
+  <url><loc>https://feichipower.com/en/industries/petrochemical</loc><lastmod>2026-10-29</lastmod><priority>0.85</priority></url>
+  <url><loc>https://feichipower.com/en/industries/ports-airports</loc><lastmod>2026-10-29</lastmod><priority>0.85</priority></url>
+
+  <!-- Russian & CIS Market Pages (Yandex & Google RU High Priority SEO) -->
+  <url>
+    <loc>https://feichipower.com/ru/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://feichipower.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://feichipower.com/en/"/>
+  </url>
+  <url><loc>https://feichipower.com/ru/products/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/products/box-substation</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/products/mv-lv-switchgear</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/products/prefabricated-cabins</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/products/dry-type-transformers</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/products/oil-immersed-transformers</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/products/distribution-boxes</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
+  <url><loc>https://feichipower.com/ru/products/psa-nitrogen-generator</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/products/svg-statcom</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/contact/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
+
+  <!-- Technical Whitepapers Direct Indexing (English & Russian & Multi-language) -->
+  <url><loc>https://feichipower.com/en/resources/mining-flameproof-mobile-substation-and-explosion-proof-vacuum-switchgear-guide</loc><lastmod>2026-11-03</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/mining-flameproof-mobile-substation-and-explosion-proof-vacuum-switchgear-guide</loc><lastmod>2026-11-03</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/mining-flameproof-mobile-substation-and-explosion-proof-vacuum-switchgear-guide</loc><lastmod>2026-11-03</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ja/resources/mining-flameproof-mobile-substation-and-explosion-proof-vacuum-switchgear-guide</loc><lastmod>2026-11-03</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/es/resources/mining-flameproof-mobile-substation-and-explosion-proof-vacuum-switchgear-guide</loc><lastmod>2026-11-03</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/en/resources/high-voltage-statcom-svg-dynamic-reactive-power-compensation-and-harmonic-filtering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/high-voltage-statcom-svg-dynamic-reactive-power-compensation-and-harmonic-filtering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/high-voltage-statcom-svg-dynamic-reactive-power-compensation-and-harmonic-filtering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ja/resources/high-voltage-statcom-svg-dynamic-reactive-power-compensation-and-harmonic-filtering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/es/resources/high-voltage-statcom-svg-dynamic-reactive-power-compensation-and-harmonic-filtering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/en/resources/110kv-220kv-power-transformer-and-autotransformer-engineering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/110kv-220kv-power-transformer-and-autotransformer-engineering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/110kv-220kv-power-transformer-and-autotransformer-engineering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ja/resources/110kv-220kv-power-transformer-and-autotransformer-engineering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/es/resources/110kv-220kv-power-transformer-and-autotransformer-engineering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/en/resources/35kv-110kv-modular-prefabricated-substation-and-gis-engineering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/35kv-110kv-modular-prefabricated-substation-and-gis-engineering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/35kv-110kv-modular-prefabricated-substation-and-gis-engineering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ja/resources/35kv-110kv-modular-prefabricated-substation-and-gis-engineering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/es/resources/35kv-110kv-modular-prefabricated-substation-and-gis-engineering-guide</loc><lastmod>2026-11-03</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/en/resources/metal-clad-arc-resistant-switchgear-and-ultrafast-optical-protection-guide</loc><lastmod>2026-10-30</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/metal-clad-arc-resistant-switchgear-and-ultrafast-optical-protection-guide</loc><lastmod>2026-10-30</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/en/resources/mobile-modular-digital-substation-35kv-110kv-mmps-engineering-guide</loc><lastmod>2026-10-30</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/mobile-modular-digital-substation-35kv-110kv-mmps-engineering-guide</loc><lastmod>2026-10-30</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/en/resources/smart-vacuum-recloser-and-overhead-distribution-automation-guide</loc><lastmod>2026-10-30</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/smart-vacuum-recloser-and-overhead-distribution-automation-guide</loc><lastmod>2026-10-30</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/en/resources/sf6-free-clean-air-and-solid-insulated-switchgear-engineering-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/sf6-free-clean-air-and-solid-insulated-switchgear-engineering-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/en/resources/utility-scale-solar-pv-and-bess-1500v-mv-skid-substation-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/utility-scale-solar-pv-and-bess-1500v-mv-skid-substation-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/en/resources/neutral-grounding-resistor-and-arc-suppression-coil-design-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/neutral-grounding-resistor-and-arc-suppression-coil-design-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/en/resources/mining-explosion-proof-mobile-substation-and-underground-distribution-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/mining-explosion-proof-mobile-substation-and-underground-distribution-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+
+  <!-- Multilingual Mirrors -->
+  <url><loc>https://feichipower.com/zh/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
+  <url><loc>https://feichipower.com/ja/</loc><lastmod>2026-10-29</lastmod><priority>0.85</priority></url>
+  <url><loc>https://feichipower.com/es/</loc><lastmod>2026-10-29</lastmod><priority>0.85</priority></url>
+</urlset>

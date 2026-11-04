@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "siteId": "feichi-electric-20260903100447",
+  "name": "feichi-electric-20260903100447",
+  "kind": "react-vite",
+  "platform": "alibaba-international",
+  "devCommand": "vite",
+  "buildCommand": "vite build",
+  "outputDir": "dist",
+  "entry": "index.html",
+  "databaseUrl": "",
+  "createdBy": "accio-site-builder",
+  "createdAt": "2026-09-03T02:05:01Z",
+  "installedAt": "2026-09-03T02:27:37.746Z"
+}
