@@ -4576,6 +4576,215 @@ function SubstationSurgeArresterSizer({ locale }: { locale: Locale }) {
   );
 }
 
+function HighVoltageCableAccessorySizer({ locale }: { locale: Locale }) {
+  const [ratedVoltage, setRatedVoltage] = useState<'35kV' | '110kV' | '220kV'>('110kV');
+  const [conductorCrossSection, setConductorCrossSection] = useState<'240 mm²' | '400 mm²' | '630 mm²' | '1200 mm²'>('630 mm²');
+  const [accessoryType, setAccessoryType] = useState<'Composite Outdoor Termination (ПКВТ)' | 'GIS/Transformer Dry Plug-in (Ввод)' | 'One-Piece Straight Joint (ПСТ)'>('Composite Outdoor Termination (ПКВТ)');
+  const [cableLengthM, setCableLengthM] = useState<'350m (Short Feeder)' | '1200m (Standard Grid Run)' | '3600m (Long-Distance 3-Section Cross-Bonding)'>('1200m (Standard Grid Run)');
+  const [earthingTopology, setEarthingTopology] = useState<'Single-Point Earthing (with SVL)' | 'Cross-Bonding Link Box System' | 'Both-Ends Solid Earthing'>('Cross-Bonding Link Box System');
+  const [loadCurrentA, setLoadCurrentA] = useState<'400 A' | '800 A' | '1200 A' | '2000 A'>('800 A');
+
+  const sheathInducedVoltage = useMemo(() => {
+    const lengthNum = cableLengthM.includes('3600m') ? 3600 : cableLengthM.includes('1200m') ? 1200 : 350;
+    const currentNum = parseFloat(loadCurrentA.replace(' A', ''));
+    const omega = 2 * Math.PI * 50;
+    const M = 0.22e-6; // H/m mutual inductance
+    const rawV = omega * M * currentNum * lengthNum;
+    if (earthingTopology.includes('Cross-Bonding')) {
+      const perSecV = (rawV / 3.0).toFixed(1);
+      return `${perSecV} V (Cancelled in 3-Section Major Route)`;
+    }
+    if (earthingTopology.includes('Both-Ends')) {
+      const circI = (currentNum * 0.48).toFixed(0);
+      return `0.0 V (Circulating Current: ${circI} A Loss ~${(parseFloat(circI)*parseFloat(circI)*0.08/1000).toFixed(1)} kW)`;
+    }
+    return `${rawV.toFixed(1)} V (${rawV > 50 ? 'Warning: Exceeds 50V, SVL Required' : 'Safe Touch Voltage ≤ 50V'})`;
+  }, [cableLengthM, loadCurrentA, earthingTopology]);
+
+  const recommendedCableAccessoryModel = useMemo(() => {
+    const vNum = ratedVoltage.replace('kV', '');
+    const sNum = conductorCrossSection.replace(' mm²', '');
+    if (accessoryType.includes('Outdoor')) {
+      return `FE-COT-${vNum}kV/${sNum} (ПКВТ-${vNum}/${sNum} УХЛ1 Composite)`;
+    }
+    if (accessoryType.includes('Plug-in')) {
+      return `FE-GIS-PLUG-${vNum}kV/${sNum} (Interface Type 4/6 Dry Plug-in)`;
+    }
+    return `FE-CJ-${vNum}kV/${sNum} (ПСТ-${vNum}/${sNum} УХЛ1 Pre-molded Joint)`;
+  }, [ratedVoltage, conductorCrossSection, accessoryType]);
+
+  const tangentialStressGrading = useMemo(() => {
+    if (ratedVoltage === '220kV') return 'E_tan ≤ 0.25 kV/mm (Hyperbolic Stress Cone PD < 2pC at 1.73U0)';
+    if (ratedVoltage === '110kV') return 'E_tan ≤ 0.28 kV/mm (Molded EPDM Cone PD < 2pC)';
+    return 'E_tan ≤ 0.30 kV/mm (Pre-molded Cone PD < 2pC)';
+  }, [ratedVoltage]);
+
+  const impulseWithstandBil = useMemo(() => {
+    if (ratedVoltage === '220kV') return '1050 kV Peak BIL (IEC 62067 / GB/T 18890)';
+    if (ratedVoltage === '110kV') return '550 kV Peak BIL (IEC 60840 / GB/T 11017)';
+    return '200 kV Peak BIL (IEC 60840 / ГОСТ 13781.0)';
+  }, [ratedVoltage]);
+
+  return (
+    <div className="sld-widget" style={{ marginTop: '24px', borderColor: 'rgba(14, 165, 233, 0.35)' }}>
+      <div className="sld-header">
+        <div>
+          <span className="eyebrow" style={{ color: '#0ea5e9', borderColor: 'rgba(14, 165, 233, 0.4)' }}>
+            ENGINEERING SIZING ENGINE #18 (IEC 60840 / IEC 62067 / ГОСТ 13781.0-86 / СТО РОССЕТИ)
+          </span>
+          <h3>
+            {locale === 'zh'
+              ? '35kV–220kV 高压电缆附件（终端/中间接头）金属护层感应电压与应力锥绝缘配合核算器'
+              : '35kV–220kV HV Cable Accessories Sheath Induced Voltage & Stress Cone Sizer'}
+          </h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block' }}>SHEATH INDUCED VOLTAGE</span>
+          <strong style={{ color: sheathInducedVoltage.includes('Warning') ? '#f59e0b' : '#22c55e', font: '900 22px/1 var(--display)' }}>
+            {sheathInducedVoltage.split(' ')[0]} {sheathInducedVoltage.split(' ')[1] || 'V'}
+          </strong>
+        </div>
+      </div>
+
+      <div className="sld-controls-grid">
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '电缆系统额定电压等级 (Rated Voltage):' : 'Cable Voltage System:'}</label>
+          <div className="sld-buttons">
+            {(['35kV', '110kV', '220kV'] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                className={`sld-btn ${ratedVoltage === v ? 'active' : ''}`}
+                onClick={() => setRatedVoltage(v)}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '电缆主导体标称截面积 (Conductor Size):' : 'Conductor Cross-Section:'}</label>
+          <div className="sld-buttons">
+            {(['240 mm²', '400 mm²', '630 mm²', '1200 mm²'] as const).map((s) => (
+              <button
+                key={s}
+                type="button"
+                className={`sld-btn ${conductorCrossSection === s ? 'active' : ''}`}
+                onClick={() => setConductorCrossSection(s)}
+                style={{ fontSize: '11.5px' }}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '电缆附件结构类型 (Accessory Architecture):' : 'Accessory Type:'}</label>
+          <div className="sld-buttons">
+            {(['Composite Outdoor Termination (ПКВТ)', 'GIS/Transformer Dry Plug-in (Ввод)', 'One-Piece Straight Joint (ПСТ)'] as const).map((t) => (
+              <button
+                key={t}
+                type="button"
+                className={`sld-btn ${accessoryType === t ? 'active' : ''}`}
+                onClick={() => setAccessoryType(t)}
+                style={{ fontSize: '11px' }}
+              >
+                {t.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '线路总长度与分段形式 (Route Length):' : 'Cable Route Length & Sections:'}</label>
+          <div className="sld-buttons">
+            {(['350m (Short Feeder)', '1200m (Standard Grid Run)', '3600m (Long-Distance 3-Section Cross-Bonding)'] as const).map((len) => (
+              <button
+                key={len}
+                type="button"
+                className={`sld-btn ${cableLengthM === len ? 'active' : ''}`}
+                onClick={() => setCableLengthM(len)}
+                style={{ fontSize: '11px' }}
+              >
+                {len.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '金属屏蔽护层接地拓扑 (Earthing Scheme):' : 'Metallic Sheath Earthing Scheme:'}</label>
+          <div className="sld-buttons">
+            {(['Single-Point Earthing (with SVL)', 'Cross-Bonding Link Box System', 'Both-Ends Solid Earthing'] as const).map((earth) => (
+              <button
+                key={earth}
+                type="button"
+                className={`sld-btn ${earthingTopology === earth ? 'active' : ''}`}
+                onClick={() => setEarthingTopology(earth)}
+                style={{ fontSize: '11px' }}
+              >
+                {earth.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '主线路持续运行负荷电流 (Load Current):' : 'Continuous Load Current:'}</label>
+          <div className="sld-buttons">
+            {(['400 A', '800 A', '1200 A', '2000 A'] as const).map((cur) => (
+              <button
+                key={cur}
+                type="button"
+                className={`sld-btn ${loadCurrentA === cur ? 'active' : ''}`}
+                onClick={() => setLoadCurrentA(cur)}
+                style={{ fontSize: '11.5px' }}
+              >
+                {cur}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="sld-results-panel" style={{ marginTop: '20px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(14, 165, 233, 0.25)', borderRadius: '10px', padding: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>RECOMMENDED ACCESSORY MODEL</span>
+            <strong style={{ color: '#38bdf8', fontSize: '13.5px' }}>{recommendedCableAccessoryModel}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>SHEATH INDUCED TOUCH VOLTAGE</span>
+            <strong style={{ color: sheathInducedVoltage.includes('Warning') ? '#f59e0b' : '#22c55e', fontSize: '13px' }}>{sheathInducedVoltage}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>STRESS CONE TANGENTIAL FIELD</span>
+            <strong style={{ color: '#f8fafc', fontSize: '12.5px', lineHeight: 1.4, display: 'block' }}>{tangentialStressGrading}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>LIGHTNING IMPULSE WITHSTAND</span>
+            <strong style={{ color: '#a855f7', fontSize: '13px', lineHeight: 1.4, display: 'block' }}>{impulseWithstandBil}</strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <a
+            className="button button-orange"
+            style={{ width: '100%', background: 'linear-gradient(135deg, #0284c7, #0369a1)', color: '#ffffff', fontWeight: 'bold' }}
+            href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I configured 35-220kV Cable Accessories on Feichi Power: Voltage = ${ratedVoltage}, CrossSection = ${conductorCrossSection}, Type = ${accessoryType}, Length = ${cableLengthM}, Earthing = ${earthingTopology}, Load = ${loadCurrentA}, Model = ${recommendedCableAccessoryModel}. Please provide step-cut CAD drawings, sheath induced voltage calculation sheet, and Russian GOST Опросный лист quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {locale === 'zh' ? '向 Henry 索取 35kV–220kV 电缆附件施工图纸、护层感应电压计算书与报价' : 'Request Cable Accessories CAD, Sheath Sizing & Quote'}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function EngineeringJourney({ locale }: { locale: Locale }) {
   const steps = [
     {
@@ -5669,9 +5878,10 @@ function Home({ locale }: { locale: Locale }) {
           <div className="wrap">
             <SectionTitle
               eyebrow="ENGINEERING INTERACTION & SIZING CALCULATORS"
-              title={locale === 'zh' ? '交互式十七大重工与电网防雷绝缘配合工程计算工具箱：金属氧化物避雷器MOA、限流电抗器CLR、高压电机软起动MCR/固态、中性点接地电阻NGR、气体绝缘输电线路GIL、高压谐波治理APF、车载移动变电站、光电互感器合并单元、变压器、SVG无功、高压断路器TRV、隔离开关破冰、母线热稳定、光储压降、智能重合器自愈、箱变与制氮机选型' : 'Comprehensive 17-Engine Engineering Sizing Suite: Metal-Oxide Surge Arresters MOA, Current-Limiting Reactor CLR, Motor Soft Starters MCR/SSS, Neutral Grounding Resistor NGR, Gas-Insulated Lines GIL, Harmonic Active Filters APF/FC, Mobile Substations, Optical NCIT & Merging Units, Transformers, STATCOM, HV Breakers TRV, Disconnectors Ice-Breaking, Busbars, Solar Skid, Smart Recloser FLISR, SLD & Nitrogen'}
-              copy={locale === 'zh' ? '输入您的电网负荷、短路电流、避雷器绝缘裕度、限流电抗率、电机轴功率、中性点接地阻值、GIL走廊长度、谐波目标THD、断路器TRV开断、隔离开关破冰力矩、车载变电站轴荷公路限值、光电互感器SV流速率、线路接地电容或光储集电参数，系统实时完成高精度电气核算并生成一键技术方案。' : 'Specify your grid active load, short-circuit withstand, surge arrester BIL margin %, reactor reactance %, motor kW, NGR resistance, GIL corridor length, target harmonic THD, breaker TRV duty, disconnector ice torque, mobile substation axle loads, optical NCIT SV traffic, reactive harmonics, ground capacitance, or solar skid parameters to generate instant model proposals and engineering dossiers.'}
+              title={locale === 'zh' ? '交互式十八大重工与超高压电缆工程计算工具箱：高压电缆附件/护层感应电压、金属氧化物避雷器MOA、限流电抗器CLR、高压电机软起动MCR/固态、中性点接地电阻NGR、气体绝缘输电线路GIL、高压谐波治理APF、车载移动变电站、光电互感器合并单元、变压器、SVG无功、高压断路器TRV、隔离开关破冰、母线热稳定、光储压降、智能重合器自愈、箱变与制氮机选型' : 'Comprehensive 18-Engine Engineering Sizing Suite: HV Cable Accessories & Sheath Induced Voltage, Metal-Oxide Surge Arresters MOA, Current-Limiting Reactor CLR, Motor Soft Starters MCR/SSS, Neutral Grounding Resistor NGR, Gas-Insulated Lines GIL, Harmonic Active Filters APF/FC, Mobile Substations, Optical NCIT & Merging Units, Transformers, STATCOM, HV Breakers TRV, Disconnectors Ice-Breaking, Busbars, Solar Skid, Smart Recloser FLISR, SLD & Nitrogen'}
+              copy={locale === 'zh' ? '输入您的电网负荷、电缆长度与护层接地方式、短路电流、避雷器绝缘裕度、限流电抗率、电机轴功率、中性点接地阻值、GIL走廊长度、谐波目标THD、断路器TRV开断、隔离开关破冰力矩、车载变电站轴荷公路限值、光电互感器SV流速率、线路接地电容或光储集电参数，系统实时完成高精度电气核算并生成一键技术方案。' : 'Specify your grid active load, cable length & sheath earthing scheme, short-circuit withstand, surge arrester BIL margin %, reactor reactance %, motor kW, NGR resistance, GIL corridor length, target harmonic THD, breaker TRV duty, disconnector ice torque, mobile substation axle loads, optical NCIT SV traffic, reactive harmonics, ground capacitance, or solar skid parameters to generate instant model proposals and engineering dossiers.'}
             />
+            <HighVoltageCableAccessorySizer locale={locale} />
             <SubstationSurgeArresterSizer locale={locale} />
             <AirCoreCurrentLimitingReactorSizer locale={locale} />
             <HighVoltageSoftStarterSizer locale={locale} />
@@ -6655,7 +6865,7 @@ function WhitepaperKnowledgeHub({ locale }: { locale: Locale }) {
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const categoryTabs: { id: string; label: Record<Locale, string> }[] = [
-    { id: 'all', label: { en: 'All 38 Engineering Whitepapers', zh: '全部 38 篇工程白皮书', ja: '全 38 編技術ホワイトペーパー', es: 'Todas las 38 Guías de Ingeniería', ru: 'Все 38 руководств ГОСТ/МЭК' } },
+    { id: 'all', label: { en: 'All 39 Engineering Whitepapers', zh: '全部 39 篇工程白皮书', ja: '全 39 編技術ホワイトペーパー', es: 'Todas las 39 Guías de Ingeniería', ru: 'Все 39 руководств ГОСТ/МЭК' } },
     { id: 'substation', label: { en: 'Substations & Transformers', zh: '箱变与变压器', ja: '変電所・変圧器', es: 'Subestaciones y Trafo', ru: 'КТП и трансформаторы' } },
     { id: 'switchgear', label: { en: 'MV/LV Switchgear & Protection', zh: '高低压开关柜与保护', ja: 'スイッチギア・保護', es: 'Celdas MT/BT y Protección', ru: 'Ячейки КРУ и защита' } },
     { id: 'mining', label: { en: 'Mining Safety & Flameproof Power', zh: '矿山防爆电力与安全制氮', ja: '鉱山防爆電力・窒素防災', es: 'Seguridad y Potencia Minera', ru: 'Шахтная взрывозащита и КТПВ' } },
@@ -7055,6 +7265,20 @@ function WhitepaperKnowledgeHub({ locale }: { locale: Locale }) {
                 : 'Calculate lightning residual voltage, discharge energy capability, and insulation coordination BIL margin per IEC 60099-4 and GOST R 52725:'}
             </p>
             <SubstationSurgeArresterSizer locale={locale} />
+          </section>
+        )}
+
+        {activePaper.hasCalculator === 'cable' && (
+          <section style={{ marginBottom: '40px', background: 'var(--panel-2)', padding: '26px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h2 style={{ font: '800 21px var(--display)', color: '#ffffff', marginBottom: '8px' }}>
+              ⚡ {locale === 'zh' ? '35kV–220kV 高压电缆附件（终端/中间接头）金属护层感应电压与应力锥绝缘配合核算器' : '35kV–220kV HV Cable Accessories Sheath Induced Voltage & Stress Cone Sizer'}
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '13.5px', marginBottom: '18px' }}>
+              {locale === 'zh'
+                ? '依据 IEC 60840、IEC 62067 及 ГОСТ 13781.0，选择系统电压、导体截面、线路长度与接地方式，实时核算护层感应电压、切向场强与冲击耐受：'
+                : 'Calculate cable sheath induced voltage, tangential electric stress grading, and impulse withstand per IEC 60840, IEC 62067 and GOST 13781:'}
+            </p>
+            <HighVoltageCableAccessorySizer locale={locale} />
           </section>
         )}
 

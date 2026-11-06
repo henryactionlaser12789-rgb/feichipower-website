@@ -19,6 +19,7 @@ import { week35Whitepaper } from './week35Whitepaper';
 import { week36Whitepaper } from './week36Whitepaper';
 import { week37Whitepaper } from './week37Whitepaper';
 import { week38Whitepaper } from './week38Whitepaper';
+import { week39Whitepaper } from './week39Whitepaper';
 
 export interface WhitepaperItem {
   id: string;
@@ -41,7 +42,7 @@ export interface WhitepaperItem {
   tableRows: Record<string, string[][]>;
   sec4Title: Record<string, string>;
   scenarios: Record<string, { title: string; recommend: string; reason: string }[]>;
-  hasCalculator?: 'sld' | 'nitrogen' | 'disconnector' | 'trv' | 'flisr' | 'transformer' | 'svg' | 'ncit' | 'mobile' | 'harmonic' | 'gil' | 'ngr' | 'softstarter' | 'reactor' | 'mosa';
+  hasCalculator?: 'sld' | 'nitrogen' | 'disconnector' | 'trv' | 'flisr' | 'transformer' | 'svg' | 'ncit' | 'mobile' | 'harmonic' | 'gil' | 'ngr' | 'softstarter' | 'reactor' | 'mosa' | 'cable';
   ctaTitle: Record<string, string>;
   ctaDesc: Record<string, string>;
 }
@@ -3571,5 +3572,6 @@ Feichi KBSGV / КТПВ Explosion-Proof Mobile Substation Technical Parameters:
   week36Whitepaper,
   week37Whitepaper,
   week38Whitepaper,
+  week39Whitepaper,
 ];
 
