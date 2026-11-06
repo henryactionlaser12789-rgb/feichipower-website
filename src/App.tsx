@@ -1568,8 +1568,10 @@ function Seo({
 }) {
   const location = useLocation();
   useEffect(() => {
-    const origin = window.location.origin;
-    const canonical = `${origin}${location.pathname}`;
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const canonicalOrigin = isLocal ? window.location.origin : 'https://feichipower.com';
+    const cleanPath = location.pathname.startsWith('/') ? location.pathname : `/${location.pathname}`;
+    const canonical = `${canonicalOrigin}${cleanPath}`;
     document.documentElement.lang = locale === 'zh' ? 'zh-CN' : locale === 'ja' ? 'ja-JP' : locale === 'es' ? 'es-ES' : locale === 'ru' ? 'ru-RU' : 'en';
     document.title = title;
 
@@ -1589,7 +1591,7 @@ function Seo({
     setMeta('meta[property="og:description"]', 'property', description);
     setMeta('meta[property="og:type"]', 'property', 'website');
     setMeta('meta[property="og:url"]', 'property', canonical);
-    setMeta('meta[property="og:image"]', 'property', `${origin}/images/hero-substation.webp`);
+    setMeta('meta[property="og:image"]', 'property', `${canonicalOrigin}/images/hero-substation.webp`);
     setMeta('meta[name="twitter:card"]', 'name', 'summary_large_image');
     setMeta('meta[name="twitter:title"]', 'name', title);
     setMeta('meta[name="twitter:description"]', 'name', description);
@@ -1607,7 +1609,8 @@ function Seo({
       const alternate = document.createElement('link');
       alternate.rel = 'alternate';
       alternate.hreflang = item;
-      alternate.href = `${origin}/${item}${location.pathname.replace(/^\/[^/]+/, '') || '/'}`;
+      const subPath = cleanPath.replace(/^\/[^/]+/, '') || '/';
+      alternate.href = `${canonicalOrigin}/${item}${subPath.startsWith('/') ? subPath : '/' + subPath}`;
       alternate.dataset.hreflang = item;
       document.head.appendChild(alternate);
     });
@@ -6007,11 +6010,35 @@ function SizingSuiteSection({ locale }: { locale: Locale }) {
   );
 }
 
+const homeSeoData: Record<Locale, { title: string; desc: string }> = {
+  zh: {
+    title: '沈阳飞驰电气 FEICHI POWER | 10kV~220kV 箱式变电站、高压GIS与特种电力变压器专业制造商',
+    desc: '沈阳飞驰电气（FEICHI POWER，成立于2004年，注册资金1.01亿元）专业研发制造10kV-220kV预装式箱变、高压GIS气体绝缘开关柜、矿用隔爆变压器及特种电力设备，服务国家电网及全球电力EPC总包项目。',
+  },
+  en: {
+    title: 'FEICHI POWER | Box Type Substation Manufacturer, 110kV-220kV GIS & Power Transformers',
+    desc: 'Feichi Power (est. 2004, RMB 101M capital) is a premier Chinese manufacturer of 10kV-220kV prefabricated box substations (E-House), gas-insulated switchgear (GIS), cast resin dry-type & oil-immersed power transformers for global EPC contractors.',
+  },
+  ru: {
+    title: 'FEICHI POWER | Завод КТПБ 35-220 кВ, КРУЭ и силовых трансформаторов (ГОСТ УХЛ1 до -50°C)',
+    desc: 'Shenyang Feichi Power — ведущий производитель блочно-модульных подстанций КТПБ/ПСМ 10-220 кВ, элегазовых распределительных устройств КРУЭ, вакуумных выключателей и силовых трансформаторов по стандартам ГОСТ для работы в условиях УХЛ1 до -50°C.',
+  },
+  es: {
+    title: 'FEICHI POWER | Fabricante de Subestaciones Tipo Paquete, GIS y Transformadores 10-220kV',
+    desc: 'Feichi Power (est. 2004) fabrica subestaciones eléctricas compactas tipo paquete (E-House 10-220kV), celdas blindadas GIS, transformadores de potencia en aceite y secos clase H para proyectos industriales y renovables en América Latina.',
+  },
+  ja: {
+    title: 'FEICHI POWER (沈陽飛馳電気) | 10kV~220kV プレハブ受変電設備・GIS・特高圧変圧器専門メーカー',
+    desc: '中国・沈陽飛馳電気（2004年設立、資本金1.01億元）。10kV〜220kVプレハブ変電所（E-House）、ガス絶縁開閉装置（GIS）、モールド変圧器および油入変圧器の設計・製造メーカー。グローバルEPC案件に24時間対応。',
+  },
+};
+
 function Home({ locale }: { locale: Locale }) {
   const text = ui[locale];
+  const seo = homeSeoData[locale] || homeSeoData.en;
   return (
     <>
-      <Seo locale={locale} title="Feichi Electrical | Industrial Substations, Switchgear & Transformers" description={text.heroCopy} />
+      <Seo locale={locale} title={seo.title} description={seo.desc} />
       <main>
         <section className="hero">
           <div className="hero-grid wrap">
@@ -6823,14 +6850,25 @@ function OfficialCatalogDownloadSection({ locale }: { locale: Locale }) {
               <h4>{item.title}</h4>
               <p>{item.desc}</p>
             </div>
-            <div className="catalog-card-footer">
-              <div className="catalog-file-info">
-                <span>PDF Format</span>
-                <span>{item.size}</span>
+            <div className="catalog-card-footer" style={{ flexDirection: 'column', gap: '8px', alignItems: 'stretch' }}>
+              <div className="catalog-file-info" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
+                <span style={{ color: 'var(--cyan)', fontWeight: 600 }}>📄 Official PDF</span>
+                <span style={{ color: 'var(--muted)' }}>{item.size} • {item.pages}</span>
               </div>
-              <a href={item.file} download className="catalog-dl-btn" target="_blank" rel="noopener noreferrer">
-                <Download size={14} /> {item.btnText}
-              </a>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                <a href={item.file} download className="catalog-dl-btn" target="_blank" rel="noopener noreferrer" style={{ justifyContent: 'center' }}>
+                  <Download size={14} /> PDF
+                </a>
+                <a
+                  href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I am reviewing the Feichi 38P Brochure (${item.badge}). Please share CAD single-line diagrams and type-test reports.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-orange"
+                  style={{ padding: '8px 12px', fontSize: '12px', justifyContent: 'center', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+                >
+                  <MessageCircle size={14} /> CAD / RFQ
+                </a>
+              </div>
             </div>
           </div>
         ))}
