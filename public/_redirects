@@ -1,10 +1,11 @@
 # Static Asset Direct Pass-through Rules (Do not rewrite static files to index.html)
-/images/*    /images/:splat    200
-/downloads/* /downloads/:splat 200
-/assets/*    /assets/:splat    200
-/robots.txt  /robots.txt       200
-/sitemap.xml /sitemap.xml      200
-/favicon.ico /favicon.ico      200
+/assets/*       /assets/:splat    200
+/images/*       /images/:splat    200
+/downloads/*    /downloads/:splat 200
+/robots.txt     /robots.txt       200
+/sitemap.xml    /sitemap.xml      200
+/llms.txt       /llms.txt         200
+/favicon.ico    /favicon.ico      200
 
 # SPA Catch-all Routing for React Router
-/*           /index.html       200
+/*              /index.html       200
