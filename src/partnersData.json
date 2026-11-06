@@ -1,0 +1,731 @@
+[
+  {
+    "code": "01_state_grid",
+    "title": "国家电网 STATE GRID",
+    "category": "Grid & Utilities",
+    "filename": "01_state_grid.png",
+    "width": 159,
+    "height": 67,
+    "aspectRatio": 2.37
+  },
+  {
+    "code": "02_inner_mongolia_power",
+    "title": "内蒙古电力",
+    "category": "Grid & Utilities",
+    "filename": "02_inner_mongolia_power.png",
+    "width": 94,
+    "height": 92,
+    "aspectRatio": 1.02
+  },
+  {
+    "code": "03_shenyang_metro",
+    "title": "沈阳地铁 SHENYANG METRO",
+    "category": "Transportation & Rail",
+    "filename": "03_shenyang_metro.png",
+    "width": 108,
+    "height": 92,
+    "aspectRatio": 1.17
+  },
+  {
+    "code": "04_crec",
+    "title": "中国中铁 CREC",
+    "category": "Infrastructure & Construction",
+    "filename": "04_crec.png",
+    "width": 95,
+    "height": 97,
+    "aspectRatio": 0.98
+  },
+  {
+    "code": "05_beijing_subway",
+    "title": "北京地铁 BEIJING SUBWAY",
+    "category": "Transportation & Rail",
+    "filename": "05_beijing_subway.png",
+    "width": 164,
+    "height": 61,
+    "aspectRatio": 2.69
+  },
+  {
+    "code": "06_huawei",
+    "title": "华为 HUAWEI",
+    "category": "Technology & Telecom",
+    "filename": "06_huawei.png",
+    "width": 94,
+    "height": 92,
+    "aspectRatio": 1.02
+  },
+  {
+    "code": "07_bmw",
+    "title": "宝马 BMW",
+    "category": "Automotive & Heavy Industry",
+    "filename": "07_bmw.png",
+    "width": 103,
+    "height": 103,
+    "aspectRatio": 1.0
+  },
+  {
+    "code": "08_avic",
+    "title": "中航工业 AVIC",
+    "category": "Aerospace & Heavy Industry",
+    "filename": "08_avic.png",
+    "width": 113,
+    "height": 106,
+    "aspectRatio": 1.07
+  },
+  {
+    "code": "09_cnpc",
+    "title": "中国石油 CNPC",
+    "category": "Oil & Gas & Chemicals",
+    "filename": "09_cnpc.png",
+    "width": 105,
+    "height": 117,
+    "aspectRatio": 0.9
+  },
+  {
+    "code": "10_sinopec",
+    "title": "中国石化 SINOPEC",
+    "category": "Oil & Gas & Chemicals",
+    "filename": "10_sinopec.png",
+    "width": 98,
+    "height": 99,
+    "aspectRatio": 0.99
+  },
+  {
+    "code": "11_chalco",
+    "title": "中国铝业 CHALCO",
+    "category": "Mining & Metallurgy",
+    "filename": "11_chalco.png",
+    "width": 125,
+    "height": 84,
+    "aspectRatio": 1.49
+  },
+  {
+    "code": "12_cnmc",
+    "title": "中国有色集团 CNMC",
+    "category": "Mining & Metallurgy",
+    "filename": "12_cnmc.png",
+    "width": 146,
+    "height": 66,
+    "aspectRatio": 2.21
+  },
+  {
+    "code": "13_china_gold",
+    "title": "中国黄金 CHINA GOLD",
+    "category": "Mining & Metallurgy",
+    "filename": "13_china_gold.png",
+    "width": 139,
+    "height": 64,
+    "aspectRatio": 2.17
+  },
+  {
+    "code": "14_china_mobile",
+    "title": "中国移动 China Mobile",
+    "category": "Technology & Telecom",
+    "filename": "14_china_mobile.png",
+    "width": 148,
+    "height": 66,
+    "aspectRatio": 2.24
+  },
+  {
+    "code": "15_china_unicom",
+    "title": "中国联通 China Unicom",
+    "category": "Technology & Telecom",
+    "filename": "15_china_unicom.png",
+    "width": 123,
+    "height": 80,
+    "aspectRatio": 1.54
+  },
+  {
+    "code": "16_china_telecom",
+    "title": "中国电信 CHINA TELECOM",
+    "category": "Technology & Telecom",
+    "filename": "16_china_telecom.png",
+    "width": 162,
+    "height": 105,
+    "aspectRatio": 1.54
+  },
+  {
+    "code": "17_kuihua_pharma",
+    "title": "葵花药业",
+    "category": "Pharmaceutical & Consumer",
+    "filename": "17_kuihua_pharma.png",
+    "width": 145,
+    "height": 120,
+    "aspectRatio": 1.21
+  },
+  {
+    "code": "18_poly_developments",
+    "title": "保利地产 POLY",
+    "category": "Real Estate & Urban",
+    "filename": "18_poly_developments.png",
+    "width": 164,
+    "height": 74,
+    "aspectRatio": 2.22
+  },
+  {
+    "code": "19_china_overseas",
+    "title": "中海地产 COLI",
+    "category": "Real Estate & Urban",
+    "filename": "19_china_overseas.png",
+    "width": 163,
+    "height": 60,
+    "aspectRatio": 2.72
+  },
+  {
+    "code": "20_longfor",
+    "title": "龙湖集团 LONGFOR",
+    "category": "Real Estate & Urban",
+    "filename": "20_longfor.png",
+    "width": 125,
+    "height": 112,
+    "aspectRatio": 1.12
+  },
+  {
+    "code": "21_peking_university",
+    "title": "北京大学 Peking University",
+    "category": "Academia & Research",
+    "filename": "21_peking_university.png",
+    "width": 109,
+    "height": 136,
+    "aspectRatio": 0.8
+  },
+  {
+    "code": "22_dpcc",
+    "title": "大连港 DPCC",
+    "category": "Ports & Logistics",
+    "filename": "22_dpcc.png",
+    "width": 100,
+    "height": 92,
+    "aspectRatio": 1.09
+  },
+  {
+    "code": "23_changan_auto",
+    "title": "长安重工 Changan Heavy",
+    "category": "Automotive & Heavy Industry",
+    "filename": "23_changan_auto.png",
+    "width": 91,
+    "height": 136,
+    "aspectRatio": 0.67
+  },
+  {
+    "code": "24_nhi",
+    "title": "北方重工 NHI",
+    "category": "Heavy Machinery & Mining",
+    "filename": "24_nhi.png",
+    "width": 147,
+    "height": 136,
+    "aspectRatio": 1.08
+  },
+  {
+    "code": "25_fangda_group",
+    "title": "方大集团 FANGDA GROUP",
+    "category": "Heavy Industry & Steel",
+    "filename": "25_fangda_group.png",
+    "width": 105,
+    "height": 136,
+    "aspectRatio": 0.77
+  },
+  {
+    "code": "26_cggc",
+    "title": "中国葛洲坝集团 CGGC",
+    "category": "Hydro & Energy EPC",
+    "filename": "26_cggc.png",
+    "width": 111,
+    "height": 136,
+    "aspectRatio": 0.82
+  },
+  {
+    "code": "27_abb",
+    "title": "ABB",
+    "category": "Global Electrical Giants",
+    "filename": "27_abb.png",
+    "width": 146,
+    "height": 136,
+    "aspectRatio": 1.07
+  },
+  {
+    "code": "28_gold_phoenix",
+    "title": "金麒麟 GOLD PHOENIX",
+    "category": "Manufacturing & Materials",
+    "filename": "28_gold_phoenix.png",
+    "width": 93,
+    "height": 136,
+    "aspectRatio": 0.68
+  },
+  {
+    "code": "29_ansteel",
+    "title": "鞍钢集团 ANSTEEL",
+    "category": "Mining & Metallurgy",
+    "filename": "29_ansteel.png",
+    "width": 108,
+    "height": 136,
+    "aspectRatio": 0.79
+  },
+  {
+    "code": "30_meihua_group",
+    "title": "梅花集团 MEIHUA GROUP",
+    "category": "Chemicals & Biotechnology",
+    "filename": "30_meihua_group.png",
+    "width": 105,
+    "height": 136,
+    "aspectRatio": 0.77
+  },
+  {
+    "code": "31_rxpe",
+    "title": "荣信汇科 RXPE",
+    "category": "Power Electronics & Grid",
+    "filename": "31_rxpe.png",
+    "width": 149,
+    "height": 92,
+    "aspectRatio": 1.62
+  },
+  {
+    "code": "32_yawei_electric",
+    "title": "亚威电气 YAWEI",
+    "category": "Electrical & Switchgear",
+    "filename": "32_yawei_electric.png",
+    "width": 131,
+    "height": 135,
+    "aspectRatio": 0.97
+  },
+  {
+    "code": "33_wwhg",
+    "title": "万家寨水控 WWHG",
+    "category": "Hydro & Water Resources",
+    "filename": "33_wwhg.png",
+    "width": 122,
+    "height": 135,
+    "aspectRatio": 0.9
+  },
+  {
+    "code": "34_shenyang_ligong_univ",
+    "title": "沈阳理工大学",
+    "category": "Academia & Research",
+    "filename": "34_shenyang_ligong_univ.png",
+    "width": 106,
+    "height": 135,
+    "aspectRatio": 0.79
+  },
+  {
+    "code": "35_chn_energy",
+    "title": "国家能源集团 CHN ENERGY",
+    "category": "Power Generation & Mining",
+    "filename": "35_chn_energy.png",
+    "width": 123,
+    "height": 135,
+    "aspectRatio": 0.91
+  },
+  {
+    "code": "36_joycome",
+    "title": "家佳康 JOYCOME",
+    "category": "Agriculture & Food",
+    "filename": "36_joycome.png",
+    "width": 122,
+    "height": 136,
+    "aspectRatio": 0.9
+  },
+  {
+    "code": "37_csg",
+    "title": "中国南方电网 CSG",
+    "category": "Grid & Utilities",
+    "filename": "37_csg.png",
+    "width": 127,
+    "height": 136,
+    "aspectRatio": 0.93
+  },
+  {
+    "code": "38_standard_group",
+    "title": "斯坦德集团 STD",
+    "category": "Testing & Certification",
+    "filename": "38_standard_group.png",
+    "width": 107,
+    "height": 136,
+    "aspectRatio": 0.79
+  },
+  {
+    "code": "39_taikang_life",
+    "title": "泰康人寿 TAIKANG LIFE",
+    "category": "Finance & Infrastructure",
+    "filename": "39_taikang_life.png",
+    "width": 124,
+    "height": 136,
+    "aspectRatio": 0.91
+  },
+  {
+    "code": "40_northeastern_univ",
+    "title": "东北大学 Northeastern Univ",
+    "category": "Academia & Research",
+    "filename": "40_northeastern_univ.png",
+    "width": 116,
+    "height": 136,
+    "aspectRatio": 0.85
+  },
+  {
+    "code": "41_longmarch_tyre",
+    "title": "浪马轮胎 LONGMARCH",
+    "category": "Manufacturing & Materials",
+    "filename": "41_longmarch_tyre.png",
+    "width": 113,
+    "height": 85,
+    "aspectRatio": 1.33
+  },
+  {
+    "code": "42_ceec",
+    "title": "中国能建 ENERGY CHINA",
+    "category": "Energy EPC & Grid",
+    "filename": "42_ceec.png",
+    "width": 115,
+    "height": 85,
+    "aspectRatio": 1.35
+  },
+  {
+    "code": "43_grinm",
+    "title": "中国有研 GRINM",
+    "category": "Advanced Materials & Tech",
+    "filename": "43_grinm.png",
+    "width": 128,
+    "height": 87,
+    "aspectRatio": 1.47
+  },
+  {
+    "code": "44_casic",
+    "title": "中国航天科工 CASIC",
+    "category": "Aerospace & High-Tech",
+    "filename": "44_casic.png",
+    "width": 138,
+    "height": 93,
+    "aspectRatio": 1.48
+  },
+  {
+    "code": "45_ccteg_electric",
+    "title": "中煤电气 CCTEG",
+    "category": "Mining Electrical & Safety",
+    "filename": "45_ccteg_electric.png",
+    "width": 110,
+    "height": 89,
+    "aspectRatio": 1.24
+  },
+  {
+    "code": "46_powerchina",
+    "title": "中国电建 POWERCHINA",
+    "category": "Energy EPC & Hydro",
+    "filename": "46_powerchina.png",
+    "width": 116,
+    "height": 98,
+    "aspectRatio": 1.18
+  },
+  {
+    "code": "47_spic",
+    "title": "国家电投 SPIC",
+    "category": "Power Generation & Clean Energy",
+    "filename": "47_spic.png",
+    "width": 80,
+    "height": 98,
+    "aspectRatio": 0.82
+  },
+  {
+    "code": "48_huadian",
+    "title": "中国华电 CHINA HUADIAN",
+    "category": "Power Generation & Clean Energy",
+    "filename": "48_huadian.png",
+    "width": 163,
+    "height": 68,
+    "aspectRatio": 2.4
+  },
+  {
+    "code": "49_huaneng",
+    "title": "中国华能 CHINA HUANENG",
+    "category": "Power Generation & Clean Energy",
+    "filename": "49_huaneng.png",
+    "width": 164,
+    "height": 52,
+    "aspectRatio": 3.15
+  },
+  {
+    "code": "50_jianlong_group",
+    "title": "建龙集团 JIANLONG GROUP",
+    "category": "Mining & Metallurgy",
+    "filename": "50_jianlong_group.png",
+    "width": 147,
+    "height": 131,
+    "aspectRatio": 1.12
+  },
+  {
+    "code": "51_shougang_group",
+    "title": "首钢集团 SHOUGANG GROUP",
+    "category": "Heavy Industry & Steel",
+    "filename": "51_shougang_group.png",
+    "width": 164,
+    "height": 115,
+    "aspectRatio": 1.43
+  },
+  {
+    "code": "52_conch_profile",
+    "title": "海螺型材 CONCH",
+    "category": "Building Materials",
+    "filename": "52_conch_profile.png",
+    "width": 110,
+    "height": 60,
+    "aspectRatio": 1.83
+  },
+  {
+    "code": "53_liugang",
+    "title": "柳州钢铁 LIUGANG",
+    "category": "Heavy Industry & Steel",
+    "filename": "53_liugang.png",
+    "width": 85,
+    "height": 91,
+    "aspectRatio": 0.93
+  },
+  {
+    "code": "54_tbea",
+    "title": "特变电工 TBEA",
+    "category": "Global Electrical Giants",
+    "filename": "54_tbea.png",
+    "width": 160,
+    "height": 60,
+    "aspectRatio": 2.67
+  },
+  {
+    "code": "55_gree",
+    "title": "格力电器 GREE",
+    "category": "Industrial Manufacturing",
+    "filename": "55_gree.png",
+    "width": 162,
+    "height": 52,
+    "aspectRatio": 3.12
+  },
+  {
+    "code": "56_yutong",
+    "title": "宇通集团 YUTONG",
+    "category": "Commercial Vehicles & Transit",
+    "filename": "56_yutong.png",
+    "width": 106,
+    "height": 76,
+    "aspectRatio": 1.39
+  },
+  {
+    "code": "57_michelin",
+    "title": "米其林 MICHELIN",
+    "category": "Global Industrial Leaders",
+    "filename": "57_michelin.png",
+    "width": 160,
+    "height": 68,
+    "aspectRatio": 2.35
+  },
+  {
+    "code": "58_huaqiang_group",
+    "title": "华强集团 HUAQIANG GROUP",
+    "category": "Technology & Industrial Parks",
+    "filename": "58_huaqiang_group.png",
+    "width": 147,
+    "height": 68,
+    "aspectRatio": 2.16
+  },
+  {
+    "code": "59_vanke",
+    "title": "万科 vanke",
+    "category": "Real Estate & Urban",
+    "filename": "59_vanke.png",
+    "width": 148,
+    "height": 60,
+    "aspectRatio": 2.47
+  },
+  {
+    "code": "60_tsinghua_univ",
+    "title": "清华大学 Tsinghua University",
+    "category": "Academia & Research",
+    "filename": "60_tsinghua_univ.png",
+    "width": 148,
+    "height": 68,
+    "aspectRatio": 2.18
+  },
+  {
+    "code": "61_dalian_medical_univ",
+    "title": "大连医科大学",
+    "category": "Academia & Research",
+    "filename": "61_dalian_medical_univ.png",
+    "width": 174,
+    "height": 97,
+    "aspectRatio": 1.79
+  },
+  {
+    "code": "62_kingsemi",
+    "title": "芯源微 KINGSEMI",
+    "category": "Semiconductor Equipment",
+    "filename": "62_kingsemi.png",
+    "width": 180,
+    "height": 84,
+    "aspectRatio": 2.14
+  },
+  {
+    "code": "63_shengu_group",
+    "title": "沈阳鼓风机集团 SHENGU",
+    "category": "Heavy Machinery & Turbines",
+    "filename": "63_shengu_group.png",
+    "width": 194,
+    "height": 93,
+    "aspectRatio": 2.09
+  },
+  {
+    "code": "64_daheishan_moly",
+    "title": "大黑山钼业",
+    "category": "Mining & Metallurgy",
+    "filename": "64_daheishan_moly.png",
+    "width": 192,
+    "height": 68,
+    "aspectRatio": 2.82
+  },
+  {
+    "code": "65_benxi_steel",
+    "title": "本溪钢铁 BENXI STEEL",
+    "category": "Heavy Industry & Steel",
+    "filename": "65_benxi_steel.png",
+    "width": 163,
+    "height": 85,
+    "aspectRatio": 1.92
+  },
+  {
+    "code": "66_liaoning_dongmei",
+    "title": "辽宁东煤",
+    "category": "Coal & Mining Energy",
+    "filename": "66_liaoning_dongmei.png",
+    "width": 172,
+    "height": 63,
+    "aspectRatio": 2.73
+  },
+  {
+    "code": "67_guange_electric",
+    "title": "广野电气 Guang e",
+    "category": "Electrical & Switchgear",
+    "filename": "67_guange_electric.png",
+    "width": 137,
+    "height": 90,
+    "aspectRatio": 1.52
+  },
+  {
+    "code": "68_sdee",
+    "title": "山东电工 SDEE",
+    "category": "Grid Equipment & EPC",
+    "filename": "68_sdee.png",
+    "width": 127,
+    "height": 76,
+    "aspectRatio": 1.67
+  },
+  {
+    "code": "69_cgn",
+    "title": "中广核 CGN",
+    "category": "Nuclear & Clean Energy",
+    "filename": "69_cgn.png",
+    "width": 206,
+    "height": 60,
+    "aspectRatio": 3.43
+  },
+  {
+    "code": "70_xinhua_moly",
+    "title": "新华钼业 XINHUA MOLY",
+    "category": "Mining & Metallurgy",
+    "filename": "70_xinhua_moly.png",
+    "width": 180,
+    "height": 70,
+    "aspectRatio": 2.57
+  },
+  {
+    "code": "71_siemens",
+    "title": "西门子 SIEMENS",
+    "category": "Global Electrical Giants",
+    "filename": "71_siemens.png",
+    "width": 173,
+    "height": 68,
+    "aspectRatio": 2.54
+  },
+  {
+    "code": "72_vycon",
+    "title": "微控 VYCON",
+    "category": "Flywheel & Energy Storage",
+    "filename": "72_vycon.png",
+    "width": 198,
+    "height": 68,
+    "aspectRatio": 2.91
+  },
+  {
+    "code": "73_datang",
+    "title": "中国大唐 CHINA DATANG",
+    "category": "Power Generation & Clean Energy",
+    "filename": "73_datang.png",
+    "width": 158,
+    "height": 99,
+    "aspectRatio": 1.6
+  },
+  {
+    "code": "74_xd_group",
+    "title": "中国西电 XD",
+    "category": "High-Voltage Transmission",
+    "filename": "74_xd_group.png",
+    "width": 143,
+    "height": 124,
+    "aspectRatio": 1.15
+  },
+  {
+    "code": "75_schneider_electric",
+    "title": "施耐德电气 Schneider Electric",
+    "category": "Global Electrical Giants",
+    "filename": "75_schneider_electric.png",
+    "width": 148,
+    "height": 132,
+    "aspectRatio": 1.12
+  },
+  {
+    "code": "76_sieyuan",
+    "title": "思源电气 Sieyuan",
+    "category": "High-Voltage Switchgear",
+    "filename": "76_sieyuan.png",
+    "width": 147,
+    "height": 75,
+    "aspectRatio": 1.96
+  },
+  {
+    "code": "77_cr_power",
+    "title": "华润电力 CR POWER",
+    "category": "Power Generation & Clean Energy",
+    "filename": "77_cr_power.png",
+    "width": 177,
+    "height": 86,
+    "aspectRatio": 2.06
+  },
+  {
+    "code": "78_cnnc",
+    "title": "中核集团 CNNC",
+    "category": "Nuclear & High-Tech Energy",
+    "filename": "78_cnnc.png",
+    "width": 100,
+    "height": 109,
+    "aspectRatio": 0.92
+  },
+  {
+    "code": "79_cmu",
+    "title": "中国医科大学 CMU",
+    "category": "Academia & Research",
+    "filename": "79_cmu.png",
+    "width": 148,
+    "height": 104,
+    "aspectRatio": 1.42
+  },
+  {
+    "code": "80_chec",
+    "title": "中国港湾 CHEC",
+    "category": "Global Infrastructure & Ports",
+    "filename": "80_chec.png",
+    "width": 185,
+    "height": 67,
+    "aspectRatio": 2.76
+  },
+  {
+    "code": "81_eve_energy",
+    "title": "亿纬锂能 EVE",
+    "category": "BESS & Lithium Batteries",
+    "filename": "81_eve_energy.png",
+    "width": 173,
+    "height": 52,
+    "aspectRatio": 3.33
+  }
+]

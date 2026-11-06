@@ -112,6 +112,16 @@
   <url><loc>https://feichipower.com/ru/contact/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>
 
   <!-- Technical Whitepapers Direct Indexing (English & Russian & Multi-language) -->
+  <url><loc>https://feichipower.com/en/resources/outdoor-hv-live-tank-dead-tank-circuit-breaker-trv-guide</loc><lastmod>2026-11-04</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/outdoor-hv-live-tank-dead-tank-circuit-breaker-trv-guide</loc><lastmod>2026-11-04</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/outdoor-hv-live-tank-dead-tank-circuit-breaker-trv-guide</loc><lastmod>2026-11-04</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ja/resources/outdoor-hv-live-tank-dead-tank-circuit-breaker-trv-guide</loc><lastmod>2026-11-04</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/es/resources/outdoor-hv-live-tank-dead-tank-circuit-breaker-trv-guide</loc><lastmod>2026-11-04</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/en/resources/outdoor-hv-disconnector-earthing-switch-ice-breaking-guide</loc><lastmod>2026-11-05</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/outdoor-hv-disconnector-earthing-switch-ice-breaking-guide</loc><lastmod>2026-11-05</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/outdoor-hv-disconnector-earthing-switch-ice-breaking-guide</loc><lastmod>2026-11-05</lastmod><priority>0.95</priority></url>
+  <url><loc>https://feichipower.com/ja/resources/outdoor-hv-disconnector-earthing-switch-ice-breaking-guide</loc><lastmod>2026-11-05</lastmod><priority>0.90</priority></url>
+  <url><loc>https://feichipower.com/es/resources/outdoor-hv-disconnector-earthing-switch-ice-breaking-guide</loc><lastmod>2026-11-05</lastmod><priority>0.90</priority></url>
   <url><loc>https://feichipower.com/en/resources/mining-flameproof-mobile-substation-and-explosion-proof-vacuum-switchgear-guide</loc><lastmod>2026-11-03</lastmod><priority>0.98</priority></url>
   <url><loc>https://feichipower.com/ru/resources/mining-flameproof-mobile-substation-and-explosion-proof-vacuum-switchgear-guide</loc><lastmod>2026-11-03</lastmod><priority>0.98</priority></url>
   <url><loc>https://feichipower.com/zh/resources/mining-flameproof-mobile-substation-and-explosion-proof-vacuum-switchgear-guide</loc><lastmod>2026-11-03</lastmod><priority>0.95</priority></url>
@@ -146,6 +156,39 @@
   <url><loc>https://feichipower.com/ru/resources/neutral-grounding-resistor-and-arc-suppression-coil-design-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
   <url><loc>https://feichipower.com/en/resources/mining-explosion-proof-mobile-substation-and-underground-distribution-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
   <url><loc>https://feichipower.com/ru/resources/mining-explosion-proof-mobile-substation-and-underground-distribution-guide</loc><lastmod>2026-10-29</lastmod><priority>0.95</priority></url>
+
+  <!-- Week 31-38 Technical Whitepapers & Sizing Engines -->
+  <url><loc>https://feichipower.com/en/resources/110kv-220kv-optical-electronic-current-voltage-transformer-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/110kv-220kv-optical-electronic-current-voltage-transformer-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/110kv-220kv-optical-electronic-current-voltage-transformer-guide</loc><lastmod>2026-11-06</lastmod><priority>0.95</priority></url>
+
+  <url><loc>https://feichipower.com/en/resources/35kv-110kv-prefabricated-mobile-substation-trailer-skid-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/35kv-110kv-prefabricated-mobile-substation-trailer-skid-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/35kv-110kv-prefabricated-mobile-substation-trailer-skid-guide</loc><lastmod>2026-11-06</lastmod><priority>0.95</priority></url>
+
+  <url><loc>https://feichipower.com/en/resources/10kv-35kv-harmonic-passive-active-filter-apf-svg-hybrid-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/10kv-35kv-harmonic-passive-active-filter-apf-svg-hybrid-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/10kv-35kv-harmonic-passive-active-filter-apf-svg-hybrid-guide</loc><lastmod>2026-11-06</lastmod><priority>0.95</priority></url>
+
+  <url><loc>https://feichipower.com/en/resources/110kv-220kv-gas-insulated-transmission-lines-gil-vs-xlpe-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/110kv-220kv-gas-insulated-transmission-lines-gil-vs-xlpe-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/110kv-220kv-gas-insulated-transmission-lines-gil-vs-xlpe-guide</loc><lastmod>2026-11-06</lastmod><priority>0.95</priority></url>
+
+  <url><loc>https://feichipower.com/en/resources/10kv-35kv-neutral-grounding-resistor-arc-suppression-coil-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/10kv-35kv-neutral-grounding-resistor-arc-suppression-coil-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/10kv-35kv-neutral-grounding-resistor-arc-suppression-coil-guide</loc><lastmod>2026-11-06</lastmod><priority>0.95</priority></url>
+
+  <url><loc>https://feichipower.com/en/resources/10kv-35kv-intelligent-magnetic-solid-state-soft-starter-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/10kv-35kv-intelligent-magnetic-solid-state-soft-starter-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/10kv-35kv-intelligent-magnetic-solid-state-soft-starter-guide</loc><lastmod>2026-11-06</lastmod><priority>0.95</priority></url>
+
+  <url><loc>https://feichipower.com/en/resources/10kv-35kv-series-parallel-reactors-fault-current-limiter-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/10kv-35kv-series-parallel-reactors-fault-current-limiter-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/10kv-35kv-series-parallel-reactors-fault-current-limiter-guide</loc><lastmod>2026-11-06</lastmod><priority>0.95</priority></url>
+
+  <url><loc>https://feichipower.com/en/resources/10kv-35kv-heavy-duty-surge-arrester-substation-overvoltage-insulation-coordination-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/ru/resources/10kv-35kv-heavy-duty-surge-arrester-substation-overvoltage-insulation-coordination-guide</loc><lastmod>2026-11-06</lastmod><priority>0.98</priority></url>
+  <url><loc>https://feichipower.com/zh/resources/10kv-35kv-heavy-duty-surge-arrester-substation-overvoltage-insulation-coordination-guide</loc><lastmod>2026-11-06</lastmod><priority>0.95</priority></url>
 
   <!-- Multilingual Mirrors -->
   <url><loc>https://feichipower.com/zh/</loc><lastmod>2026-10-29</lastmod><priority>0.9</priority></url>

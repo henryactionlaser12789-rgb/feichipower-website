@@ -35,6 +35,10 @@ import {
 } from 'lucide-react';
 import { whitepapersList, type WhitepaperItem } from './whitepapersData';
 import { epcFaqList, type EpcFaqItem } from './epcKnowledge';
+import { StrategicPartnersSection } from './StrategicPartnersSection';
+import { GlobalProjectsShowcase } from './GlobalProjectsShowcase';
+import { CertificationsTrustHub } from './CertificationsTrustHub';
+import { OverseasProjectsTrackRecord } from './OverseasProjectsTrackRecord';
 
 type Locale = 'en' | 'zh' | 'ja' | 'es' | 'ru';
 const locales: Locale[] = ['en', 'zh', 'ja', 'es', 'ru'];
@@ -48,25 +52,25 @@ const localeLabels: Record<Locale, string> = {
 
 import { TechnicalDrawingPlaceholder } from './TechnicalDrawing';
 
-const heroImage = '/images/curated/factory_panoramic.jpg';
-const factoryImage = '/images/curated/factory_workshop.jpg';
-const cleanroomImage = '/images/curated/transformer_cleanroom.jpg';
+const heroImage = '/images/syfcdq/feichi_hq_panoramic_2k.webp';
+const factoryImage = '/images/syfcdq/feichi_workshop_cnc_2k.webp';
+const cleanroomImage = '/images/library/01_企业形象与厂区/P02_04_企业介绍_核心生产线装备特写_812x611.webp';
 const fieldImages = [
-  '/images/curated/project_simandou_guinea.jpg',
-  '/images/curated/project_saudi_power.jpg',
-  '/images/curated/project_kazakhstan_coke.jpg',
-  '/images/curated/project_audifaw_solar.jpg',
-  '/images/curated/project_steel_base.jpg',
-  '/images/curated/project_shenyang_metro.jpg',
+  '/images/syfcdq/project_mexico_penasco_solar.webp',
+  '/images/syfcdq/project_philippines_pcpc_solar_ehouse.webp',
+  '/images/library/03_工程项目案例/02_预制舱EHouse工程业绩/P25_01_几内亚力拓西芒杜港口EHouse项目_预制舱现场_1_618x300.webp',
+  '/images/library/03_工程项目案例/01_开关柜工程业绩/P21_03_沈阳地铁4号线一期供电系统_现场实景_3_606x454.webp',
+  '/images/syfcdq/project_yingkou_220kv_substation.webp',
+  '/images/library/03_工程项目案例/01_开关柜工程业绩/P21_04_防城港钢铁基地项目_现场实景_4_400x300.webp',
 ];
 
 const industryImages: Record<string, string> = {
-  'renewable-energy': '/images/curated/box_substation_solar.jpg',
-  'rail-transit': '/images/curated/project_shenyang_metro.jpg',
-  'industrial-manufacturing': '/images/curated/project_steel_base.jpg',
-  'commercial-buildings': '/images/curated/industry_commercial.jpg',
-  'petrochemical': '/images/curated/industry_petrochemical.jpg',
-  'ports-airports': '/images/curated/project_simandou_guinea.jpg',
+  'renewable-energy': '/images/syfcdq/project_mexico_penasco_solar.webp',
+  'rail-transit': '/images/library/03_工程项目案例/01_开关柜工程业绩/P21_03_沈阳地铁4号线一期供电系统_现场实景_3_606x454.webp',
+  'industrial-manufacturing': '/images/library/03_工程项目案例/01_开关柜工程业绩/P21_04_防城港钢铁基地项目_现场实景_4_400x300.webp',
+  'commercial-buildings': '/images/syfcdq/project_shenyang_hunnan_tech_city.webp',
+  'petrochemical': '/images/library/03_工程项目案例/03_变压器工程业绩/P27_05_宽城华盛矿业电力项目_变压器实景_5_350x262.webp',
+  'ports-airports': '/images/library/03_工程项目案例/02_预制舱EHouse工程业绩/P25_01_几内亚力拓西芒杜港口EHouse项目_预制舱现场_1_618x300.webp',
 };
 
 interface ProductSpec {
@@ -121,7 +125,7 @@ const products: ProductItem[] = [
     ja: 'プレハブ式コンパクト変電所 (10kV-35kV パッケージ型変電設備)',
     es: 'Subestación compacta prefabricada tipo paquete (10kV-35kV)',
     ru: 'Комплектная трансформаторная подстанция КТПН, 2КТПН 6-35/0.4 кВ по ГОСТ 14695-80',
-    image: '/images/curated/box_substation_solar.jpg',
+    image: '/images/curated/box_substation_solar.webp',
     summary: 'Outdoor packaged prefabricated box-type substation integrating MV switchgear, high-efficiency power transformer, and LV distribution units in a modular weather-resistant compartmented enclosure.',
     voltage: '6 kV / 10 kV / 24 kV / 35 kV -> 0.4 kV',
     tag: 'OUTDOOR POWER DISTRIBUTION',
@@ -239,7 +243,7 @@ const products: ProductItem[] = [
     ja: '中低圧金属閉鎖引出形スイッチギア (KYN28 / MNS / 10-35kV)',
     es: 'Celdas blindadas de distribución MT y BT (KYN28 / GCS / MNS 10-35kV)',
     ru: 'Комплектные распределительные устройства КРУ 6-35 кВ (КРУ-2-10, КРУ СЭЩ, КСО-298, НКУ)',
-    image: '/images/curated/unisafe_switchgear.jpg',
+    image: '/images/curated/unisafe_switchgear.webp',
     summary: 'High-performance withdrawable metal-clad switchgear assemblies with 4-compartment segregation (LSC2B-PM), IAC AFLR 31.5kA internal arc classification, and integrated SCADA microcomputer protection.',
     voltage: '0.4 kV - 35 kV (Up to 4000 A)',
     tag: 'PROTECTION & CONTROL',
@@ -370,7 +374,7 @@ const products: ProductItem[] = [
     ja: 'モジュール型プレハブ電気キャビン (E-House / 10-110kV)',
     es: 'Cabinas eléctricas modulares prefabricadas (E-House / Subestación en contenedor)',
     ru: 'Блочно-модульные здания и электротехнические контейнеры (БМЗ, КТПБ 10-110 кВ по ГОСТ)',
-    image: '/images/curated/precast_cabin_ehouse.jpg',
+    image: '/images/curated/precast_cabin_ehouse.webp',
     summary: 'Heavy-duty containerized substation solution (E-House / BMZ) pre-integrated with MV/LV switchboards, DC UPS, HVAC, and fire suppression for utility-scale solar PV, BESS, and mining microgrids.',
     voltage: 'Tailored 10 kV - 110 kV',
     tag: 'MODULAR ENERGY STORAGE & GRID',
@@ -500,7 +504,7 @@ const products: ProductItem[] = [
     ja: 'エポキシモールド乾式変压器 (F/H種絶縁・低騒音)',
     es: 'Transformadores secos de resina epoxi encapsulada (Clase F/H)',
     ru: 'Сухие силовые трансформаторы с литой изоляцией (ТСЛ, ТСЗЛ 6-35/0.4 кВ по ГОСТ 52719)',
-    image: '/images/curated/transformer_scb.jpg',
+    image: '/images/curated/transformer_scb.webp',
     summary: 'Flame-retardant, self-extinguishing epoxy resin-cast dry-type power transformers engineered for indoor substations, skyscrapers, data centers, and underground railways with low partial discharge (<5pC).',
     voltage: '6 kV / 10 kV / 20 kV / 35 kV -> 0.4 kV',
     tag: 'INDOOR SAFE POWER',
@@ -659,7 +663,7 @@ const products: ProductItem[] = [
     ja: '密閉型コルゲート油入変压器 (高効率・低損失)',
     es: 'Transformadores sumergidos en aceite sellados herméticamente',
     ru: 'Масляные герметичные силовые трансформаторы (ТМГ, ТДН, ТРДН 10-110 кВ по ГОСТ 11677 / ТР ТС)',
-    image: '/images/curated/transformer_oil.jpg',
+    image: '/images/curated/transformer_oil.webp',
     summary: 'Corrugated tank hermetically sealed oil-filled power transformer providing high overload capacity, robust weatherproofing, and low operating losses compliant with IEC 60076, IEEE C57 and GOST 11677.',
     voltage: '6 kV / 10 kV / 24 kV / 35 kV / 66 kV / 110 kV',
     tag: 'UTILITY SUBSTATIONS',
@@ -806,7 +810,7 @@ const products: ProductItem[] = [
     ja: '産業用配電盤・動力盤',
     es: 'Cuadros de distribución de fuerza y alumbrado',
     ru: 'Низковольтные распределительные шкафы и щиты (НКУ / ЩО-70 / ВРУ)',
-    image: '/images/curated/distribution_boxes.jpg',
+    image: '/images/curated/distribution_boxes.webp',
     summary: 'Standardized and custom engineered wall-mounted or floor-standing low voltage distribution boxes for motor control, lighting, and power branch circuits.',
     voltage: '220 V / 380 V / 415 V / 690 V',
     tag: 'TERMINAL POWER CONTROL',
@@ -835,7 +839,7 @@ const products: ProductItem[] = [
     ja: '飛馳電気 FC-N2シリーズ PSA式・鉱山防爆/産業用窒素発生装置システム',
     es: 'Sistema Generador de Nitrógeno PSA y Antideflagrante Feichi Serie FC-N2',
     ru: 'Шахтные взрывобезопасные и промышленные азотные станции КЦА серии FC-N2 (ГОСТ 31441 / Ex d I)',
-    image: '/images/curated/psa_nitrogen_system.jpg',
+    image: '/images/curated/psa_nitrogen_system.webp',
     summary: 'Feichi proprietary high-purity Pressure Swing Adsorption (PSA) & membrane nitrogen generation packages engineered for underground coal mine inerting, gas explosion suppression, petrochemical pipeline purging, and metallurgical heat treatment.',
     voltage: '380 V / 660 V / 1140 V (Mining Standard)',
     tag: 'FEICHI PROPRIETARY GAS SEPARATION',
@@ -954,7 +958,7 @@ const products: ProductItem[] = [
     ja: 'Blokset シュナイダー公式ライセンス低圧引出式スイッチギア',
     es: 'Cuadro de distribución extraíble de baja tensión Blokset (Licencia Schneider)',
     ru: 'НКУ серии Blokset (Официальная лицензия Schneider Electric, до 6300 А)',
-    image: '/images/curated/blokset_switchgear.jpg',
+    image: '/images/curated/blokset_switchgear.webp',
     summary: 'Officially authorized by Schneider Electric, Blokset offers type-tested Form 4b internal segregation, maximum operational safety, and intelligent busbar temperature monitoring for heavy power grids and industrial hubs.',
     voltage: 'AC 0.4 kV - 690 V (Up to 6300 A)',
     tag: 'SCHNEIDER ELECTRIC AUTHORIZED',
@@ -983,7 +987,7 @@ const products: ProductItem[] = [
     ja: 'UniSafe ABB公式ライセンス空気絶縁中圧スイッチギヤ (12-24kV)',
     es: 'Celdas de media tensión con aislamiento en aire UniSafe (Licencia ABB 12-24kV)',
     ru: 'КРУ серии UniSafe (Официальная лицензия ABB 6-24 кВ, до 4000 А)',
-    image: '/images/curated/unisafe_switchgear.jpg',
+    image: '/images/curated/unisafe_switchgear.webp',
     summary: 'ABB fully authorized air-insulated medium-voltage metal-clad switchgear featuring 5-prevention mechanical interlocking, VD4/HVX circuit breaker compatibility, and IAC AFLR arc-proof safety test verification.',
     voltage: '12 kV / 24 kV (Up to 4000 A)',
     tag: 'ABB STRATEGIC AUTHORIZED',
@@ -1012,7 +1016,7 @@ const products: ProductItem[] = [
     ja: 'MDmax ABB公式ライセンスデジタル低圧スマートスイッチギア',
     es: 'Cuadros de distribución inteligente de baja tensión MDmax (Licencia ABB)',
     ru: 'Цифровые распределительные щиты MDmax (Официальная лицензия ABB)',
-    image: '/images/curated/mdmax_switchgear.jpg',
+    image: '/images/curated/mdmax_switchgear.webp',
     summary: 'Cutting-edge digital switchgear manufactured under ABB authorization, featuring real-time wireless busbar temperature monitoring, predictive maintenance algorithms, and seamless cloud SCADA integration.',
     voltage: 'AC 0.4 kV - 690 V',
     tag: 'ABB DIGITAL INTELLIGENT',
@@ -1041,7 +1045,7 @@ const products: ProductItem[] = [
     ja: 'FC-GXDZ 固体蓄熱電気加熱システム (0.4kV-10kV / 50kW-20MW)',
     es: 'Sistema de calefacción por acumulación térmica sólida FC-GXDZ (0.4kV-10kV)',
     ru: 'Твердотельные теплоаккумуляторы высокой мощности FC-GXDZ (0,4-10 кВ / 50 кВт-20 МВт)',
-    image: '/images/curated/solid_thermal_storage.jpg',
+    image: '/images/curated/solid_thermal_storage.webp',
     summary: 'High-voltage solid thermal storage electric heating units utilizing off-peak electricity and renewable surplus power to provide continuous clean steam, heating, and industrial thermal energy.',
     voltage: '0.4 kV / 6 kV / 10 kV (50 kW - 20 MW)',
     tag: 'CLEAN HEATING & PEAK SHAVING',
@@ -1582,7 +1586,7 @@ function Seo({
     setMeta('meta[property="og:description"]', 'property', description);
     setMeta('meta[property="og:type"]', 'property', 'website');
     setMeta('meta[property="og:url"]', 'property', canonical);
-    setMeta('meta[property="og:image"]', 'property', `${origin}/images/hero-substation.jpg`);
+    setMeta('meta[property="og:image"]', 'property', `${origin}/images/hero-substation.webp`);
     setMeta('meta[name="twitter:card"]', 'name', 'summary_large_image');
     setMeta('meta[name="twitter:title"]', 'name', title);
     setMeta('meta[name="twitter:description"]', 'name', description);
@@ -1623,7 +1627,7 @@ function Seo({
           name: 'Shenyang Feichi Electrical Equipment Co., Ltd.',
           alternateName: ['沈阳市飞驰电气设备有限公司', 'Feichi Power', 'Feichi Electrical', 'Завод Феичи Электрик'],
           url: 'https://feichipower.com',
-          logo: `${origin}/images/hero-substation.jpg`,
+          logo: `${origin}/images/hero-substation.webp`,
           description: 'Leading global manufacturer of prefabricated substations (2KTPN/E-House), MV/LV switchgear (KYN28/KRU), flameproof mining mobile substations (KBSGV/KTPV), and SVG/STATCOM reactive power compensators compliant with IEC 62271 and Russian GOST standards.',
           sameAs: [
             'https://t.me/+8615566206930',
@@ -2997,6 +3001,1581 @@ function TrvBreakerSizer({ locale }: { locale: Locale }) {
   );
 }
 
+function DisconnectorSizer({ locale }: { locale: Locale }) {
+  const [ratedVoltage, setRatedVoltage] = useState<'35kV' | '72.5kV' | '110kV'>('110kV');
+  const [ratedCurrent, setRatedCurrent] = useState<'1250A' | '2000A' | '3150A'>('2000A');
+  const [shortCircuitKa, setShortCircuitKa] = useState<'25kA' | '31.5kA' | '40kA'>('40kA');
+  const [iceThickness, setIceThickness] = useState<'10mm (IEC Normal)' | '15mm (Heavy Glaze)' | '20mm (Severe Siberian УХЛ1)'>('20mm (Severe Siberian УХЛ1)');
+  const [earthingBlades, setEarthingBlades] = useState<'No Earth Switch' | '1 Earth Blade (РДЗ-1)' | '2 Earth Blades (РДЗ-2 Dual Side)'>('2 Earth Blades (РДЗ-2 Dual Side)');
+
+  const peakDynamicCurrent = useMemo(() => {
+    const scNum = parseFloat(shortCircuitKa.replace('kA', ''));
+    return Math.round(scNum * 2.5);
+  }, [shortCircuitKa]);
+
+  const thermalEnergy = useMemo(() => {
+    const scNum = parseFloat(shortCircuitKa.replace('kA', ''));
+    return scNum * scNum * 3;
+  }, [shortCircuitKa]);
+
+  const requiredIceTorque = useMemo(() => {
+    if (iceThickness.includes('20mm')) return 375;
+    if (iceThickness.includes('15mm')) return 260;
+    return 165;
+  }, [iceThickness]);
+
+  const recommendedDisconnectorModel = useMemo(() => {
+    const vNum = ratedVoltage.replace('kV', '');
+    const cNum = ratedCurrent.replace('A', '');
+    const scNum = shortCircuitKa.replace('kA', '');
+    const earthCode = earthingBlades.includes('2 Earth') ? '.2' : earthingBlades.includes('1 Earth') ? '.1' : '';
+    const climTag = iceThickness.includes('20mm') ? 'УХЛ1' : 'У1';
+    if (vNum === '35') {
+      return `GW5-40.5/${cNum}-${scNum} (РГП${earthCode}-35/${cNum}-${scNum} ${climTag})`;
+    }
+    if (vNum === '72.5') {
+      return `GW4-72.5/${cNum}-${scNum} (РДЗ${earthCode}-72.5/${cNum}-${scNum} ${climTag})`;
+    }
+    return `GW4-126/${cNum}-${scNum} (РДЗ${earthCode}-110/${cNum}-${scNum} ${climTag})`;
+  }, [ratedVoltage, ratedCurrent, shortCircuitKa, earthingBlades, iceThickness]);
+
+  const driveMechanism = useMemo(() => {
+    return locale === 'zh'
+      ? '重型行星齿轮电动机构 CJ6（俄标 ПД-14）+ 机械/电气双重闭锁 + 30μm 镀银触头自清洁'
+      : 'Heavy Planetary Gear Motor Drive CJ6 / PD-14 + Dual Interlocking + 30μm Ag Self-Cleaning Blades';
+  }, [locale]);
+
+  return (
+    <div className="sld-widget" style={{ marginTop: '24px', borderColor: 'rgba(56, 189, 248, 0.35)' }}>
+      <div className="sld-header">
+        <div>
+          <span className="eyebrow" style={{ color: '#38bdf8', borderColor: 'rgba(56, 189, 248, 0.4)' }}>
+            ENGINEERING SIZING ENGINE #09 (IEC 62271-102 / ГОСТ Р 52726-2007)
+          </span>
+          <h3>
+            {locale === 'zh'
+              ? '35kV–110kV 户外高压隔离开关动热稳定与 20mm 极寒覆冰破冰力矩核算器'
+              : '35kV–110kV HV Disconnector Thermal/Dynamic Withstand & 20mm Ice-Breaking Sizer'}
+          </h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block' }}>ICE-BREAKING TORQUE (Mice)</span>
+          <strong style={{ color: '#38bdf8', font: '900 22px/1 var(--display)' }}>≥ {requiredIceTorque} N·m</strong>
+        </div>
+      </div>
+
+      <div className="sld-controls-grid">
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '系统额定电压 (Rated Voltage Ur):' : 'System Rated Voltage Ur:'}</label>
+          <div className="sld-buttons">
+            {(['35kV', '72.5kV', '110kV'] as const).map((kv) => (
+              <button
+                key={kv}
+                type="button"
+                className={`sld-btn ${ratedVoltage === kv ? 'active' : ''}`}
+                onClick={() => setRatedVoltage(kv)}
+              >
+                {kv}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '额定连续通电电流 (Continuous Current Ir):' : 'Continuous Current Ir:'}</label>
+          <div className="sld-buttons">
+            {(['1250A', '2000A', '3150A'] as const).map((a) => (
+              <button
+                key={a}
+                type="button"
+                className={`sld-btn ${ratedCurrent === a ? 'active' : ''}`}
+                onClick={() => setRatedCurrent(a)}
+              >
+                {a}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '额定短时耐受电流 (Short-Time Icw / 3s):' : 'Short-Time Withstand Icw / 3s:'}</label>
+          <div className="sld-buttons">
+            {(['25kA', '31.5kA', '40kA'] as const).map((ka) => (
+              <button
+                key={ka}
+                type="button"
+                className={`sld-btn ${shortCircuitKa === ka ? 'active' : ''}`}
+                onClick={() => setShortCircuitKa(ka)}
+              >
+                {ka}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '环境覆冰厚度与极寒评级 (Ice Thickness):' : 'Ice Thickness & Climate Rating:'}</label>
+          <div className="sld-buttons">
+            {(['10mm (IEC Normal)', '15mm (Heavy Glaze)', '20mm (Severe Siberian УХЛ1)'] as const).map((ice) => (
+              <button
+                key={ice}
+                type="button"
+                className={`sld-btn ${iceThickness === ice ? 'active' : ''}`}
+                onClick={() => setIceThickness(ice)}
+                style={{ fontSize: '11.5px' }}
+              >
+                {ice.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group" style={{ gridColumn: '1 / -1' }}>
+          <label>{locale === 'zh' ? '接地开关与防误闭锁配置 (Earthing Switch):' : 'Integrated Earthing Switch & Interlock:'}</label>
+          <div className="sld-buttons">
+            {(['No Earth Switch', '1 Earth Blade (РДЗ-1)', '2 Earth Blades (РДЗ-2 Dual Side)'] as const).map((eb) => (
+              <button
+                key={eb}
+                type="button"
+                className={`sld-btn ${earthingBlades === eb ? 'active' : ''}`}
+                onClick={() => setEarthingBlades(eb)}
+                style={{ fontSize: '12px' }}
+              >
+                {eb}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="sld-results-panel" style={{ marginTop: '20px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '10px', padding: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>RECOMMENDED DISCONNECTOR MODEL</span>
+            <strong style={{ color: '#38bdf8', fontSize: '14.5px' }}>{recommendedDisconnectorModel}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>PEAK DYNAMIC WITHSTAND (Ipeak)</span>
+            <strong style={{ color: '#f8fafc', fontSize: '14px' }}>{peakDynamicCurrent} kA Peak Electrodynamic</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>THERMAL HEAT INTEGRAL (Icw²·t)</span>
+            <strong style={{ color: '#22c55e', fontSize: '14px' }}>{thermalEnergy} kA²·s (3s Thermal Withstand)</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>MOTOR DRIVE & METALLURGY</span>
+            <strong style={{ color: '#e2e8f0', fontSize: '12.5px', lineHeight: 1.4, display: 'block' }}>{driveMechanism}</strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <a
+            className="button button-orange"
+            style={{ width: '100%', background: 'linear-gradient(135deg, #0284c7, #0369a1)', color: '#ffffff', fontWeight: 'bold' }}
+            href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I sized 35-110kV HV Disconnector on Feichi Power: Voltage = ${ratedVoltage}, Current = ${ratedCurrent}, Withstand = ${shortCircuitKa}/3s (${peakDynamicCurrent}kA peak), Ice = ${iceThickness}, Earth Blades = ${earthingBlades}, Model = ${recommendedDisconnectorModel}. Please provide foundation CAD drawings, ice-breaking test reports, and Russian GOST Опросный лист quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {locale === 'zh' ? '向 Henry 索取 110kV 隔离开关 CAD 方案、破冰报告与报价' : 'Request 110kV Disconnector CAD, Ice Test & Proposal'}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NcitOpticalTransformerSizer({ locale }: { locale: Locale }) {
+  const [ratedVoltage, setRatedVoltage] = useState<'110kV' | '220kV'>('110kV');
+  const [ratedCurrent, setRatedCurrent] = useState<'1250A' | '2000A' | '3150A' | '4000A'>('2000A');
+  const [sensingTopology, setSensingTopology] = useState<'Faraday Pure Fiber (OCT)' | 'Rogowski Coil (RCT)' | 'Hybrid Combined (OCT + OVT)'>('Faraday Pure Fiber (OCT)');
+  const [processBusRate, setProcessBusRate] = useState<'4000Hz (50Hz / 80pt Protection)' | '4800Hz (60Hz / 80pt Protection)' | '12.8kHz (256pt Revenue Metering)'>('4000Hz (50Hz / 80pt Protection)');
+  const [ambientTempRating, setAmbientTempRating] = useState<'-50°C (УХЛ1 Siberian Arctic)' | '-40°C (Standard IEC/GOST)'>('-50°C (УХЛ1 Siberian Arctic)');
+
+  const peakDynamicCurrent = useMemo(() => {
+    const cNum = parseFloat(ratedCurrent.replace('A', ''));
+    return cNum >= 3150 ? 125 : 100;
+  }, [ratedCurrent]);
+
+  const recommendedNcitModel = useMemo(() => {
+    const vNum = ratedVoltage.replace('kV', '');
+    const cNum = ratedCurrent.replace('A', '');
+    const climTag = ambientTempRating.includes('-50°C') ? 'УХЛ1' : 'У1';
+    if (sensingTopology.includes('Faraday')) {
+      return `FE-OCT-${vNum}/${cNum}-0.2S (ЭТТ-${vNum}/${cNum}-40 ${climTag})`;
+    }
+    if (sensingTopology.includes('Rogowski')) {
+      return `FE-RCT-${vNum}/${cNum}-5TPE (ЭТТ-Р-${vNum}/${cNum}-50 ${climTag})`;
+    }
+    return `FE-NCIT-COMBINED-${vNum}/${cNum}-0.2S/0.2 (ЭТТ/ЭТН-${vNum} ${climTag})`;
+  }, [ratedVoltage, ratedCurrent, sensingTopology, ambientTempRating]);
+
+  const svStreamBandwidth = useMemo(() => {
+    if (processBusRate.includes('12.8kHz')) return '12.8 kHz / 256 samples/cycle (~4.8 Mbps per Merging Unit stream)';
+    if (processBusRate.includes('4800Hz')) return '4800 Hz / 80 samples/cycle (~1.8 Mbps IEC 61869-9 Stream)';
+    return '4000 Hz / 80 samples/cycle (~1.5 Mbps IEC 61850-9-2LE Stream)';
+  }, [processBusRate]);
+
+  return (
+    <div className="sld-widget" style={{ marginTop: '24px', borderColor: 'rgba(6, 182, 212, 0.35)' }}>
+      <div className="sld-header">
+        <div>
+          <span className="eyebrow" style={{ color: '#06b6d4', borderColor: 'rgba(6, 182, 212, 0.4)' }}>
+            ENGINEERING SIZING ENGINE #10 (IEC 61869-9 / IEC 61850-9-2LE / ГОСТ Р 55153-2012)
+          </span>
+          <h3>
+            {locale === 'zh'
+              ? '110kV–220kV 光电互感器（NCIT）过程层合并单元采样流与零磁饱和选型核算器'
+              : '110kV–220kV Optical/Electronic Instrument Transformer & SV Merging Unit Sizer'}
+          </h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block' }}>METROLOGICAL ACCURACY</span>
+          <strong style={{ color: '#06b6d4', font: '900 22px/1 var(--display)' }}>0.2S / 5TPE</strong>
+        </div>
+      </div>
+
+      <div className="sld-controls-grid">
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '电网额定电压等级 (Rated Voltage Ur):' : 'System Voltage Ur:'}</label>
+          <div className="sld-buttons">
+            {(['110kV', '220kV'] as const).map((kv) => (
+              <button
+                key={kv}
+                type="button"
+                className={`sld-btn ${ratedVoltage === kv ? 'active' : ''}`}
+                onClick={() => setRatedVoltage(kv)}
+              >
+                {kv}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '额定一次通电电流 (Continuous Current Ir):' : 'Continuous Current Ir:'}</label>
+          <div className="sld-buttons">
+            {(['1250A', '2000A', '3150A', '4000A'] as const).map((a) => (
+              <button
+                key={a}
+                type="button"
+                className={`sld-btn ${ratedCurrent === a ? 'active' : ''}`}
+                onClick={() => setRatedCurrent(a)}
+              >
+                {a}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '核心传感物理机理 (Sensing Topology):' : 'Sensing Physics Architecture:'}</label>
+          <div className="sld-buttons">
+            {(['Faraday Pure Fiber (OCT)', 'Rogowski Coil (RCT)', 'Hybrid Combined (OCT + OVT)'] as const).map((top) => (
+              <button
+                key={top}
+                type="button"
+                className={`sld-btn ${sensingTopology === top ? 'active' : ''}`}
+                onClick={() => setSensingTopology(top)}
+                style={{ fontSize: '11px' }}
+              >
+                {top.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '过程层数字报文发布速率 (Process Bus SV):' : 'Process Bus SV Sampling Rate:'}</label>
+          <div className="sld-buttons">
+            {(['4000Hz (50Hz / 80pt Protection)', '4800Hz (60Hz / 80pt Protection)', '12.8kHz (256pt Revenue Metering)'] as const).map((rate) => (
+              <button
+                key={rate}
+                type="button"
+                className={`sld-btn ${processBusRate === rate ? 'active' : ''}`}
+                onClick={() => setProcessBusRate(rate)}
+                style={{ fontSize: '11px' }}
+              >
+                {rate.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group" style={{ gridColumn: '1 / -1' }}>
+          <label>{locale === 'zh' ? '极端气候环境耐受等级 (Climate Rating):' : 'Climate & Temperature Rating:'}</label>
+          <div className="sld-buttons">
+            {(['-50°C (УХЛ1 Siberian Arctic)', '-40°C (Standard IEC/GOST)'] as const).map((clim) => (
+              <button
+                key={clim}
+                type="button"
+                className={`sld-btn ${ambientTempRating === clim ? 'active' : ''}`}
+                onClick={() => setAmbientTempRating(clim)}
+                style={{ fontSize: '12px' }}
+              >
+                {clim}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="sld-results-panel" style={{ marginTop: '20px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(6, 182, 212, 0.25)', borderRadius: '10px', padding: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>RECOMMENDED NCIT MODEL</span>
+            <strong style={{ color: '#06b6d4', fontSize: '14.5px' }}>{recommendedNcitModel}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>PEAK WITHSTAND (0% SATURATION)</span>
+            <strong style={{ color: '#f8fafc', fontSize: '14px' }}>{peakDynamicCurrent} kA Peak (Zero Saturation)</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>TIME SYNCHRONIZATION</span>
+            <strong style={{ color: '#22c55e', fontSize: '14px' }}>IEEE 1588v2 PTP (Jitter &lt; 100ns)</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>DIGITAL MERGING UNIT TRAFFIC</span>
+            <strong style={{ color: '#e2e8f0', fontSize: '12.5px', lineHeight: 1.4, display: 'block' }}>{svStreamBandwidth}</strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <a
+            className="button button-orange"
+            style={{ width: '100%', background: 'linear-gradient(135deg, #0891b2, #0e7490)', color: '#ffffff', fontWeight: 'bold' }}
+            href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I configured 110-220kV NCIT on Feichi Power: Voltage = ${ratedVoltage}, Current = ${ratedCurrent}, Topology = ${sensingTopology}, SV Rate = ${processBusRate}, Climate = ${ambientTempRating}, Model = ${recommendedNcitModel}. Please provide SCL ICD files, optical budget loss sheets, and Russian GOST Опросный лист quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {locale === 'zh' ? '向 Henry 索取 110kV/220kV 光电互感器 ICD 配置、光损耗核算与报价' : 'Request NCIT Merging Unit SCL, Optical Budget & Quote'}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MobileSubstationSizer({ locale }: { locale: Locale }) {
+  const [ratedVoltage, setRatedVoltage] = useState<'35kV/10kV' | '110kV/10kV' | '110kV/35kV/10kV'>('110kV/10kV');
+  const [transformerMva, setTransformerMva] = useState<'10MVA' | '16MVA' | '25MVA' | '40MVA'>('25MVA');
+  const [trailerAxleConfig, setTrailerAxleConfig] = useState<'3-Axle Semi-Trailer' | '4-Axle Lowboy' | '5-Axle Heavy Hydraulic'>('4-Axle Lowboy');
+  const [hvSwitchgearType, setHvSwitchgearType] = useState<'Integrated 110kV H-GIS' | 'Foldable Roof Open Disconnector' | 'Plug-in Polymer Cable E-House'>('Integrated 110kV H-GIS');
+  const [climateRating, setClimateRating] = useState<'-50°C (УХЛ1 Siberian Oil Heater)' | '-40°C (Standard Road-Legal)'>('-50°C (УХЛ1 Siberian Oil Heater)');
+
+  const grossTrailerWeight = useMemo(() => {
+    const mvaNum = parseFloat(transformerMva.replace('MVA', ''));
+    if (mvaNum >= 40) return 76;
+    if (mvaNum >= 25) return 62;
+    if (mvaNum >= 16) return 48;
+    return 38;
+  }, [transformerMva]);
+
+  const maxAxleLoad = useMemo(() => {
+    const totalW = grossTrailerWeight;
+    const kingpinShare = totalW * 0.32;
+    const axleTotal = totalW - kingpinShare;
+    const axleCount = trailerAxleConfig.includes('5-Axle') ? 5 : trailerAxleConfig.includes('4-Axle') ? 4 : 3;
+    return (axleTotal / axleCount).toFixed(1);
+  }, [grossTrailerWeight, trailerAxleConfig]);
+
+  const recommendedPsmModel = useMemo(() => {
+    const vTag = ratedVoltage.includes('110kV/35kV') ? '110/35/10' : ratedVoltage.includes('110kV') ? '110/10' : '35/10';
+    const mvaNum = transformerMva.replace('MVA', '');
+    const climCode = climateRating.includes('-50°C') ? 'УХЛ1' : 'У1';
+    return `FE-MSB-${vTag}-${mvaNum}MVA (ПСМ-${vTag}-${mvaNum000(mvaNum)}/110 ${climCode})`;
+  }, [ratedVoltage, transformerMva, climateRating]);
+
+  function mvaNum000(mva: string) {
+    const n = parseFloat(mva);
+    return `${n * 1000}`;
+  }
+
+  const deploymentTimeHours = useMemo(() => {
+    if (hvSwitchgearType.includes('H-GIS')) return '≤ 3.5 Hours (Plug & Play)';
+    if (hvSwitchgearType.includes('Polymer')) return '≤ 4.5 Hours';
+    return '≤ 6.0 Hours (Roof unfolding required)';
+  }, [hvSwitchgearType]);
+
+  return (
+    <div className="sld-widget" style={{ marginTop: '24px', borderColor: 'rgba(234, 179, 8, 0.35)' }}>
+      <div className="sld-header">
+        <div>
+          <span className="eyebrow" style={{ color: '#eab308', borderColor: 'rgba(234, 179, 8, 0.4)' }}>
+            ENGINEERING SIZING ENGINE #11 (IEC 62271-202 / ГОСТ 14695-80 / СТО РОССЕТИ)
+          </span>
+          <h3>
+            {locale === 'zh'
+              ? '35kV–110kV 拖挂车载移动式变电站公路轴荷与应急极速并网核算器'
+              : '35kV–110kV Mobile Trailer Substation Axle-Load & Rapid Deployment Sizer'}
+          </h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block' }}>MAX HIGHWAY AXLE LOAD</span>
+          <strong style={{ color: parseFloat(maxAxleLoad) <= 11.5 ? '#22c55e' : '#f59e0b', font: '900 22px/1 var(--display)' }}>
+            {maxAxleLoad} t/axle
+          </strong>
+        </div>
+      </div>
+
+      <div className="sld-controls-grid">
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '高低压进出线电压 (Voltage Rating):' : 'Primary / Secondary Voltage:'}</label>
+          <div className="sld-buttons">
+            {(['35kV/10kV', '110kV/10kV', '110kV/35kV/10kV'] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                className={`sld-btn ${ratedVoltage === v ? 'active' : ''}`}
+                onClick={() => setRatedVoltage(v)}
+                style={{ fontSize: '11.5px' }}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '主变压器额定容量 (Transformer MVA):' : 'Main Power Capacity:'}</label>
+          <div className="sld-buttons">
+            {(['10MVA', '16MVA', '25MVA', '40MVA'] as const).map((mva) => (
+              <button
+                key={mva}
+                type="button"
+                className={`sld-btn ${transformerMva === mva ? 'active' : ''}`}
+                onClick={() => setTransformerMva(mva)}
+              >
+                {mva}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '半挂车多轴底盘规格 (Axle Chassis):' : 'Semi-Trailer Chassis Type:'}</label>
+          <div className="sld-buttons">
+            {(['3-Axle Semi-Trailer', '4-Axle Lowboy', '5-Axle Heavy Hydraulic'] as const).map((ax) => (
+              <button
+                key={ax}
+                type="button"
+                className={`sld-btn ${trailerAxleConfig === ax ? 'active' : ''}`}
+                onClick={() => setTrailerAxleConfig(ax)}
+                style={{ fontSize: '11px' }}
+              >
+                {ax.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '高压侧开关与进线形式 (HV Switchgear):' : 'High-Voltage Switchgear Bay:'}</label>
+          <div className="sld-buttons">
+            {(['Integrated 110kV H-GIS', 'Foldable Roof Open Disconnector', 'Plug-in Polymer Cable E-House'] as const).map((sw) => (
+              <button
+                key={sw}
+                type="button"
+                className={`sld-btn ${hvSwitchgearType === sw ? 'active' : ''}`}
+                onClick={() => setHvSwitchgearType(sw)}
+                style={{ fontSize: '11px' }}
+              >
+                {sw.split(' ')[1] || sw.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group" style={{ gridColumn: '1 / -1' }}>
+          <label>{locale === 'zh' ? '极端气候保温与防爆系统 (Climate Rating):' : 'Climate Insulation & Safety:'}</label>
+          <div className="sld-buttons">
+            {(['-50°C (УХЛ1 Siberian Oil Heater)', '-40°C (Standard Road-Legal)'] as const).map((clim) => (
+              <button
+                key={clim}
+                type="button"
+                className={`sld-btn ${climateRating === clim ? 'active' : ''}`}
+                onClick={() => setClimateRating(clim)}
+                style={{ fontSize: '12px' }}
+              >
+                {clim}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="sld-results-panel" style={{ marginTop: '20px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(234, 179, 8, 0.25)', borderRadius: '10px', padding: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>RECOMMENDED MOBILE SUBSTATION</span>
+            <strong style={{ color: '#eab308', fontSize: '14px' }}>{recommendedPsmModel}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>GROSS TRAILER WEIGHT (GVW)</span>
+            <strong style={{ color: '#f8fafc', fontSize: '14px' }}>~{grossTrailerWeight} Tonnes (Fully Integrated)</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>DEPLOYMENT & ENERGIZATION</span>
+            <strong style={{ color: '#22c55e', fontSize: '14px' }}>{deploymentTimeHours}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>HIGHWAY REGULATION COMPLIANCE</span>
+            <strong style={{ color: parseFloat(maxAxleLoad) <= 11.5 ? '#22c55e' : '#ef4444', fontSize: '13px', lineHeight: 1.4, display: 'block' }}>
+              {parseFloat(maxAxleLoad) <= 11.5 ? '100% Legal (<11.5 t/axle, W≤3.0m, H≤4.35m)' : 'Overload Warning (>11.5 t/axle - Upgrade Chassis)'}
+            </strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <a
+            className="button button-orange"
+            style={{ width: '100%', background: 'linear-gradient(135deg, #d97706, #b45309)', color: '#ffffff', fontWeight: 'bold' }}
+            href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I configured Mobile Substation on Feichi Power: Voltage = ${ratedVoltage}, Capacity = ${transformerMva}, Axle Chassis = ${trailerAxleConfig}, Switchgear = ${hvSwitchgearType}, Climate = ${climateRating}, Max Axle Load = ${maxAxleLoad} t/axle, Model = ${recommendedPsmModel}. Please provide trailer CAD clearance drawings, single-line diagrams, and Russian GOST Опросный лист quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {locale === 'zh' ? '向 Henry 索取 110kV 车载移动变电站公路轴荷 CAD、单线图与报价' : 'Request Mobile Substation CAD, Axle Calculation & Quote'}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function HarmonicFilterApfSizer({ locale }: { locale: Locale }) {
+  const [gridVoltage, setGridVoltage] = useState<'6.3kV' | '10kV' | '35kV'>('10kV');
+  const [targetThdi, setTargetThdi] = useState<'< 3.0% (IEEE 519 Ultra)' | '< 5.0% (GOST 32144 Standard)' | '< 8.0% (Basic Industrial)'>('< 3.0% (IEEE 519 Ultra)');
+  const [loadType, setLoadType] = useState<'Arc Furnace / Smelter' | 'Mining Multi-MW VFD Hoist' | 'Solar/Wind Feeder Hub'>('Mining Multi-MW VFD Hoist');
+  const [requiredVarMvar, setRequiredVarMvar] = useState<'2.0 Mvar' | '5.0 Mvar' | '10.0 Mvar' | '20.0 Mvar'>('5.0 Mvar');
+  const [coolingSystem, setCoolingSystem] = useState<'Forced Air Modular Container' | 'Closed Pure Water Liquid Cooling'>('Closed Pure Water Liquid Cooling');
+
+  const harmonicCancellationEfficiency = useMemo(() => {
+    if (targetThdi.includes('< 3.0%')) return '97.5% (2nd–50th Orders)';
+    if (targetThdi.includes('< 5.0%')) return '93.0% (Dominant Orders)';
+    return '86.5% (5th/7th/11th)';
+  }, [targetThdi]);
+
+  const recommendedHybridArchitecture = useMemo(() => {
+    const vNum = gridVoltage.replace('kV', '');
+    const mvarNum = requiredVarMvar.replace(' Mvar', '');
+    const capTotal = parseFloat(mvarNum);
+    const passiveCap = (capTotal * 0.7).toFixed(1);
+    const activeCap = (capTotal * 0.3).toFixed(1);
+    return `FE-HYBRID-PQ-${vNum}/${mvarNum}Mvar (70% FC-${passiveCap}Mvar + 30% APF/SVG-${activeCap}Mvar / ФКУ-${vNum})`;
+  }, [gridVoltage, requiredVarMvar]);
+
+  const resonanceSecurityMargin = useMemo(() => {
+    if (loadType.includes('Arc Furnace')) return 'Q < 1.0 (Active Virtual Resistance Lock)';
+    return 'Q < 1.2 (PCC Impedance Auto-Tracking)';
+  }, [loadType]);
+
+  return (
+    <div className="sld-widget" style={{ marginTop: '24px', borderColor: 'rgba(168, 85, 247, 0.35)' }}>
+      <div className="sld-header">
+        <div>
+          <span className="eyebrow" style={{ color: '#c084fc', borderColor: 'rgba(168, 85, 247, 0.4)' }}>
+            ENGINEERING SIZING ENGINE #12 (IEEE 519-2022 / ГОСТ 32144-2013 / СТО РОССЕТИ)
+          </span>
+          <h3>
+            {locale === 'zh'
+              ? '10kV–35kV 高压谐波治理与有源 APF / 无源 FC 混合滤波补偿核算器'
+              : '10kV–35kV Industrial Harmonic Mitigation & Hybrid APF/FC Filter Sizer'}
+          </h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block' }}>TARGET CURRENT THD</span>
+          <strong style={{ color: '#c084fc', font: '900 22px/1 var(--display)' }}>{targetThdi.split(' ')[0]}</strong>
+        </div>
+      </div>
+
+      <div className="sld-controls-grid">
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '电网额定供电电压 (System Voltage):' : 'Grid Voltage Ur:'}</label>
+          <div className="sld-buttons">
+            {(['6.3kV', '10kV', '35kV'] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                className={`sld-btn ${gridVoltage === v ? 'active' : ''}`}
+                onClick={() => setGridVoltage(v)}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '非线性负载类型 (Load Profile):' : 'Non-Linear Load Type:'}</label>
+          <div className="sld-buttons">
+            {(['Arc Furnace / Smelter', 'Mining Multi-MW VFD Hoist', 'Solar/Wind Feeder Hub'] as const).map((ld) => (
+              <button
+                key={ld}
+                type="button"
+                className={`sld-btn ${loadType === ld ? 'active' : ''}`}
+                onClick={() => setLoadType(ld)}
+                style={{ fontSize: '11px' }}
+              >
+                {ld.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '目标电流畸变率与标准 (Target THDi):' : 'Target THDi Standard:'}</label>
+          <div className="sld-buttons">
+            {(['< 3.0% (IEEE 519 Ultra)', '< 5.0% (GOST 32144 Standard)', '< 8.0% (Basic Industrial)'] as const).map((thd) => (
+              <button
+                key={thd}
+                type="button"
+                className={`sld-btn ${targetThdi === thd ? 'active' : ''}`}
+                onClick={() => setTargetThdi(thd)}
+                style={{ fontSize: '11px' }}
+              >
+                {thd.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '总补偿无功容量 (Total Capacity):' : 'Total Compensation Capacity:'}</label>
+          <div className="sld-buttons">
+            {(['2.0 Mvar', '5.0 Mvar', '10.0 Mvar', '20.0 Mvar'] as const).map((mvar) => (
+              <button
+                key={mvar}
+                type="button"
+                className={`sld-btn ${requiredVarMvar === mvar ? 'active' : ''}`}
+                onClick={() => setRequiredVarMvar(mvar)}
+                style={{ fontSize: '11.5px' }}
+              >
+                {mvar}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group" style={{ gridColumn: '1 / -1' }}>
+          <label>{locale === 'zh' ? '冷却形式与极寒集装箱舱体 (Cooling & Thermal):' : 'Cooling System & Container:'}</label>
+          <div className="sld-buttons">
+            {(['Forced Air Modular Container', 'Closed Pure Water Liquid Cooling'] as const).map((cool) => (
+              <button
+                key={cool}
+                type="button"
+                className={`sld-btn ${coolingSystem === cool ? 'active' : ''}`}
+                onClick={() => setCoolingSystem(cool)}
+                style={{ fontSize: '12px' }}
+              >
+                {cool}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="sld-results-panel" style={{ marginTop: '20px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(168, 85, 247, 0.25)', borderRadius: '10px', padding: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>HYBRID PQ CONFIGURATION</span>
+            <strong style={{ color: '#c084fc', fontSize: '13.5px' }}>{recommendedHybridArchitecture}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>HARMONIC FILTERING EFFICIENCY</span>
+            <strong style={{ color: '#f8fafc', fontSize: '14px' }}>{harmonicCancellationEfficiency}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>PCC RESONANCE SUPPRESSION</span>
+            <strong style={{ color: '#22c55e', fontSize: '14px' }}>{resonanceSecurityMargin}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>POWER FACTOR IMPROVEMENT</span>
+            <strong style={{ color: '#38bdf8', fontSize: '14px', lineHeight: 1.4, display: 'block' }}>Cos φ ≥ 0.99 (Dynamic Bilateral)</strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <a
+            className="button button-orange"
+            style={{ width: '100%', background: 'linear-gradient(135deg, #9333ea, #7e22ce)', color: '#ffffff', fontWeight: 'bold' }}
+            href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I configured Harmonic Power Quality System on Feichi Power: Voltage = ${gridVoltage}, Load = ${loadType}, Target THD = ${targetThdi}, Capacity = ${requiredVarMvar}, Cooling = ${coolingSystem}, Architecture = ${recommendedHybridArchitecture}. Please provide harmonic spectrum ETAP simulation, resonance sweep curves, and Russian GOST Опросный лист quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {locale === 'zh' ? '向 Henry 索取 10kV/35kV 谐波治理仿真报告、单线图与报价' : 'Request Harmonic Filter ETAP Simulation & Quote'}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function GilTransmissionLineSizer({ locale }: { locale: Locale }) {
+  const [ratedVoltage, setRatedVoltage] = useState<'110kV' | '220kV'>('220kV');
+  const [continuousCurrent, setContinuousCurrent] = useState<'3150A' | '4000A' | '5000A'>('4000A');
+  const [installationEnvironment, setInstallationEnvironment] = useState<'Direct-Buried Underground' | 'Utility Tunnel Trench' | 'Hydro Plant Vertical Shaft'>('Direct-Buried Underground');
+  const [insulatingGasMix, setInsulatingGasMix] = useState<'80% N2 + 20% SF6 Eco-Mix' | '100% Pure SF6 Gas'>('80% N2 + 20% SF6 Eco-Mix');
+  const [transmissionLengthKm, setTransmissionLengthKm] = useState<'1.0 km' | '5.0 km' | '15.0 km' | '30.0 km'>('5.0 km');
+
+  const chargingReactivePowerMvar = useMemo(() => {
+    const kmNum = parseFloat(transmissionLengthKm.replace(' km', ''));
+    const kvNum = parseFloat(ratedVoltage.replace('kV', ''));
+    const omega = 2 * Math.PI * 50;
+    const cGilPerKm = 55e-12; // 55 pF/m = 55e-9 F/km
+    const qCharging = 3 * omega * (cGilPerKm * 1000) * (Math.pow(kvNum * 1e3 / Math.sqrt(3), 2)) * kmNum / 1e6;
+    return qCharging.toFixed(2);
+  }, [transmissionLengthKm, ratedVoltage]);
+
+  const recommendedGilModel = useMemo(() => {
+    const vNum = ratedVoltage.replace('kV', '');
+    const cNum = continuousCurrent.replace('A', '');
+    const gasCode = insulatingGasMix.includes('Eco') ? 'ЭКО' : 'Э';
+    return `FE-GIL-${vNum}/${cNum}-63kA (КТПП-${vNum}/${cNum} ${gasCode} УХЛ1)`;
+  }, [ratedVoltage, continuousCurrent, insulatingGasMix]);
+
+  const enclosureOuterDiameterMm = useMemo(() => {
+    return ratedVoltage === '220kV' ? '520 mm (High-Strength 6063-T6 Al Alloy)' : '420 mm (High-Strength 6063-T6 Al Alloy)';
+  }, [ratedVoltage]);
+
+  return (
+    <div className="sld-widget" style={{ marginTop: '24px', borderColor: 'rgba(14, 165, 233, 0.35)' }}>
+      <div className="sld-header">
+        <div>
+          <span className="eyebrow" style={{ color: '#0ea5e9', borderColor: 'rgba(14, 165, 233, 0.4)' }}>
+            ENGINEERING SIZING ENGINE #13 (IEC 62271-204 / ГОСТ Р 54828-2011 / СТО РОССЕТИ)
+          </span>
+          <h3>
+            {locale === 'zh'
+              ? '110kV–220kV 气体绝缘金属封闭输电线路（GIL）大容量载流与对地电容无功核算器'
+              : '110kV–220kV Gas-Insulated Transmission Line (GIL) Ampacity & Charging Sizer'}
+          </h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block' }}>CHARGING REACTIVE POWER</span>
+          <strong style={{ color: '#0ea5e9', font: '900 22px/1 var(--display)' }}>{chargingReactivePowerMvar} Mvar</strong>
+        </div>
+      </div>
+
+      <div className="sld-controls-grid">
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '电网额定电压等级 (Rated Voltage):' : 'System Voltage Ur:'}</label>
+          <div className="sld-buttons">
+            {(['110kV', '220kV'] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                className={`sld-btn ${ratedVoltage === v ? 'active' : ''}`}
+                onClick={() => setRatedVoltage(v)}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '额定连续输送电流 (Ampacity Ir):' : 'Continuous Ampacity Ir:'}</label>
+          <div className="sld-buttons">
+            {(['3150A', '4000A', '5000A'] as const).map((a) => (
+              <button
+                key={a}
+                type="button"
+                className={`sld-btn ${continuousCurrent === a ? 'active' : ''}`}
+                onClick={() => setContinuousCurrent(a)}
+              >
+                {a}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '工程敷设安装工况 (Installation Mode):' : 'Laying Installation Mode:'}</label>
+          <div className="sld-buttons">
+            {(['Direct-Buried Underground', 'Utility Tunnel Trench', 'Hydro Plant Vertical Shaft'] as const).map((env) => (
+              <button
+                key={env}
+                type="button"
+                className={`sld-btn ${installationEnvironment === env ? 'active' : ''}`}
+                onClick={() => setInstallationEnvironment(env)}
+                style={{ fontSize: '11px' }}
+              >
+                {env.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '绝缘气体介质配比 (Insulating Gas):' : 'Insulating Gas Medium:'}</label>
+          <div className="sld-buttons">
+            {(['80% N2 + 20% SF6 Eco-Mix', '100% Pure SF6 Gas'] as const).map((gas) => (
+              <button
+                key={gas}
+                type="button"
+                className={`sld-btn ${insulatingGasMix === gas ? 'active' : ''}`}
+                onClick={() => setInsulatingGasMix(gas)}
+                style={{ fontSize: '11px' }}
+              >
+                {gas.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group" style={{ gridColumn: '1 / -1' }}>
+          <label>{locale === 'zh' ? '输电线路走廊全长 (Corridor Length):' : 'Transmission Length:'}</label>
+          <div className="sld-buttons">
+            {(['1.0 km', '5.0 km', '15.0 km', '30.0 km'] as const).map((km) => (
+              <button
+                key={km}
+                type="button"
+                className={`sld-btn ${transmissionLengthKm === km ? 'active' : ''}`}
+                onClick={() => setTransmissionLengthKm(km)}
+                style={{ fontSize: '12px' }}
+              >
+                {km}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="sld-results-panel" style={{ marginTop: '20px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(14, 165, 233, 0.25)', borderRadius: '10px', padding: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>RECOMMENDED GIL MODEL</span>
+            <strong style={{ color: '#0ea5e9', fontSize: '14px' }}>{recommendedGilModel}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>ENCLOSURE CASING DIAMETER</span>
+            <strong style={{ color: '#f8fafc', fontSize: '13.5px' }}>{enclosureOuterDiameterMm}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>WORKING CAPACITANCE</span>
+            <strong style={{ color: '#22c55e', fontSize: '14px' }}>C &lt; 55 pF/m (68% Lower vs XLPE Cable)</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>SHORT-CIRCUIT WITHSTAND</span>
+            <strong style={{ color: '#38bdf8', fontSize: '14px', lineHeight: 1.4, display: 'block' }}>63 kA / 3s (160 kA Peak Dynamic)</strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <a
+            className="button button-orange"
+            style={{ width: '100%', background: 'linear-gradient(135deg, #0284c7, #0369a1)', color: '#ffffff', fontWeight: 'bold' }}
+            href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I configured 110-220kV GIL Transmission System on Feichi Power: Voltage = ${ratedVoltage}, Ampacity = ${continuousCurrent}, Environment = ${installationEnvironment}, Gas = ${insulatingGasMix}, Length = ${transmissionLengthKm}, Model = ${recommendedGilModel}, Charging Reactive = ${chargingReactivePowerMvar} Mvar. Please provide tunnel thermal calculations, expansion bellow drawings, and Russian GOST Опросный лист quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {locale === 'zh' ? '向 Henry 索取 110kV/220kV GIL 隧道散热计算书、补偿器图纸与报价' : 'Request 110/220kV GIL Thermal Sizing, CAD & Quote'}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NeutralGroundingResistorSizer({ locale }: { locale: Locale }) {
+  const [ratedVoltage, setRatedVoltage] = useState<'6.3kV' | '10.5kV' | '20kV' | '35kV'>('10.5kV');
+  const [groundingPhilosophy, setGroundingPhilosophy] = useState<'NGR Low-Resistance Grounding' | 'Petersen Coil ASC Auto-Tuning' | 'Z-Type Grounding Trafo + NGR'>('NGR Low-Resistance Grounding');
+  const [faultCurrentDuration, setFaultCurrentDuration] = useState<'100A (10s Rating)' | '200A (10s Rating)' | '400A (10s Rating)' | '1000A (10s Rating)'>('200A (10s Rating)');
+  const [gridCapacitiveCurrent, setGridCapacitiveCurrent] = useState<'15A (Short Cable Network)' | '35A (Medium Urban Grid)' | '85A (Heavy Industrial Cable Grid)'>('35A (Medium Urban Grid)');
+  const [enclosureMaterial, setEnclosureMaterial] = useState<'Stainless Steel 304 (IP54 C5-M)' | 'Alu-Zinc Heavy Steel Box'>('Stainless Steel 304 (IP54 C5-M)');
+
+  const resistorResistanceOhm = useMemo(() => {
+    const vNum = parseFloat(ratedVoltage.replace('kV', '')) * 1e3 / Math.sqrt(3);
+    const iNum = parseFloat(faultCurrentDuration.split('A')[0]);
+    return (vNum / iNum).toFixed(1);
+  }, [ratedVoltage, faultCurrentDuration]);
+
+  const recommendedNgrModel = useMemo(() => {
+    const vNum = ratedVoltage.replace('kV', '');
+    const iNum = faultCurrentDuration.split('A')[0];
+    const rOhm = resistorResistanceOhm;
+    if (groundingPhilosophy.includes('Petersen')) {
+      return `FE-ASC-${vNum}kV/500kVA (ДГР-${vNum}/500 РУДТ УХЛ1)`;
+    }
+    if (groundingPhilosophy.includes('Z-Type')) {
+      return `FE-ZNGR-${vNum}kV/${iNum}A-${rOhm}Ω (ТМГ-З+ЗНГ-${vNum} УХЛ1)`;
+    }
+    return `FE-NGR-${vNum}kV/${iNum}A-${rOhm}Ω-10s (ЗНГ-${vNum}/${iNum} ШЗН УХЛ1)`;
+  }, [ratedVoltage, faultCurrentDuration, resistorResistanceOhm, groundingPhilosophy]);
+
+  const overvoltageClampRatio = useMemo(() => {
+    if (groundingPhilosophy.includes('Petersen')) return 'U_arc < 1.1 p.u. (Arc Extinguished in < 5ms)';
+    return 'U_arc < 2.2 p.u. (IEEE 32 / GOST 13109 Compliant)';
+  }, [groundingPhilosophy]);
+
+  return (
+    <div className="sld-widget" style={{ marginTop: '24px', borderColor: 'rgba(239, 68, 68, 0.35)' }}>
+      <div className="sld-header">
+        <div>
+          <span className="eyebrow" style={{ color: '#ef4444', borderColor: 'rgba(239, 68, 68, 0.4)' }}>
+            ENGINEERING SIZING ENGINE #14 (IEEE 32 / IEC 60076-16 / ГОСТ 13109-97 / СТО РОССЕТИ)
+          </span>
+          <h3>
+            {locale === 'zh'
+              ? '10kV–35kV 中性点接地电阻柜（NGR）与消弧线圈（ASC）容性电流对消核算器'
+              : '10kV–35kV Neutral Grounding Resistor (NGR) & Petersen Coil Sizer'}
+          </h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block' }}>CALCULATED RESISTANCE (R)</span>
+          <strong style={{ color: '#ef4444', font: '900 22px/1 var(--display)' }}>{resistorResistanceOhm} Ω</strong>
+        </div>
+      </div>
+
+      <div className="sld-controls-grid">
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '配电网额定工作电压 (System Voltage):' : 'Grid Voltage Ur:'}</label>
+          <div className="sld-buttons">
+            {(['6.3kV', '10.5kV', '20kV', '35kV'] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                className={`sld-btn ${ratedVoltage === v ? 'active' : ''}`}
+                onClick={() => setRatedVoltage(v)}
+                style={{ fontSize: '11.5px' }}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '中性点接地方式架构 (Philosophy):' : 'Grounding Philosophy:'}</label>
+          <div className="sld-buttons">
+            {(['NGR Low-Resistance Grounding', 'Petersen Coil ASC Auto-Tuning', 'Z-Type Grounding Trafo + NGR'] as const).map((m) => (
+              <button
+                key={m}
+                type="button"
+                className={`sld-btn ${groundingPhilosophy === m ? 'active' : ''}`}
+                onClick={() => setGroundingPhilosophy(m)}
+                style={{ fontSize: '10.5px' }}
+              >
+                {m.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '额定接地故障电流与时间 (Fault Current):' : 'Rated Fault Current & Duration:'}</label>
+          <div className="sld-buttons">
+            {(['100A (10s Rating)', '200A (10s Rating)', '400A (10s Rating)', '1000A (10s Rating)'] as const).map((fc) => (
+              <button
+                key={fc}
+                type="button"
+                className={`sld-btn ${faultCurrentDuration === fc ? 'active' : ''}`}
+                onClick={() => setFaultCurrentDuration(fc)}
+                style={{ fontSize: '11px' }}
+              >
+                {fc.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '全网对地电容电流 (Ic0 Current):' : 'Grid Zero-Sequence Capacitive Ic0:'}</label>
+          <div className="sld-buttons">
+            {(['15A (Short Cable Network)', '35A (Medium Urban Grid)', '85A (Heavy Industrial Cable Grid)'] as const).map((ic) => (
+              <button
+                key={ic}
+                type="button"
+                className={`sld-btn ${gridCapacitiveCurrent === ic ? 'active' : ''}`}
+                onClick={() => setGridCapacitiveCurrent(ic)}
+                style={{ fontSize: '11px' }}
+              >
+                {ic.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group" style={{ gridColumn: '1 / -1' }}>
+          <label>{locale === 'zh' ? '外壳防腐材质与极寒温控 (Enclosure & Climate):' : 'Enclosure Metallurgy & Climate:'}</label>
+          <div className="sld-buttons">
+            {(['Stainless Steel 304 (IP54 C5-M)', 'Alu-Zinc Heavy Steel Box'] as const).map((enc) => (
+              <button
+                key={enc}
+                type="button"
+                className={`sld-btn ${enclosureMaterial === enc ? 'active' : ''}`}
+                onClick={() => setEnclosureMaterial(enc)}
+                style={{ fontSize: '12px' }}
+              >
+                {enc}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="sld-results-panel" style={{ marginTop: '20px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(239, 68, 68, 0.25)', borderRadius: '10px', padding: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>RECOMMENDED NGR/ASC MODEL</span>
+            <strong style={{ color: '#ef4444', fontSize: '13.5px' }}>{recommendedNgrModel}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>CALCULATED OHMIC VALUE</span>
+            <strong style={{ color: '#f8fafc', fontSize: '14px' }}>{resistorResistanceOhm} Ω (Cr20Ni80 Alloy)</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>ARC OVERVOLTAGE SUPPRESSION</span>
+            <strong style={{ color: '#22c55e', fontSize: '13.5px' }}>{overvoltageClampRatio}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>THERMAL RESISTANCE STABILITY</span>
+            <strong style={{ color: '#38bdf8', fontSize: '14px', lineHeight: 1.4, display: 'block' }}>ΔR &lt; 5.0% (Up to 760°C Short-Time)</strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <a
+            className="button button-orange"
+            style={{ width: '100%', background: 'linear-gradient(135deg, #dc2626, #991b1b)', color: '#ffffff', fontWeight: 'bold' }}
+            href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I configured Neutral Grounding System on Feichi Power: Voltage = ${ratedVoltage}, Philosophy = ${groundingPhilosophy}, Fault Current = ${faultCurrentDuration}, Capacitive Ic0 = ${gridCapacitiveCurrent}, Enclosure = ${enclosureMaterial}, Resistance = ${resistorResistanceOhm} Ohm, Model = ${recommendedNgrModel}. Please provide zero-sequence fault calculations, transformer schematics, and Russian GOST Опросный лист quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {locale === 'zh' ? '向 Henry 索取 10kV/35kV 中性点接地电阻计算书、一次单线图与报价' : 'Request NGR/ASC Fault Calculations, CAD & Quote'}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function HighVoltageSoftStarterSizer({ locale }: { locale: Locale }) {
+  const [ratedVoltage, setRatedVoltage] = useState<'6.0kV' | '10.0kV' | '35kV'>('10.0kV');
+  const [motorPowerKw, setMotorPowerKw] = useState<'1000 kW' | '2500 kW' | '5000 kW' | '10000 kW'>('2500 kW');
+  const [softStarterTopology, setSoftStarterTopology] = useState<'Magnetically Controlled MCR' | 'High-Voltage Thyristor SSS' | 'Dual Mode (MCR + VFD)'>('Magnetically Controlled MCR');
+  const [motorLoadType, setMotorLoadType] = useState<'Mining Ball Mill / SAG Mill' | 'Gas Turbo-Compressor' | 'High-Head Slurry Pump'>('Mining Ball Mill / SAG Mill');
+  const [ambientTempRating, setAmbientTempRating] = useState<'-50°C (УХЛ1 Siberian Heavy)' | '-40°C (Standard Industrial)'>('-50°C (УХЛ1 Siberian Heavy)');
+
+  const startingCurrentClamped = useMemo(() => {
+    if (softStarterTopology.includes('MCR')) return '≤ 2.0 Ie (Pure Sine Wave)';
+    return '≤ 2.5 Ie (Thyristor Ramp)';
+  }, [softStarterTopology]);
+
+  const recommendedSoftStarterModel = useMemo(() => {
+    const vNum = ratedVoltage.replace('kV', '');
+    const kwNum = motorPowerKw.replace(' kW', '');
+    const climTag = ambientTempRating.includes('-50°C') ? 'УХЛ1' : 'У1';
+    if (softStarterTopology.includes('MCR')) {
+      return `FE-MCR-${vNum}kV/${kwNum}kW (ВУП-${vNum}/${kwNum} ${climTag})`;
+    }
+    return `FE-SSS-${vNum}kV/${kwNum}kW (УППВ-${vNum}/${kwNum} ${climTag})`;
+  }, [ratedVoltage, motorPowerKw, softStarterTopology, ambientTempRating]);
+
+  const gridVoltageSagEstimate = useMemo(() => {
+    if (motorPowerKw === '10000 kW') return 'ΔU ≈ 4.8% (Grid Voltage Sag Safe)';
+    if (motorPowerKw === '5000 kW') return 'ΔU ≈ 3.2%';
+    return 'ΔU < 2.0% (Zero Impact on Busbar)';
+  }, [motorPowerKw]);
+
+  return (
+    <div className="sld-widget" style={{ marginTop: '24px', borderColor: 'rgba(249, 115, 22, 0.35)' }}>
+      <div className="sld-header">
+        <div>
+          <span className="eyebrow" style={{ color: '#f97316', borderColor: 'rgba(249, 115, 22, 0.4)' }}>
+            ENGINEERING SIZING ENGINE #15 (IEC 60947-4-2 / ГОСТ 12434-83 / СТО РОССЕТИ)
+          </span>
+          <h3>
+            {locale === 'zh'
+              ? '10kV–35kV 大中型电动机磁控（MCR）与晶闸管固态软起动压降核算器'
+              : '10kV–35kV Medium-Voltage Motor Magnetic/Solid-State Soft Starter Sizer'}
+          </h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block' }}>STARTING CURRENT LIMIT</span>
+          <strong style={{ color: '#f97316', font: '900 22px/1 var(--display)' }}>{startingCurrentClamped.split(' ')[0]}</strong>
+        </div>
+      </div>
+
+      <div className="sld-controls-grid">
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '电机额定工作电压 (Motor Voltage):' : 'Motor Voltage Ur:'}</label>
+          <div className="sld-buttons">
+            {(['6.0kV', '10.0kV', '35kV'] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                className={`sld-btn ${ratedVoltage === v ? 'active' : ''}`}
+                onClick={() => setRatedVoltage(v)}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '电机额定轴功率 (Motor Power kW):' : 'Motor Power Rating:'}</label>
+          <div className="sld-buttons">
+            {(['1000 kW', '2500 kW', '5000 kW', '10000 kW'] as const).map((p) => (
+              <button
+                key={p}
+                type="button"
+                className={`sld-btn ${motorPowerKw === p ? 'active' : ''}`}
+                onClick={() => setMotorPowerKw(p)}
+                style={{ fontSize: '11.5px' }}
+              >
+                {p}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '软起动核心电气拓扑 (Topology):' : 'Soft Starter Architecture:'}</label>
+          <div className="sld-buttons">
+            {(['Magnetically Controlled MCR', 'High-Voltage Thyristor SSS', 'Dual Mode (MCR + VFD)'] as const).map((top) => (
+              <button
+                key={top}
+                type="button"
+                className={`sld-btn ${softStarterTopology === top ? 'active' : ''}`}
+                onClick={() => setSoftStarterTopology(top)}
+                style={{ fontSize: '10.5px' }}
+              >
+                {top.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '机械负载特性与工况 (Load Profile):' : 'Mechanical Load Type:'}</label>
+          <div className="sld-buttons">
+            {(['Mining Ball Mill / SAG Mill', 'Gas Turbo-Compressor', 'High-Head Slurry Pump'] as const).map((ld) => (
+              <button
+                key={ld}
+                type="button"
+                className={`sld-btn ${motorLoadType === ld ? 'active' : ''}`}
+                onClick={() => setMotorLoadType(ld)}
+                style={{ fontSize: '11px' }}
+              >
+                {ld.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group" style={{ gridColumn: '1 / -1' }}>
+          <label>{locale === 'zh' ? '极端气候保温与防潮系统 (Climate Rating):' : 'Climate & Temperature Rating:'}</label>
+          <div className="sld-buttons">
+            {(['-50°C (УХЛ1 Siberian Heavy)', '-40°C (Standard Industrial)'] as const).map((clim) => (
+              <button
+                key={clim}
+                type="button"
+                className={`sld-btn ${ambientTempRating === clim ? 'active' : ''}`}
+                onClick={() => setAmbientTempRating(clim)}
+                style={{ fontSize: '12px' }}
+              >
+                {clim}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="sld-results-panel" style={{ marginTop: '20px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(249, 115, 22, 0.25)', borderRadius: '10px', padding: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>RECOMMENDED SOFT STARTER</span>
+            <strong style={{ color: '#f97316', fontSize: '13.5px' }}>{recommendedSoftStarterModel}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>GRID BUSBAR VOLTAGE SAG</span>
+            <strong style={{ color: '#f8fafc', fontSize: '14px' }}>{gridVoltageSagEstimate}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>STARTING ACCELERATION TORQUE</span>
+            <strong style={{ color: '#22c55e', fontSize: '14px' }}>T_start ≥ 1.2 Te (No Stall)</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>BYPASS VACUUM CONTACTOR</span>
+            <strong style={{ color: '#38bdf8', fontSize: '13.5px', lineHeight: 1.4, display: 'block' }}>Zero-Crossing Sync Bypass (&lt;15ms)</strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <a
+            className="button button-orange"
+            style={{ width: '100%', background: 'linear-gradient(135deg, #ea580c, #c2410c)', color: '#ffffff', fontWeight: 'bold' }}
+            href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I configured Medium-Voltage Soft Starter on Feichi Power: Voltage = ${ratedVoltage}, Power = ${motorPowerKw}, Topology = ${softStarterTopology}, Load = ${motorLoadType}, Climate = ${ambientTempRating}, Model = ${recommendedSoftStarterModel}. Please provide motor dynamic speed-torque curves, voltage sag calculations, and Russian GOST Опросный лист quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {locale === 'zh' ? '向 Henry 索取 10kV/35kV 电机软起动计算书、转矩曲线与报价' : 'Request MV Soft Starter Simulation, CAD & Quote'}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AirCoreCurrentLimitingReactorSizer({ locale }: { locale: Locale }) {
+  const [ratedVoltage, setRatedVoltage] = useState<'6.0kV' | '10.0kV' | '20.0kV' | '35kV'>('10.0kV');
+  const [ratedCurrent, setRatedCurrent] = useState<'630A' | '1000A' | '1600A' | '2500A' | '4000A'>('1600A');
+  const [percentageReactance, setPercentageReactance] = useState<'4.0% (Line Feeder)' | '6.0% (Standard Limiting)' | '8.0% (Bus-Tie Sectionalizing)' | '12.0% (Deep Limiting)'>('6.0% (Standard Limiting)');
+  const [prospectiveFaultKa, setProspectiveFaultKa] = useState<'31.5 kA' | '40.0 kA' | '50.0 kA' | '63.0 kA'>('50.0 kA');
+  const [installationLayout, setInstallationLayout] = useState<'Three-Phase Vertical Stack' | 'Horizontal Side-by-Side'>('Three-Phase Vertical Stack');
+
+  const calculatedReactanceOhm = useMemo(() => {
+    const vNum = parseFloat(ratedVoltage.replace('kV', '')) * 1e3 / Math.sqrt(3);
+    const iNum = parseFloat(ratedCurrent.replace('A', ''));
+    const xkPct = parseFloat(percentageReactance.split('%')[0]) / 100.0;
+    const ohm = (xkPct * vNum) / iNum;
+    return ohm.toFixed(2);
+  }, [ratedVoltage, ratedCurrent, percentageReactance]);
+
+  const clampedFaultCurrentKa = useMemo(() => {
+    const vPhase = parseFloat(ratedVoltage.replace('kV', '')) * 1e3 / Math.sqrt(3);
+    const xL = parseFloat(calculatedReactanceOhm);
+    const iInit = parseFloat(prospectiveFaultKa.replace(' kA', '')) * 1e3;
+    const xGrid = vPhase / iInit;
+    const iClamped = vPhase / (xGrid + xL) / 1e3;
+    return iClamped.toFixed(1);
+  }, [ratedVoltage, prospectiveFaultKa, calculatedReactanceOhm]);
+
+  const recommendedReactorModel = useMemo(() => {
+    const vNum = ratedVoltage.replace('kV', '');
+    const iNum = ratedCurrent.replace('A', '');
+    const xOhm = calculatedReactanceOhm;
+    return `FE-CLR-${vNum}kV/${iNum}A-${xOhm}Ω (РТОС-${vNum}/${iNum}-${xOhm} УХЛ1)`;
+  }, [ratedVoltage, ratedCurrent, calculatedReactanceOhm]);
+
+  const strayMagneticClearanceM = useMemo(() => {
+    const iNum = parseFloat(ratedCurrent.replace('A', ''));
+    if (iNum >= 2500) return 'D_clearance ≥ 2.8m (Metallic Loop Safe Zone)';
+    if (iNum >= 1600) return 'D_clearance ≥ 2.2m (Low Eddy Loss)';
+    return 'D_clearance ≥ 1.6m';
+  }, [ratedCurrent]);
+
+  return (
+    <div className="sld-widget" style={{ marginTop: '24px', borderColor: 'rgba(34, 197, 94, 0.35)' }}>
+      <div className="sld-header">
+        <div>
+          <span className="eyebrow" style={{ color: '#22c55e', borderColor: 'rgba(34, 197, 94, 0.4)' }}>
+            ENGINEERING SIZING ENGINE #16 (IEC 60076-6 / ГОСТ 14794-79 / СТО РОССЕТИ)
+          </span>
+          <h3>
+            {locale === 'zh'
+              ? '10kV–35kV 干式空心限流电抗器短路阻抗与空间漏磁安全净距核算器'
+              : '10kV–35kV Air-Core Current-Limiting Reactor Impedance & Magnetic Sizer'}
+          </h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block' }}>CLAMPED FAULT CURRENT</span>
+          <strong style={{ color: '#22c55e', font: '900 22px/1 var(--display)' }}>{clampedFaultCurrentKa} kA</strong>
+        </div>
+      </div>
+
+      <div className="sld-controls-grid">
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '电网额定工作电压 (System Voltage):' : 'Grid Voltage Ur:'}</label>
+          <div className="sld-buttons">
+            {(['6.0kV', '10.0kV', '20.0kV', '35kV'] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                className={`sld-btn ${ratedVoltage === v ? 'active' : ''}`}
+                onClick={() => setRatedVoltage(v)}
+                style={{ fontSize: '11.5px' }}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '额定连续通流能力 (Continuous Current):' : 'Rated Continuous Current:'}</label>
+          <div className="sld-buttons">
+            {(['630A', '1000A', '1600A', '2500A', '4000A'] as const).map((a) => (
+              <button
+                key={a}
+                type="button"
+                className={`sld-btn ${ratedCurrent === a ? 'active' : ''}`}
+                onClick={() => setRatedCurrent(a)}
+                style={{ fontSize: '11.5px' }}
+              >
+                {a}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '额定百分比电抗率 (Percentage xk):' : 'Percentage Reactance Drop:'}</label>
+          <div className="sld-buttons">
+            {(['4.0% (Line Feeder)', '6.0% (Standard Limiting)', '8.0% (Bus-Tie Sectionalizing)', '12.0% (Deep Limiting)'] as const).map((xk) => (
+              <button
+                key={xk}
+                type="button"
+                className={`sld-btn ${percentageReactance === xk ? 'active' : ''}`}
+                onClick={() => setPercentageReactance(xk)}
+                style={{ fontSize: '10.5px' }}
+              >
+                {xk.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '上级电网预期短路冲击 (Prospective Fault):' : 'Prospective Grid Fault:'}</label>
+          <div className="sld-buttons">
+            {(['31.5 kA', '40.0 kA', '50.0 kA', '63.0 kA'] as const).map((f) => (
+              <button
+                key={f}
+                type="button"
+                className={`sld-btn ${prospectiveFaultKa === f ? 'active' : ''}`}
+                onClick={() => setProspectiveFaultKa(f)}
+                style={{ fontSize: '11.5px' }}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group" style={{ gridColumn: '1 / -1' }}>
+          <label>{locale === 'zh' ? '三相空间安装布置方式 (Layout & Orientation):' : 'Three-Phase Physical Layout:'}</label>
+          <div className="sld-buttons">
+            {(['Three-Phase Vertical Stack', 'Horizontal Side-by-Side'] as const).map((lay) => (
+              <button
+                key={lay}
+                type="button"
+                className={`sld-btn ${installationLayout === lay ? 'active' : ''}`}
+                onClick={() => setInstallationLayout(lay)}
+                style={{ fontSize: '12px' }}
+              >
+                {lay}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="sld-results-panel" style={{ marginTop: '20px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(34, 197, 94, 0.25)', borderRadius: '10px', padding: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>RECOMMENDED REACTOR MODEL</span>
+            <strong style={{ color: '#22c55e', fontSize: '13.5px' }}>{recommendedReactorModel}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>CALCULATED OHMIC REACTANCE</span>
+            <strong style={{ color: '#f8fafc', fontSize: '14px' }}>{calculatedReactanceOhm} Ω (100% Linear Air-Core)</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>FAULT CURRENT CLAMPING</span>
+            <strong style={{ color: '#38bdf8', fontSize: '13.5px' }}>{prospectiveFaultKa} → {clampedFaultCurrentKa} kA (Protected)</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>STRAY MAGNETIC CLEARANCE</span>
+            <strong style={{ color: '#f59e0b', fontSize: '13.5px', lineHeight: 1.4, display: 'block' }}>{strayMagneticClearanceM}</strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <a
+            className="button button-orange"
+            style={{ width: '100%', background: 'linear-gradient(135deg, #16a34a, #15803d)', color: '#ffffff', fontWeight: 'bold' }}
+            href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I configured Air-Core Current-Limiting Reactor on Feichi Power: Voltage = ${ratedVoltage}, Current = ${ratedCurrent}, Percentage = ${percentageReactance}, Prospective Fault = ${prospectiveFaultKa}, Clamped Fault = ${clampedFaultCurrentKa} kA, Reactance = ${calculatedReactanceOhm} Ohm, Model = ${recommendedReactorModel}. Please provide stray magnetic clearance profiles, ETAP simulation, and Russian GOST Опросный лист quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {locale === 'zh' ? '向 Henry 索取 10kV/35kV 限流电抗器仿真计算书、净距图与报价' : 'Request Air-Core Reactor Sizing, Magnetic CAD & Quote'}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SubstationSurgeArresterSizer({ locale }: { locale: Locale }) {
+  const [ratedVoltage, setRatedVoltage] = useState<'10kV' | '20kV' | '35kV'>('35kV');
+  const [nominalDischargeKa, setNominalDischargeKa] = useState<'5 kA (Distribution Normal)' | '10 kA (Station Heavy Duty)'>('10 kA (Station Heavy Duty)');
+  const [lineDischargeClass, setLineDischargeClass] = useState<'Class 2 (W ≥ 4.5 kJ/kV)' | 'Class 3 (W ≥ 7.2 kJ/kV Heavy Line)'>('Class 3 (W ≥ 7.2 kJ/kV Heavy Line)');
+  const [housingMaterial, setHousingMaterial] = useState<'HTV Silicone Polymer (Class IV Creepage)' | 'High-Grade Porcelain Housing'>('HTV Silicone Polymer (Class IV Creepage)');
+  const [insulationCoordinationBil, setInsulationCoordinationBil] = useState<'75 kV (10kV Transformer)' | '125 kV (20kV Transformer)' | '200 kV (35kV Main Trafo)'>('200 kV (35kV Main Trafo)');
+
+  const residualVoltage10ka = useMemo(() => {
+    if (ratedVoltage === '35kV') return 134;
+    if (ratedVoltage === '20kV') return 78;
+    return 45;
+  }, [ratedVoltage]);
+
+  const insulationMarginPct = useMemo(() => {
+    const bilNum = parseFloat(insulationCoordinationBil.split(' kV')[0]);
+    const uRes = residualVoltage10ka;
+    const margin = ((bilNum / uRes) - 1.0) * 100.0;
+    return margin.toFixed(1);
+  }, [insulationCoordinationBil, residualVoltage10ka]);
+
+  const recommendedMoaModel = useMemo(() => {
+    const vNum = ratedVoltage.replace('kV', '');
+    const kaNum = nominalDischargeKa.includes('10 kA') ? '10' : '5';
+    const classNum = lineDischargeClass.includes('Class 3') ? 'III' : 'II';
+    const polymerTag = housingMaterial.includes('Silicone') ? 'П' : 'Ф';
+    return `FE-MOA-${vNum}kV/${kaNum}kA-${classNum} (ОПН-${polymerTag}-${vNum}/40.5-${kaNum}/550 УХЛ1)`;
+  }, [ratedVoltage, nominalDischargeKa, lineDischargeClass, housingMaterial]);
+
+  const creepageSafetyLevel = useMemo(() => {
+    if (housingMaterial.includes('Silicone')) return '≥ 31 mm/kV (Class IV Heavy Pollution Hydrophobic HC1)';
+    return '≥ 25 mm/kV (Standard Porcelain)';
+  }, [housingMaterial]);
+
+  return (
+    <div className="sld-widget" style={{ marginTop: '24px', borderColor: 'rgba(59, 130, 246, 0.35)' }}>
+      <div className="sld-header">
+        <div>
+          <span className="eyebrow" style={{ color: '#3b82f6', borderColor: 'rgba(59, 130, 246, 0.4)' }}>
+            ENGINEERING SIZING ENGINE #17 (IEC 60099-4 / ГОСТ Р 52725-2007 / СТО РОССЕТИ)
+          </span>
+          <h3>
+            {locale === 'zh'
+              ? '10kV–35kV 变电站金属氧化物避雷器（MOA）雷电残压与绝缘配合裕度核算器'
+              : '10kV–35kV Substation Surge Arrester (MOA) Residual Voltage & BIL Sizer'}
+          </h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block' }}>INSULATION MARGIN (Mins)</span>
+          <strong style={{ color: parseFloat(insulationMarginPct) >= 20.0 ? '#22c55e' : '#f59e0b', font: '900 22px/1 var(--display)' }}>
+            +{insulationMarginPct}%
+          </strong>
+        </div>
+      </div>
+
+      <div className="sld-controls-grid">
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '变电站额定系统电压 (System Voltage):' : 'System Voltage Ur:'}</label>
+          <div className="sld-buttons">
+            {(['10kV', '20kV', '35kV'] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                className={`sld-btn ${ratedVoltage === v ? 'active' : ''}`}
+                onClick={() => setRatedVoltage(v)}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '标称雷电冲击放电电流 (Discharge Current):' : 'Nominal Discharge Current:'}</label>
+          <div className="sld-buttons">
+            {(['5 kA (Distribution Normal)', '10 kA (Station Heavy Duty)'] as const).map((ka) => (
+              <button
+                key={ka}
+                type="button"
+                className={`sld-btn ${nominalDischargeKa === ka ? 'active' : ''}`}
+                onClick={() => setNominalDischargeKa(ka)}
+                style={{ fontSize: '11px' }}
+              >
+                {ka.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '线路放电耐受等级 (Discharge Class):' : 'Line Discharge Class:'}</label>
+          <div className="sld-buttons">
+            {(['Class 2 (W ≥ 4.5 kJ/kV)', 'Class 3 (W ≥ 7.2 kJ/kV Heavy Line)'] as const).map((cls) => (
+              <button
+                key={cls}
+                type="button"
+                className={`sld-btn ${lineDischargeClass === cls ? 'active' : ''}`}
+                onClick={() => setLineDischargeClass(cls)}
+                style={{ fontSize: '11px' }}
+              >
+                {cls.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group">
+          <label>{locale === 'zh' ? '被保护变压器冲击绝缘水平 (Transformer BIL):' : 'Protected Trafo BIL Level:'}</label>
+          <div className="sld-buttons">
+            {(['75 kV (10kV Transformer)', '125 kV (20kV Transformer)', '200 kV (35kV Main Trafo)'] as const).map((bil) => (
+              <button
+                key={bil}
+                type="button"
+                className={`sld-btn ${insulationCoordinationBil === bil ? 'active' : ''}`}
+                onClick={() => setInsulationCoordinationBil(bil)}
+                style={{ fontSize: '10.5px' }}
+              >
+                {bil.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="sld-control-group" style={{ gridColumn: '1 / -1' }}>
+          <label>{locale === 'zh' ? '外套绝缘材质与防污防爆 (Housing & Anti-Blast):' : 'Housing Metallurgy & Anti-Blast:'}</label>
+          <div className="sld-buttons">
+            {(['HTV Silicone Polymer (Class IV Creepage)', 'High-Grade Porcelain Housing'] as const).map((mat) => (
+              <button
+                key={mat}
+                type="button"
+                className={`sld-btn ${housingMaterial === mat ? 'active' : ''}`}
+                onClick={() => setHousingMaterial(mat)}
+                style={{ fontSize: '12px' }}
+              >
+                {mat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="sld-results-panel" style={{ marginTop: '20px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(59, 130, 246, 0.25)', borderRadius: '10px', padding: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>RECOMMENDED MOA MODEL</span>
+            <strong style={{ color: '#38bdf8', fontSize: '13.5px' }}>{recommendedMoaModel}</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>LIGHTNING RESIDUAL VOLTAGE</span>
+            <strong style={{ color: '#f8fafc', fontSize: '14px' }}>U_res ≤ {residualVoltage10ka} kV (at 10kA 8/20μs)</strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>INSULATION COORDINATION MARGIN</span>
+            <strong style={{ color: parseFloat(insulationMarginPct) >= 20.0 ? '#22c55e' : '#f59e0b', fontSize: '13.5px' }}>
+              +{insulationMarginPct}% ({parseFloat(insulationMarginPct) >= 20.0 ? 'Exceeds IEC 20% Standard' : 'Warning: Low Margin'})
+            </strong>
+          </div>
+          <div>
+            <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', display: 'block' }}>EXTERNAL CREEPAGE & ANTI-BLAST</span>
+            <strong style={{ color: '#a855f7', fontSize: '13px', lineHeight: 1.4, display: 'block' }}>{creepageSafetyLevel}</strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <a
+            className="button button-orange"
+            style={{ width: '100%', background: 'linear-gradient(135deg, #2563eb, #1d4ed8)', color: '#ffffff', fontWeight: 'bold' }}
+            href={`https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, I configured Metal-Oxide Surge Arrester on Feichi Power: Voltage = ${ratedVoltage}, Discharge = ${nominalDischargeKa}, Class = ${lineDischargeClass}, Trafo BIL = ${insulationCoordinationBil}, Housing = ${housingMaterial}, Margin = +${insulationMarginPct}%, Model = ${recommendedMoaModel}. Please provide EMTP insulation coordination simulation, residual voltage curves, and Russian GOST Опросный лист quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {locale === 'zh' ? '向 Henry 索取 10kV/35kV 避雷器绝缘配合计算书、残压曲线与报价' : 'Request Surge Arrester Insulation Sizing, CAD & Quote'}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function EngineeringJourney({ locale }: { locale: Locale }) {
   const steps = [
     {
@@ -3056,25 +4635,25 @@ function SubstationAnatomy({ locale }: { locale: Locale }) {
       title: locale === 'zh' ? '01 / 高压进线室 (HV Compartment)' : '01 / High Voltage (HV) Compartment',
       summary: locale === 'zh' ? '配置 SF6 / 固体绝缘环网柜 (RMU)、真空断路器、带电显示器与避雷器，实现电网进线安全隔离与短路保护。' : 'Equipped with SF6 / Solid-insulated Ring Main Units (RMU), vacuum circuit breakers, live indicators, and surge arresters for reliable grid incomer isolation.',
       specs: 'IEC 62271-200 | 12kV / 24kV / 35kV | 20kA / 25kA Withstand',
-      image: '/images/curated/unisafe_switchgear.jpg',
+      image: '/images/curated/unisafe_switchgear.webp',
     },
     {
       title: locale === 'zh' ? '02 / 变压器室 (Transformer Compartment)' : '02 / Power Transformer Chamber',
       summary: locale === 'zh' ? '全密封低损耗油浸式或环氧树脂浇注干式变压器，配备智能温控与强迫风冷风道，满足高温严寒环境满负荷连续运行。' : 'Low-loss hermetically sealed oil-immersed or cast-resin dry-type transformers with PT100 temperature sensors and forced airflow ventilation.',
       specs: 'IEC 60076 | Dyn11 / Yyn0 | 50kVA - 3150kVA | Class F/H Insulation',
-      image: '/images/curated/transformer_oil.jpg',
+      image: '/images/curated/transformer_oil.webp',
     },
     {
       title: locale === 'zh' ? '03 / 低压配电室 (LV & APFC Chamber)' : '03 / Low Voltage & Control Chamber',
       summary: locale === 'zh' ? '智能塑壳断路器 (MCCB)、多回路出线单元、自动电容无功补偿屏与多功能电力监控仪表，支持 RS485 / Modbus 智慧物联网集控。' : 'Intelligent MCCB switchboards, automatic reactive power compensation (APFC), and multi-function power meters with RS485/Modbus telemetry.',
       specs: 'IEC 61439-1 | 0.4kV / 690V | Rated Current up to 4000A',
-      image: '/images/curated/distribution_boxes.jpg',
+      image: '/images/curated/distribution_boxes.webp',
     },
     {
       title: locale === 'zh' ? '04 / 壳体与环境防护 (Enclosure & Protection)' : '04 / Heavy-Duty Protective Enclosure',
       summary: locale === 'zh' ? '镀铝锌钢板、不锈钢或非金属 GRC 复合壳体，双层隔热夹层、迷宫式防雨百叶与阻燃防腐涂层，专为荒漠、高湿盐雾及极寒工况设计。' : 'Alu-zinc alloy, stainless steel, or composite GRC housing with double-layer thermal insulation, labyrinth dust louvers, and IP54 weatherproof sealing.',
       specs: 'IP54 / IP65 | Anti-Corrosion C4/C5 | -45°C to +55°C Ambient',
-      image: '/images/curated/precast_cabin_ehouse.jpg',
+      image: '/images/curated/precast_cabin_ehouse.webp',
     },
   ];
 
@@ -4053,6 +5632,9 @@ function Home({ locale }: { locale: Locale }) {
           </div>
         </section>
 
+        {/* 81+ Strategic Partners & Collaborative Ecosystem (First-Screen Prominent Marquee) */}
+        <StrategicPartnersSection locale={locale} />
+
         {/* Products Section */}
         <section className="section products-section">
           <div className="wrap">
@@ -4068,25 +5650,40 @@ function Home({ locale }: { locale: Locale }) {
               </Link>
             </div>
 
-            {/* Strategic Partnerships */}
-            <StrategicPartnershipSection locale={locale} />
-
             {/* Official 2026 Multilingual Catalog Download Center */}
             <OfficialCatalogDownloadSection locale={locale} />
           </div>
         </section>
+
+        {/* Authoritative Type-Test Reports & Certifications Trust Hub */}
+        <CertificationsTrustHub locale={locale} />
+
+        {/* Global Reference Projects & Commissioning Showcase */}
+        <GlobalProjectsShowcase locale={locale} />
+
+        {/* 49+ Global Overseas Track Record & EPC Matrix */}
+        <OverseasProjectsTrackRecord locale={locale} />
 
         {/* Interactive Dual Sizing Engines Section */}
         <section id="substation-sizer" className="section sld-section section-darker">
           <div className="wrap">
             <SectionTitle
               eyebrow="ENGINEERING INTERACTION & SIZING CALCULATORS"
-              title={locale === 'zh' ? '交互式八大工业工程计算工具箱：变压器、SVG无功、高压断路器TRV、母线热稳定、光储压降、智能重合器自愈、箱变与制氮机选型' : 'Comprehensive 8-Engine Engineering Sizing Suite: Transformers, STATCOM, HV Breakers TRV, Busbars, Solar Skid, Smart Recloser FLISR, SLD & Nitrogen'}
-              copy={locale === 'zh' ? '输入您的电网负荷、短路电流、断路器TRV开断、谐波要求、线路接地电容或光储集电参数，系统实时完成高精度电气核算并生成一键技术方案。' : 'Specify your grid active load, short-circuit withstand, breaker TRV duty, reactive harmonics, ground capacitance, or solar skid parameters to generate instant model proposals and engineering dossiers.'}
+              title={locale === 'zh' ? '交互式十七大重工与电网防雷绝缘配合工程计算工具箱：金属氧化物避雷器MOA、限流电抗器CLR、高压电机软起动MCR/固态、中性点接地电阻NGR、气体绝缘输电线路GIL、高压谐波治理APF、车载移动变电站、光电互感器合并单元、变压器、SVG无功、高压断路器TRV、隔离开关破冰、母线热稳定、光储压降、智能重合器自愈、箱变与制氮机选型' : 'Comprehensive 17-Engine Engineering Sizing Suite: Metal-Oxide Surge Arresters MOA, Current-Limiting Reactor CLR, Motor Soft Starters MCR/SSS, Neutral Grounding Resistor NGR, Gas-Insulated Lines GIL, Harmonic Active Filters APF/FC, Mobile Substations, Optical NCIT & Merging Units, Transformers, STATCOM, HV Breakers TRV, Disconnectors Ice-Breaking, Busbars, Solar Skid, Smart Recloser FLISR, SLD & Nitrogen'}
+              copy={locale === 'zh' ? '输入您的电网负荷、短路电流、避雷器绝缘裕度、限流电抗率、电机轴功率、中性点接地阻值、GIL走廊长度、谐波目标THD、断路器TRV开断、隔离开关破冰力矩、车载变电站轴荷公路限值、光电互感器SV流速率、线路接地电容或光储集电参数，系统实时完成高精度电气核算并生成一键技术方案。' : 'Specify your grid active load, short-circuit withstand, surge arrester BIL margin %, reactor reactance %, motor kW, NGR resistance, GIL corridor length, target harmonic THD, breaker TRV duty, disconnector ice torque, mobile substation axle loads, optical NCIT SV traffic, reactive harmonics, ground capacitance, or solar skid parameters to generate instant model proposals and engineering dossiers.'}
             />
+            <SubstationSurgeArresterSizer locale={locale} />
+            <AirCoreCurrentLimitingReactorSizer locale={locale} />
+            <HighVoltageSoftStarterSizer locale={locale} />
+            <NeutralGroundingResistorSizer locale={locale} />
+            <GilTransmissionLineSizer locale={locale} />
+            <HarmonicFilterApfSizer locale={locale} />
+            <MobileSubstationSizer locale={locale} />
+            <NcitOpticalTransformerSizer locale={locale} />
             <TransformerKvaSizer locale={locale} />
             <SvgReactiveCalculator locale={locale} />
             <TrvBreakerSizer locale={locale} />
+            <DisconnectorSizer locale={locale} />
             <BusbarThermalSizer locale={locale} />
             <PvBessCableDropSizer locale={locale} />
             <FlisrProtectionSizer locale={locale} />
@@ -4171,9 +5768,6 @@ function Home({ locale }: { locale: Locale }) {
             </div>
           </div>
         </section>
-
-        {/* Field Evidence */}
-        <CaseStrip locale={locale} text={text} />
 
         {/* FAQ Section */}
         <FaqAccordion locale={locale} />
@@ -4572,7 +6166,7 @@ function IndustriesPage({ locale }: { locale: Locale }) {
     <>
       <Seo locale={locale} title={`${text.nav.industries} | Feichi Electrical Equipment`} description={text.industriesCopy} />
       <main>
-        <PageHero eyebrow={text.industriesEyebrow} title={text.industriesTitle} copy={text.industriesCopy} image="/images/ind-solar.jpg" />
+        <PageHero eyebrow={text.industriesEyebrow} title={text.industriesTitle} copy={text.industriesCopy} image="/images/ind-solar.webp" />
         <section className="section">
           <div className="wrap">
             <div className="industry-grid industry-grid-large">
@@ -4952,33 +6546,18 @@ function CasesPage({ locale }: { locale: Locale }) {
       <Seo locale={locale} title={`${text.nav.cases} | Feichi Electrical Equipment`} description={text.casesCopy} />
       <main>
         <PageHero eyebrow={text.casesEyebrow} title={text.casesTitle} copy={text.casesCopy} image={fieldImages[0]} />
+
+        {/* Global Reference Projects & Commissioning Showcase */}
+        <GlobalProjectsShowcase locale={locale} />
+
+        {/* 49+ Global Overseas Track Record & EPC Matrix */}
+        <OverseasProjectsTrackRecord locale={locale} />
+
+        {/* 81+ Strategic Partners & Collaborative Ecosystem */}
+        <StrategicPartnersSection locale={locale} />
+
         <section className="section">
           <div className="wrap">
-            <div className="case-photo-grid case-photo-grid-large">
-              {fieldImages.map((image, index) => {
-                const captions = [
-                  'GUINEA SIMANDOU IRON ORE PORT EPC (WEST AFRICA)',
-                  'SAUDI ARABIA COMBINED CYCLE POWER PLANT (MIDDLE EAST)',
-                  'KAZAKHSTAN SHUBARKOL SEMI-COKE POWER SUBSTATION (-60°C)',
-                  'AUDI-FAW NEV DISTRIBUTED ROOFTOP SOLAR (1500V DC)',
-                  'GUANGXI FANGCHENGGANG STEEL METALLURGY BASE (40.5kV)',
-                  'SHENYANG METRO LINE 3 & 4 TRACTION POWER INTEGRATION',
-                ];
-                return (
-                  <figure key={image}>
-                    <img
-                      src={image}
-                      alt={`Feichi Electrical field evidence ${index + 1}`}
-                      loading="lazy"
-                    />
-                    <figcaption>
-                      <strong>0{index + 1}</strong> / {captions[index] || 'GLOBAL EPC PROJECT SITE'}
-                    </figcaption>
-                  </figure>
-                );
-              })}
-            </div>
-
             <div className="case-stats-banner">
               <div>
                 <strong>500+</strong>
@@ -5076,7 +6655,7 @@ function WhitepaperKnowledgeHub({ locale }: { locale: Locale }) {
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const categoryTabs: { id: string; label: Record<Locale, string> }[] = [
-    { id: 'all', label: { en: 'All 27 Engineering Whitepapers', zh: '全部 27 篇工程白皮书', ja: '全 27 編技術ホワイトペーパー', es: 'Todas las 27 Guías de Ingeniería', ru: 'Все 27 руководств ГОСТ/МЭК' } },
+    { id: 'all', label: { en: 'All 38 Engineering Whitepapers', zh: '全部 38 篇工程白皮书', ja: '全 38 編技術ホワイトペーパー', es: 'Todas las 38 Guías de Ingeniería', ru: 'Все 38 руководств ГОСТ/МЭК' } },
     { id: 'substation', label: { en: 'Substations & Transformers', zh: '箱变与变压器', ja: '変電所・変圧器', es: 'Subestaciones y Trafo', ru: 'КТП и трансформаторы' } },
     { id: 'switchgear', label: { en: 'MV/LV Switchgear & Protection', zh: '高低压开关柜与保护', ja: 'スイッチギア・保護', es: 'Celdas MT/BT y Protección', ru: 'Ячейки КРУ и защита' } },
     { id: 'mining', label: { en: 'Mining Safety & Flameproof Power', zh: '矿山防爆电力与安全制氮', ja: '鉱山防爆電力・窒素防災', es: 'Seguridad y Potencia Minera', ru: 'Шахтная взрывозащита и КТПВ' } },
@@ -5353,6 +6932,132 @@ function WhitepaperKnowledgeHub({ locale }: { locale: Locale }) {
           </section>
         )}
 
+        {activePaper.hasCalculator === 'disconnector' && (
+          <section style={{ marginBottom: '40px', background: 'var(--panel-2)', padding: '26px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h2 style={{ font: '800 21px var(--display)', color: '#ffffff', marginBottom: '8px' }}>
+              ❄️ {locale === 'zh' ? '35kV–110kV 高压隔离开关动热稳定与 20mm 极寒破冰力矩核算器' : '35kV–110kV HV Disconnector Thermal/Dynamic & 20mm Ice-Breaking Sizer'}
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '13.5px', marginBottom: '18px' }}>
+              {locale === 'zh'
+                ? '依据 IEC 62271-102 及 ГОСТ Р 52726，输入电压等级、额定短时耐受电流与覆冰厚度，核算动稳定峰值电动力与破冰操作扭矩：'
+                : 'Calculate peak dynamic withstand force and mechanical ice-breaking torque per IEC 62271-102 and GOST R 52726:'}
+            </p>
+            <DisconnectorSizer locale={locale} />
+          </section>
+        )}
+
+        {activePaper.hasCalculator === 'ncit' && (
+          <section style={{ marginBottom: '40px', background: 'var(--panel-2)', padding: '26px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h2 style={{ font: '800 21px var(--display)', color: '#ffffff', marginBottom: '8px' }}>
+              🔬 {locale === 'zh' ? '110kV–220kV 光电互感器（NCIT）合并单元过程层采样流与零磁饱和选型核算器' : '110kV–220kV Optical/Electronic Instrument Transformer & Merging Unit Sizer'}
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '13.5px', marginBottom: '18px' }}>
+              {locale === 'zh'
+                ? '依据 IEC 61869-9、IEC 61850-9-2LE 及 ГОСТ Р 55153，选择电压等级、一次电流、传感机理与采样速率，实时核算网络带宽与选型方案：'
+                : 'Configure rated voltage, primary current, sensing physics, and SV sampling rate to calculate process bus bandwidth and generate digital substation proposals:'}
+            </p>
+            <NcitOpticalTransformerSizer locale={locale} />
+          </section>
+        )}
+
+        {activePaper.hasCalculator === 'mobile' && (
+          <section style={{ marginBottom: '40px', background: 'var(--panel-2)', padding: '26px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h2 style={{ font: '800 21px var(--display)', color: '#ffffff', marginBottom: '8px' }}>
+              🚛 {locale === 'zh' ? '35kV–110kV 拖挂车载移动式变电站公路轴荷与应急极速并网核算器' : '35kV–110kV Mobile Trailer Substation Axle-Load & Rapid Deployment Sizer'}
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '13.5px', marginBottom: '18px' }}>
+              {locale === 'zh'
+                ? '依据 IEC 62271-202、ГОСТ 14695 及 СТО Россети，输入进出线电压等级、变压器容量、底盘轴数及开关形式，实时核算公路通行合法性与展开时间：'
+                : 'Calculate road-legal axle load distribution and emergency deployment speed per IEC 62271-202, GOST 14695 and Rosseti standards:'}
+            </p>
+            <MobileSubstationSizer locale={locale} />
+          </section>
+        )}
+
+        {activePaper.hasCalculator === 'harmonic' && (
+          <section style={{ marginBottom: '40px', background: 'var(--panel-2)', padding: '26px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h2 style={{ font: '800 21px var(--display)', color: '#ffffff', marginBottom: '8px' }}>
+              ⚡ {locale === 'zh' ? '10kV–35kV 高压谐波治理与有源 APF / 无源 FC 混合滤波补偿核算器' : '10kV–35kV Industrial Harmonic Mitigation & Hybrid APF/FC Filter Sizer'}
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '13.5px', marginBottom: '18px' }}>
+              {locale === 'zh'
+                ? '依据 IEEE 519-2022、IEC 61000-3-6 及 ГОСТ 32144，选择电网电压、负载类型、目标电流畸变率与补偿容量，实时核算滤波效率与选型方案：'
+                : 'Configure grid voltage, load profile, target current THD, and required Mvar to calculate filtering efficiency and generate harmonic mitigation proposals:'}
+            </p>
+            <HarmonicFilterApfSizer locale={locale} />
+          </section>
+        )}
+
+        {activePaper.hasCalculator === 'gil' && (
+          <section style={{ marginBottom: '40px', background: 'var(--panel-2)', padding: '26px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h2 style={{ font: '800 21px var(--display)', color: '#ffffff', marginBottom: '8px' }}>
+              🌐 {locale === 'zh' ? '110kV–220kV 气体绝缘金属封闭输电线路（GIL）大容量载流与对地电容无功核算器' : '110kV–220kV Gas-Insulated Transmission Line (GIL) Ampacity & Charging Sizer'}
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '13.5px', marginBottom: '18px' }}>
+              {locale === 'zh'
+                ? '依据 IEC 62271-204、GB/T 22383 及 ГОСТ Р 54828，选择系统电压、额定通流能力、敷设方式与线路长度，实时核算充电无功与选型方案：'
+                : 'Calculate bulk transmission ampacity, charging reactive power, and optimal eco-gas mix per IEC 62271-204 and GOST R 54828:'}
+            </p>
+            <GilTransmissionLineSizer locale={locale} />
+          </section>
+        )}
+
+        {activePaper.hasCalculator === 'ngr' && (
+          <section style={{ marginBottom: '40px', background: 'var(--panel-2)', padding: '26px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h2 style={{ font: '800 21px var(--display)', color: '#ffffff', marginBottom: '8px' }}>
+              🛡️ {locale === 'zh' ? '10kV–35kV 中性点接地电阻柜（NGR）与消弧线圈（ASC）容性电流对消核算器' : '10kV–35kV Neutral Grounding Resistor (NGR) & Petersen Coil Sizer'}
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '13.5px', marginBottom: '18px' }}>
+              {locale === 'zh'
+                ? '依据 IEEE 32、IEC 60076-16 及 ГОСТ 13109，选择电网电压、接地方式、额定故障电流与全网电容电流，实时核算电阻欧姆值与选型方案：'
+                : 'Configure grid voltage, grounding philosophy, fault current, and capacitive current to calculate resistance value and generate neutral grounding proposals:'}
+            </p>
+            <NeutralGroundingResistorSizer locale={locale} />
+          </section>
+        )}
+
+        {activePaper.hasCalculator === 'softstarter' && (
+          <section style={{ marginBottom: '40px', background: 'var(--panel-2)', padding: '26px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h2 style={{ font: '800 21px var(--display)', color: '#ffffff', marginBottom: '8px' }}>
+              ⚙️ {locale === 'zh' ? '10kV–35kV 大中型电动机磁控（MCR）与晶闸管固态软起动压降核算器' : '10kV–35kV Medium-Voltage Motor Magnetic/Solid-State Soft Starter Sizer'}
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '13.5px', marginBottom: '18px' }}>
+              {locale === 'zh'
+                ? '依据 IEC 60947-4-2、IEEE 1566 及 ГОСТ 12434，选择电机电压、额定轴功率、起动拓扑与负载类型，实时核算起动电流限制与电网电压暂降：'
+                : 'Calculate motor starting inrush current clamping, acceleration torque, and busbar voltage sag per IEC 60947-4-2 and GOST 12434:'}
+            </p>
+            <HighVoltageSoftStarterSizer locale={locale} />
+          </section>
+        )}
+
+        {activePaper.hasCalculator === 'reactor' && (
+          <section style={{ marginBottom: '40px', background: 'var(--panel-2)', padding: '26px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h2 style={{ font: '800 21px var(--display)', color: '#ffffff', marginBottom: '8px' }}>
+              ⚡ {locale === 'zh' ? '10kV–35kV 干式空心限流电抗器短路阻抗与空间漏磁安全净距核算器' : '10kV–35kV Air-Core Current-Limiting Reactor Impedance & Magnetic Sizer'}
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '13.5px', marginBottom: '18px' }}>
+              {locale === 'zh'
+                ? '依据 IEC 60076-6、GB/T 1094.6 及 ГОСТ 14794，选择电网电压、额定电流、电抗率与预期短路电流，实时核算限流后故障电流与漏磁净距：'
+                : 'Calculate short-circuit current reduction, linear air-core reactance value, and stray magnetic safety clearances per IEC 60076-6 and GOST 14794:'}
+            </p>
+            <AirCoreCurrentLimitingReactorSizer locale={locale} />
+          </section>
+        )}
+
+        {activePaper.hasCalculator === 'mosa' && (
+          <section style={{ marginBottom: '40px', background: 'var(--panel-2)', padding: '26px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h2 style={{ font: '800 21px var(--display)', color: '#ffffff', marginBottom: '8px' }}>
+              ⚡ {locale === 'zh' ? '10kV–35kV 变电站金属氧化物避雷器（MOA）雷电残压与绝缘配合裕度核算器' : '10kV–35kV Substation Surge Arrester (MOA) Residual Voltage & BIL Sizer'}
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '13.5px', marginBottom: '18px' }}>
+              {locale === 'zh'
+                ? '依据 IEC 60099-4、IEEE C62.11 及 ГОСТ Р 52725，选择系统电压、标称放电电流、放电等级与主变 BIL，实时核算雷电残压与绝缘配合安全裕度：'
+                : 'Calculate lightning residual voltage, discharge energy capability, and insulation coordination BIL margin per IEC 60099-4 and GOST R 52725:'}
+            </p>
+            <SubstationSurgeArresterSizer locale={locale} />
+          </section>
+        )}
+
         {/* High-Conversion Engineering Action Banner */}
         <div style={{ padding: '32px', background: 'linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(6, 182, 212, 0.08))', border: '1px solid var(--orange-glow)', borderRadius: '8px', textAlign: 'center' }}>
           <h3 style={{ font: '900 23px var(--display)', color: '#ffffff', margin: '0 0 10px' }}>{ctaTitle}</h3>
@@ -5504,7 +7209,7 @@ function ResourcesPage({ locale }: { locale: Locale }) {
     <>
       <Seo locale={locale} title={`${text.nav.resources} | Feichi Electrical Technical Portal & Engineering Whitepapers`} description={text.resourcesCopy} />
       <main>
-        <PageHero eyebrow="06 / TECHNICAL RESOURCES & WHITEPAPERS" title={text.resourcesTitle} copy={text.resourcesCopy} image="/images/switchgear.jpg" />
+        <PageHero eyebrow="06 / TECHNICAL RESOURCES & WHITEPAPERS" title={text.resourcesTitle} copy={text.resourcesCopy} image="/images/switchgear.webp" />
         <section className="section">
           <div className="wrap">
             <SectionTitle
@@ -5688,6 +7393,12 @@ function AboutPage({ locale }: { locale: Locale }) {
             </div>
           </div>
         </section>
+
+        {/* Authoritative Type-Test Reports & Certifications Trust Hub */}
+        <CertificationsTrustHub locale={locale} />
+
+        {/* 81+ Strategic Partners & Collaborative Ecosystem */}
+        <StrategicPartnersSection locale={locale} />
       </main>
     </>
   );

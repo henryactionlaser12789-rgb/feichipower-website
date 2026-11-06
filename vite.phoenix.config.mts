@@ -5,7 +5,7 @@ import { mergeConfig } from 'vite'
 import userConfigModule from './vite.config.ts'
 const userConfig = (userConfigModule as any).default || userConfigModule
 
-const __parentPid = 15824
+const __parentPid = 19180
 const __watchdog = setInterval(() => {
   try { process.kill(__parentPid, 0) } catch { process.exit(0) }
 }, 3000)
