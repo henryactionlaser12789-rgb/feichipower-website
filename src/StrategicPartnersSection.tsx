@@ -16,6 +16,7 @@ export function StrategicPartnersSection({ locale }: { locale: Locale }) {
       const matchSearch =
         searchQuery.trim() === '' ||
         item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (item.titleEn && item.titleEn.toLowerCase().includes(searchQuery.toLowerCase())) ||
         item.code.toLowerCase().includes(searchQuery.toLowerCase());
       return matchCategory && matchSearch;
     });
@@ -60,70 +61,73 @@ export function StrategicPartnersSection({ locale }: { locale: Locale }) {
   };
 
   // Helper renderer for a single logo card
-  const renderCard = (item: PartnerItem, keyPrefix = '') => (
-    <div
-      key={`${keyPrefix}-${item.code}`}
-      title={item.title}
-      style={{
-        background: '#ffffff',
-        border: '1px solid #e2e8f0',
-        borderRadius: '10px',
-        padding: '8px 14px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minWidth: '145px',
-        maxWidth: '160px',
-        height: '78px',
-        flexShrink: 0,
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
-        transition: 'transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease',
-        cursor: 'default',
-        userSelect: 'none',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'translateY(-4px) scale(1.03)';
-        e.currentTarget.style.boxShadow = '0 10px 24px rgba(56, 189, 248, 0.35)';
-        e.currentTarget.style.borderColor = '#38bdf8';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'translateY(0) scale(1)';
-        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.25)';
-        e.currentTarget.style.borderColor = '#e2e8f0';
-      }}
-    >
-      <img
-        src={`/images/partners/${item.filename}`}
-        alt={item.title}
-        loading="lazy"
-        decoding="async"
-        width={120}
-        height={40}
+  const renderCard = (item: PartnerItem, keyPrefix = '') => {
+    const displayTitle = locale === 'zh' ? item.title : (item.titleEn || item.title);
+    return (
+      <div
+        key={`${keyPrefix}-${item.code}`}
+        title={displayTitle}
         style={{
-          maxWidth: '100%',
-          maxHeight: '40px',
-          objectFit: 'contain',
-          filter: 'contrast(1.05)',
+          background: '#ffffff',
+          border: '1px solid #e2e8f0',
+          borderRadius: '10px',
+          padding: '8px 14px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minWidth: '145px',
+          maxWidth: '160px',
+          height: '78px',
+          flexShrink: 0,
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
+          transition: 'transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease',
+          cursor: 'default',
+          userSelect: 'none',
         }}
-      />
-      <span
-        style={{
-          marginTop: '5px',
-          fontSize: '10px',
-          color: '#475569',
-          textAlign: 'center',
-          fontWeight: 600,
-          whiteSpace: 'nowrap',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          width: '100%',
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-4px) scale(1.03)';
+          e.currentTarget.style.boxShadow = '0 10px 24px rgba(56, 189, 248, 0.35)';
+          e.currentTarget.style.borderColor = '#38bdf8';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0) scale(1)';
+          e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.25)';
+          e.currentTarget.style.borderColor = '#e2e8f0';
         }}
       >
-        {item.title}
-      </span>
-    </div>
-  );
+        <img
+          src={`/images/partners/${item.filename}`}
+          alt={displayTitle}
+          loading="lazy"
+          decoding="async"
+          width={120}
+          height={40}
+          style={{
+            maxWidth: '100%',
+            maxHeight: '40px',
+            objectFit: 'contain',
+            filter: 'contrast(1.05)',
+          }}
+        />
+        <span
+          style={{
+            marginTop: '5px',
+            fontSize: '10px',
+            color: '#475569',
+            textAlign: 'center',
+            fontWeight: 600,
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            width: '100%',
+          }}
+        >
+          {displayTitle}
+        </span>
+      </div>
+    );
+  };
 
   return (
     <section id="strategic-partners" className="section partners-ecosystem-section" style={{ background: '#070b12', borderTop: '1px solid #1e293b', padding: '80px 0', overflow: 'hidden' }}>
