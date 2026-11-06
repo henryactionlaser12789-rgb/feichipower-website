@@ -71,18 +71,19 @@ export function StrategicPartnersSection({ locale }: { locale: Locale }) {
           background: '#ffffff',
           border: '1px solid #e2e8f0',
           borderRadius: '10px',
-          padding: '10px 18px',
+          padding: '8px 14px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          minWidth: '150px',
-          maxWidth: '170px',
+          minWidth: '155px',
+          maxWidth: '175px',
           height: '76px',
           flexShrink: 0,
           boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
           transition: 'transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease',
           cursor: 'pointer',
           userSelect: 'none',
+          overflow: 'hidden',
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = 'translateY(-4px) scale(1.04)';
@@ -100,13 +101,16 @@ export function StrategicPartnersSection({ locale }: { locale: Locale }) {
           alt={displayTitle}
           loading="lazy"
           decoding="async"
-          width={130}
-          height={48}
+          width={150}
+          height={60}
           style={{
-            maxWidth: '100%',
-            maxHeight: '48px',
+            width: '100%',
+            height: '100%',
+            maxWidth: '145px',
+            maxHeight: '58px',
             objectFit: 'contain',
-            filter: 'contrast(1.05)',
+            display: 'block',
+            margin: '0 auto',
           }}
         />
       </div>
