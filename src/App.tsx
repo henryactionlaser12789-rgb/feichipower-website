@@ -7872,6 +7872,18 @@ function RoutedContact() {
 }
 
 export default function App() {
+  const isLocalFileProtocol = typeof window !== 'undefined' && window.location.protocol === 'file:';
+
+  if (isLocalFileProtocol) {
+    return (
+      <ErrorBoundary>
+        <Layout locale="zh">
+          <Home locale="zh" />
+        </Layout>
+      </ErrorBoundary>
+    );
+  }
+
   return (
     <ErrorBoundary>
       <BrowserRouter>
