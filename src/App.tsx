@@ -52,9 +52,12 @@ const localeLabels: Record<Locale, string> = {
 
 import { TechnicalDrawingPlaceholder } from './TechnicalDrawing';
 
-const heroImage = '/images/syfcdq/feichi_hq_panoramic_2k.webp';
-const factoryImage = '/images/syfcdq/feichi_workshop_cnc_2k.webp';
-const cleanroomImage = '/images/library/01_企业形象与厂区/P02_04_企业介绍_核心生产线装备特写_812x611.webp';
+const heroImage = '/images/syfcdq/feichi_overseas_substation_hero.webp';
+const factoryGateImage = '/images/syfcdq/feichi_factory_gate_hero.webp';
+const cncSheetMetalImage = '/images/syfcdq/feichi_cnc_flexible_line.webp';
+const workshopAssemblyImage = '/images/syfcdq/feichi_transformer_cleanroom_assembly.webp';
+const factoryImage = factoryGateImage;
+const cleanroomImage = workshopAssemblyImage;
 const fieldImages = [
   '/images/syfcdq/project_mexico_penasco_solar.webp',
   '/images/syfcdq/project_philippines_pcpc_solar_ehouse.webp',
@@ -7501,7 +7504,7 @@ function AboutPage({ locale }: { locale: Locale }) {
     <>
       <Seo locale={locale} title={`${text.nav.about} | Feichi Electrical Equipment Co., Ltd.`} description={text.aboutCopy} />
       <main>
-        <PageHero eyebrow={text.aboutEyebrow} title={text.aboutPageTitle} copy={text.aboutCopy} image={factoryImage} />
+        <PageHero eyebrow={text.aboutEyebrow} title={text.aboutPageTitle} copy={text.aboutCopy} image={factoryGateImage} />
 
         <section className="section about-detail">
           <div className="wrap about-detail-grid">
@@ -7570,7 +7573,7 @@ function AboutPage({ locale }: { locale: Locale }) {
           <div className="wrap" style={{ marginTop: '36px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px' }}>
               <div style={{ background: 'var(--panel)', border: '1px solid var(--border)', borderRadius: '6px', overflow: 'hidden' }}>
-                <img src={factoryImage} alt="Automated Switchgear Assembly & CNC Sheet Metal Line" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
+                <img src={cncSheetMetalImage} alt="Automated Switchgear Assembly & CNC Sheet Metal Line" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
                 <div style={{ padding: '16px' }}>
                   <h4 style={{ margin: '0 0 6px', color: 'var(--text)', fontSize: '15px' }}>
                     {locale === 'zh' ? '现代化成套开关设备装配与数控柔性钣金线' : 'Automated Switchgear Assembly & CNC Sheet Metal Line'}
@@ -7581,7 +7584,7 @@ function AboutPage({ locale }: { locale: Locale }) {
                 </div>
               </div>
               <div style={{ background: 'var(--panel)', border: '1px solid var(--border)', borderRadius: '6px', overflow: 'hidden' }}>
-                <img src={cleanroomImage} alt="100,000-Grade Cleanroom Power Transformer Winding Workshop" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
+                <img src={workshopAssemblyImage} alt="100,000-Grade Cleanroom Power Transformer Winding Workshop" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
                 <div style={{ padding: '16px' }}>
                   <h4 style={{ margin: '0 0 6px', color: 'var(--text)', fontSize: '15px' }}>
                     {locale === 'zh' ? '十万级恒温恒湿无尘变压器浇注与总装车间' : '100,000-Grade Cleanroom Power Transformer Workshop'}
