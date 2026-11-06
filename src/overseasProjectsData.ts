@@ -31,10 +31,10 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "sector": "utility",
     "title": {
       "zh": "菲律宾TVI二期（3#机组）扩建工程全厂小三箱设备采购",
-      "en": "Philippines - 菲律宾TVI二期（3#机组）扩建工程全厂小三箱设备采购",
-      "ru": "Филиппины - 菲律宾TVI二期（3#机组）扩建工程全厂小三箱设备采购",
-      "es": "Filipinas - 菲律宾TVI二期（3#机组）扩建工程全厂小三箱设备采购",
-      "ja": "フィリピン - 菲律宾TVI二期（3#机组）扩建工程全厂小三箱设备采购"
+      "en": "Philippines TVI Phase II (Unit 3#) Power Plant LV Distribution Box Procurement",
+      "ru": "Филиппины - ТЭС TVI Фаза II (Блок 3#) НКУ и распределительные шкафы",
+      "es": "Filipinas - Central Térmica TVI Fase II Cajas de Distribución BT",
+      "ja": "フィリピン - TVI火力発電所第2期（3号機）低圧配電盤・分電盤調達プロジェクト"
     },
     "equipmentSummary": "配电箱FCMCCBF：FCMCCBF",
     "quantity": 258,
@@ -58,10 +58,10 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "sector": "renewable",
     "title": {
       "zh": "哈尔霍鲁姆太阳能”11035千伏2×31.5兆伏安的发电站",
-      "en": "Mongolia - 哈尔霍鲁姆太阳能”11035千伏2×31.5兆伏安的发电站",
-      "ru": "Монголия - 哈尔霍鲁姆太阳能”11035千伏2×31.5兆伏安的发电站",
-      "es": "Mongolia - 哈尔霍鲁姆太阳能”11035千伏2×31.5兆伏安的发电站",
-      "ja": "モンゴル - 哈尔霍鲁姆太阳能”11035千伏2×31.5兆伏安的发电站"
+      "en": "Karakorum 110/35kV 2×31.5MVA Solar Power Substation MV Switchgear",
+      "ru": "Монголия - СЭС Каракорум 110/35 кВ 2×31.5 МВА КРУ 35 кВ КЮН-61",
+      "es": "Mongolia - Subestación Solar Karakorum 110/35kV 2×31.5MVA Celdas MT",
+      "ja": "モンゴル - カラコルム太陽光発電所 110/35kV 2×31.5MVA 高圧開閉装置プロジェクト"
     },
     "equipmentSummary": "铠装移开式交流金属开关设备：KYN61-40.5",
     "quantity": 16,
@@ -85,10 +85,10 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "sector": "mining",
     "title": {
       "zh": "几内亚铝业开发项目（二期）氧化铝项目",
-      "en": "Guinea - 几内亚铝业开发项目（二期）氧化铝项目",
-      "ru": "Гвинея - 几内亚铝业开发项目（二期）氧化铝项目",
-      "es": "Guinea - 几内亚铝业开发项目（二期）氧化铝项目",
-      "ja": "ギニア - 几内亚铝业开发项目（二期）氧化铝项目"
+      "en": "Guinea Bauxite & Alumina Development Phase II E-House Precast Cabin System",
+      "ru": "Гвинея - Глиноземный комплекс Фаза II Модульные мобильные подстанции YC-I",
+      "es": "Guinea - Proyecto Bauxita y Alúmina Fase II E-House y Módulos Eléctricos",
+      "ja": "ギニア - ボーキサイト・アルミナ開発第2期 プレハブ変电所E-Houseシステム"
     },
     "equipmentSummary": "配电箱FCMCCBF：FCMCCBF | 预制舱YC：YCⅠ",
     "quantity": 3,
@@ -112,10 +112,10 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "sector": "renewable",
     "title": {
       "zh": "中国能建东北第一公司菲律宾屋顶光伏项目",
-      "en": "Philippines - 中国能建东北第一公司菲律宾屋顶光伏项目",
-      "ru": "Филиппины - 中国能建东北第一公司菲律宾屋顶光伏项目",
-      "es": "Filipinas - 中国能建东北第一公司菲律宾屋顶光伏项目",
-      "ja": "フィリピン - 中国能建东北第一公司菲律宾屋顶光伏项目"
+      "en": "Philippines Industrial Rooftop PV Solar Inverter & Grid Interconnection Units",
+      "ru": "Филиппины - Промышленная крышная СЭС распределительные устройства 0.4-10 кВ",
+      "es": "Filipinas - Proyecto Solar Fotovoltaico en Techo Cuadros de Maniobra",
+      "ja": "フィリピン - 産業用屋根置き太陽光発電 受配電盤調達プロジェクト"
     },
     "equipmentSummary": "欧式变电站：YBM20 -2700/11/0.48 | SF油浸式变压器：SF11-2700/11/0.48 | 环网柜：FC-SRM-12 两进一出、XGN口-40.5/1250-31.5、FC-SRM-12 一进三出+PT | 预制舱YC：YCⅠ | SFZ油浸式变压器：SFZ-1250034.5/11 | SCB11干式变压器：SCB11-100-11/0.4、SCB11-100-11-0.23 | S11油浸式变压器：S11-2700-11/0.48",
     "quantity": 25,
@@ -301,7 +301,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "sector": "utility",
     "title": {
       "zh": "印尼MVNEX-24KV项目",
-      "en": "Indonesia - 印尼MVNEX-24KV项目",
+      "en": "Indonesia MVNEX-24KV项目",
       "ru": "Индонезия - 印尼MVNEX-24KV项目",
       "es": "Indonesia - 印尼MVNEX-24KV项目",
       "ja": "インドネシア - 印尼MVNEX-24KV项目"
@@ -1084,7 +1084,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "sector": "utility",
     "title": {
       "zh": "中铝国际印尼曼帕瓦1000kt/a氧化铝项目",
-      "en": "Indonesia - 中铝国际印尼曼帕瓦1000kt/a氧化铝项目",
+      "en": "中铝国际Indonesia 曼帕瓦1000kt/a氧化铝项目",
       "ru": "Индонезия - 中铝国际印尼曼帕瓦1000kt/a氧化铝项目",
       "es": "Indonesia - 中铝国际印尼曼帕瓦1000kt/a氧化铝项目",
       "ja": "インドネシア - 中铝国际印尼曼帕瓦1000kt/a氧化铝项目"
@@ -1111,7 +1111,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "sector": "renewable",
     "title": {
       "zh": "印尼恒生新能源材料有限公司红土镍矿冶炼年高冰镍含镍金属1万吨(印尼)项目",
-      "en": "Indonesia - 印尼恒生新能源材料有限公司红土镍矿冶炼年高冰镍含镍金属1万吨(印尼)项目",
+      "en": "Indonesia 恒生新能源材料有限公司红土镍矿冶炼年高冰镍含镍金属1万吨(Indonesia )项目",
       "ru": "Индонезия - 印尼恒生新能源材料有限公司红土镍矿冶炼年高冰镍含镍金属1万吨(印尼)项目",
       "es": "Indonesia - 印尼恒生新能源材料有限公司红土镍矿冶炼年高冰镍含镍金属1万吨(印尼)项目",
       "ja": "インドネシア - 印尼恒生新能源材料有限公司红土镍矿冶炼年高冰镍含镍金属1万吨(印尼)项目"

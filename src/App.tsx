@@ -7842,6 +7842,312 @@ const checklistMeta: Record<Locale, { eyebrow: string; title: string; copy: stri
   },
 };
 
+const gatewayI18n: Record<Locale, {
+  title: string;
+  subtitle: string;
+  companyName: string;
+  clientName: string;
+  contactMethod: string;
+  targetEquipment: string;
+  voltageRating: string;
+  projectLocation: string;
+  notesLabel: string;
+  btnEmail: string;
+  btnWhatsapp: string;
+  btnCopy: string;
+  btnSubmit: string;
+  copied: string;
+  submittedTitle: string;
+  submittedMsg: string;
+  ticketLabel: string;
+}> = {
+  zh: {
+    title: '⚡ 国际工程技术规约与在线询盘直连网关',
+    subtitle: '填入项目关键电气参数，系统将自动生成标准中英双语技术选型单，直连总工程师 Henry 及技术商务团队。',
+    companyName: '公司 / 设计院 / EPC名称',
+    clientName: '联系人姓名 / 职务',
+    contactMethod: '电子邮箱 / WhatsApp / 电话',
+    targetEquipment: '目标设备品类',
+    voltageRating: '额定电压等级 / 容量规格',
+    projectLocation: '项目实施地点 / 目标交付周期',
+    notesLabel: '特殊工况与技术规约补充要求（如海拔、极寒、抗震、保护协议等）',
+    btnEmail: '📧 发送技术询价邮件 (Email to Henry)',
+    btnWhatsapp: '💬 WhatsApp 快速提交 (+86 155 6620 6930)',
+    btnCopy: '📋 复制完整技术规约文本',
+    btnSubmit: '⚡ 登记技术需求并生成工程工单号',
+    copied: '✅ 已复制完整技术规约至剪贴板！',
+    submittedTitle: '✅ 技术询盘已成功登记！',
+    submittedMsg: '工程技术中心已生成专属项目档案，技术协议与 CAD 单线图初步方案将在 24 小时内发出。',
+    ticketLabel: '工程工单编号 (RFQ Tracking ID)',
+  },
+  en: {
+    title: '⚡ Global EPC Engineering Spec & Direct Inquiry Gateway',
+    subtitle: 'Provide project parameters to generate a formal technical requisition sheet and directly connect with Chief Engineer Henry.',
+    companyName: 'Company / EPC / Design Institute',
+    clientName: 'Contact Name & Title',
+    contactMethod: 'Corporate Email / WhatsApp / Phone',
+    targetEquipment: 'Target Equipment Category',
+    voltageRating: 'Voltage Class / Rated Capacity',
+    projectLocation: 'Project Location & Target Delivery Schedule',
+    notesLabel: 'Special Environmental Conditions & Specs (Altitude, -50°C Cold, Seismic, SCADA, etc.)',
+    btnEmail: '📧 Send Requisition Email (To Henry)',
+    btnWhatsapp: '💬 Instant WhatsApp RFQ (+86 155 6620 6930)',
+    btnCopy: '📋 Copy Requisition Spec Text',
+    btnSubmit: '⚡ Submit & Generate Engineering Ticket',
+    copied: '✅ Full technical spec copied to clipboard!',
+    submittedTitle: '✅ Engineering RFQ Successfully Registered!',
+    submittedMsg: 'Our technical team has registered your project. A preliminary SLD schematic and quotation draft will be dispatched within 24 hours.',
+    ticketLabel: 'Engineering Ticket ID (RFQ Tracking ID)',
+  },
+  ru: {
+    title: '⚡ Прямой шлюз подачи опросных листов и технических заявок',
+    subtitle: 'Заполните ключевые параметры объекта для формирования официального опросного листа и прямой связи с главным инженером.',
+    companyName: 'Компания / Проектный институт / Генподрядчик',
+    clientName: 'Контактное лицо и должность',
+    contactMethod: 'Корпоративный Email / Telegram / WhatsApp',
+    targetEquipment: 'Категория высоковольтного оборудования',
+    voltageRating: 'Класс напряжения / Номинальная мощность',
+    projectLocation: 'Регион строительства / Срок поставки',
+    notesLabel: 'Особые климатические и технические требования (УХЛ1 до -50°C, ГОСТ, РЗА, АСУ ТП)',
+    btnEmail: '📧 Отправить официальную заявку (Email Henry)',
+    btnWhatsapp: '💬 Отправить через WhatsApp (+86 155 6620 6930)',
+    btnCopy: '📋 Скопировать текст опросного листа',
+    btnSubmit: '⚡ Зарегистрировать заявку и получить номер ТКП',
+    copied: '✅ Текст опросного листа скопирован в буфер!',
+    submittedTitle: '✅ Техническая заявка успешно зарегистрирована!',
+    submittedMsg: 'Инженерный отдел сформировал карточку проекта. Предварительная однолинейная схема и ТКП будут направлены в течение 24 часов.',
+    ticketLabel: 'Номер проектной заявки (RFQ ID)',
+  },
+  es: {
+    title: '⚡ Pasarela de Especificaciones Técnicas y Consulta Directa EPC',
+    subtitle: 'Ingrese los parámetros del proyecto para generar la hoja técnica y conectar directamente con el Ingeniero Principal Henry.',
+    companyName: 'Empresa / Diseñador / Contratista EPC',
+    clientName: 'Nombre del Contacto y Cargo',
+    contactMethod: 'Email Corporativo / WhatsApp / Teléfono',
+    targetEquipment: 'Categoría de Equipo Eléctrico',
+    voltageRating: 'Nivel de Tensión / Capacidad Nominal',
+    projectLocation: 'Ubicación del Proyecto / Plazo de Entrega',
+    notesLabel: 'Condiciones Especiales y Normativa (Altitud, Sísmico, Protocolos SCADA, etc.)',
+    btnEmail: '📧 Enviar Requisición Técnica por Email',
+    btnWhatsapp: '💬 Consulta Directa por WhatsApp (+86 155 6620 6930)',
+    btnCopy: '📋 Copiar Texto de Especificaciones',
+    btnSubmit: '⚡ Registrar Requisición y Generar Ticket',
+    copied: '✅ ¡Especificación técnica copiada al portapapeles!',
+    submittedTitle: '✅ ¡Consulta Técnica Registrada con Éxito!',
+    submittedMsg: 'El departamento de ingeniería ha generado la ficha del proyecto. El esquema unifilar preliminar y cotización se enviarán en 24 horas.',
+    ticketLabel: 'Número de Ticket (RFQ ID)',
+  },
+  ja: {
+    title: '⚡ グローバルEPC技術仕様・オンライン見積直通ゲートウェイ',
+    subtitle: 'プロジェクトの電気定格パラメータを入力して仕様書を自動生成し、チーフエンジニア Henry へ直通送信します。',
+    companyName: '会社名 / 設計院 / EPC企業名',
+    clientName: 'ご担当者様氏名 / 役職',
+    contactMethod: '法人メールアドレス / WhatsApp / 電話番号',
+    targetEquipment: '対象受変電・高圧機器種別',
+    voltageRating: '定格電圧クラス / 容量仕様',
+    projectLocation: '導入先設置地域 / ご希望納期',
+    notesLabel: '特殊環境条件・技術要件（高地、極寒-50℃、耐震、SCADA通信規格など）',
+    btnEmail: '📧 技術仕様をメールで送信 (To Henry)',
+    btnWhatsapp: '💬 WhatsApp 経由でスピード送信 (+86 155 6620 6930)',
+    btnCopy: '📋 仕様書テキストをクリップボードにコピー',
+    btnSubmit: '⚡ 技術案件を登録して照会チケットを発行',
+    copied: '✅ 技術仕様書テキストをコピーしました！',
+    submittedTitle: '✅ 技術照会案件の登録が完了しました！',
+    submittedMsg: '技術設計チームが案件カルテを作成しました。24時間以内に初期単線結線図案および見積ドラフトを発行いたします。',
+    ticketLabel: '技術案件管理番号 (RFQ Ticket ID)',
+  },
+};
+
+function InstantEngineeringInquiryGateway({ locale }: { locale: Locale }) {
+  const t = gatewayI18n[locale] || gatewayI18n.en;
+  const [company, setCompany] = useState('');
+  const [name, setName] = useState('');
+  const [contact, setContact] = useState('');
+  const [equipment, setEquipment] = useState('Substation / GIS / Switchgear');
+  const [voltage, setVoltage] = useState('110kV / 35kV');
+  const [location, setLocation] = useState('');
+  const [notes, setNotes] = useState('');
+  const [copied, setCopied] = useState(false);
+  const [ticket, setTicket] = useState<string | null>(null);
+
+  const specText = `[FEICHI POWER EPC REQUISITION SHEET / ОПРОСНЫЙ ЛИСТ]
+--------------------------------------------------
+Company/Organization: ${company || 'N/A'}
+Contact Person: ${name || 'N/A'}
+Email/WhatsApp/Tel: ${contact || 'N/A'}
+Target Equipment: ${equipment}
+Voltage & Capacity: ${voltage}
+Project Location & Schedule: ${location || 'N/A'}
+Technical Specifications & Custom Demands:
+${notes || 'Standard IEC / GOST Compliant configuration.'}
+--------------------------------------------------
+Generated at: ${new Date().toISOString().split('T')[0]}
+Direct Engineer Contact: Henry (henry@feichipower.com | +86 155 6620 6930)`;
+
+  const emailSubject = `[Engineering RFQ] ${equipment} - ${company || 'Global Project'}`;
+  const emailUrl = `mailto:henry@feichipower.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(specText)}`;
+  const whatsappUrl = `https://wa.me/8615566206930?text=${encodeURIComponent(`Hello Henry, here is our electrical equipment requisition:\n\n${specText}`)}`;
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(specText);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newTicket = `FC-RFQ-${new Date().getFullYear()}-${Math.floor(100000 + Math.random() * 900000)}`;
+    setTicket(newTicket);
+  };
+
+  return (
+    <div style={{ background: '#0a1226', border: '1px solid rgba(0, 229, 255, 0.3)', borderRadius: '8px', padding: '36px 30px', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}>
+      <div style={{ marginBottom: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '16px' }}>
+        <h2 style={{ color: '#00e5ff', fontSize: '24px', fontWeight: 800, margin: '0 0 8px' }}>{t.title}</h2>
+        <p style={{ color: '#94a3b8', fontSize: '15px', margin: 0 }}>{t.subtitle}</p>
+      </div>
+
+      {ticket ? (
+        <div style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid #10b981', borderRadius: '6px', padding: '24px', textAlign: 'center' }}>
+          <h3 style={{ color: '#10b981', fontSize: '20px', margin: '0 0 10px' }}>{t.submittedTitle}</h3>
+          <p style={{ color: '#cbd5e1', fontSize: '15px', margin: '0 0 16px' }}>{t.submittedMsg}</p>
+          <div style={{ display: 'inline-block', background: '#040810', border: '1px dashed #10b981', padding: '10px 20px', borderRadius: '4px', color: '#00e5ff', fontFamily: 'monospace', fontWeight: 700, fontSize: '18px', marginBottom: '20px' }}>
+            {t.ticketLabel}: {ticket}
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            <a className="button button-orange" href={emailUrl}>
+              {t.btnEmail}
+            </a>
+            <a className="button button-dark" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              {t.btnWhatsapp}
+            </a>
+            <button className="button button-outline" onClick={() => setTicket(null)}>
+              ← 返回修改参数 (Edit Form)
+            </button>
+          </div>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '20px' }}>
+            <div>
+              <label style={{ display: 'block', color: '#cbd5e1', fontSize: '13px', fontWeight: 700, marginBottom: '6px' }}>{t.companyName}</label>
+              <input
+                type="text"
+                required
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                placeholder="e.g. State Electric Corp / Power EPC Ltd."
+                style={{ width: '100%', padding: '10px 14px', background: '#040810', border: '1px solid #1e293b', borderRadius: '4px', color: '#fff', fontSize: '14px' }}
+              />
+            </div>
+            <div>
+              <label style={{ display: 'block', color: '#cbd5e1', fontSize: '13px', fontWeight: 700, marginBottom: '6px' }}>{t.clientName}</label>
+              <input
+                type="text"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="e.g. Alex Johnson (Lead Electrical Engineer)"
+                style={{ width: '100%', padding: '10px 14px', background: '#040810', border: '1px solid #1e293b', borderRadius: '4px', color: '#fff', fontSize: '14px' }}
+              />
+            </div>
+            <div>
+              <label style={{ display: 'block', color: '#cbd5e1', fontSize: '13px', fontWeight: 700, marginBottom: '6px' }}>{t.contactMethod}</label>
+              <input
+                type="text"
+                required
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
+                placeholder="e.g. alex@powerepc.com / +1 (555) 019-2834"
+                style={{ width: '100%', padding: '10px 14px', background: '#040810', border: '1px solid #1e293b', borderRadius: '4px', color: '#fff', fontSize: '14px' }}
+              />
+            </div>
+            <div>
+              <label style={{ display: 'block', color: '#cbd5e1', fontSize: '13px', fontWeight: 700, marginBottom: '6px' }}>{t.targetEquipment}</label>
+              <select
+                value={equipment}
+                onChange={(e) => setEquipment(e.target.value)}
+                style={{ width: '100%', padding: '10px 14px', background: '#040810', border: '1px solid #1e293b', borderRadius: '4px', color: '#fff', fontSize: '14px' }}
+              >
+                <option value="110kV/220kV Prefabricated Substation (КТПБ/ПСМ)">110kV/220kV Prefabricated Substation (КТПБ/ПСМ)</option>
+                <option value="110kV~220kV Gas Insulated Switchgear (GIS / КРУЭ)">110kV~220kV Gas Insulated Switchgear (GIS / КРУЭ)</option>
+                <option value="Power Transformer 10kV~220kV (Трансформатор ТМН/ТРДН)">Power Transformer 10kV~220kV (Трансформатор ТМН/ТРДН)</option>
+                <option value="Medium Voltage Switchgear 10kV~35kV (КРУ/КСО)">Medium Voltage Switchgear 10kV~35kV (КРУ/КСО)</option>
+                <option value="Eco-friendly RMU & Circuit Breaker (КРУЭ / ВАКУУМНЫЙ ВЫКЛЮЧАТЕЛЬ)">Eco-friendly RMU & Circuit Breaker (КРУЭ)</option>
+                <option value="SVG / STATCOM / Harmonic Filter (ФКУ/СТАТКОМ)">SVG / STATCOM / Harmonic Filter (ФКУ/СТАТКОМ)</option>
+                <option value="Dry-type Air-core Reactor (РТОС/РТСТ)">Dry-type Air-core Reactor (РТОС/РТСТ)</option>
+                <option value="Neutral Grounding Resistor NGR / ASC (ЗНГ/ДГР)">Neutral Grounding Resistor NGR / ASC (ЗНГ/ДГР)</option>
+                <option value="Surge Arrester MOA (ОПН-П 10-220kV)">Surge Arrester MOA (ОПН-П 10-220kV)</option>
+              </select>
+            </div>
+            <div>
+              <label style={{ display: 'block', color: '#cbd5e1', fontSize: '13px', fontWeight: 700, marginBottom: '6px' }}>{t.voltageRating}</label>
+              <input
+                type="text"
+                value={voltage}
+                onChange={(e) => setVoltage(e.target.value)}
+                placeholder="e.g. 110/35/10kV 40MVA / 50kA short-circuit"
+                style={{ width: '100%', padding: '10px 14px', background: '#040810', border: '1px solid #1e293b', borderRadius: '4px', color: '#fff', fontSize: '14px' }}
+              />
+            </div>
+            <div>
+              <label style={{ display: 'block', color: '#cbd5e1', fontSize: '13px', fontWeight: 700, marginBottom: '6px' }}>{t.projectLocation}</label>
+              <input
+                type="text"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="e.g. Kazakhstan / Ashgabat / San Luis Potosi"
+                style={{ width: '100%', padding: '10px 14px', background: '#040810', border: '1px solid #1e293b', borderRadius: '4px', color: '#fff', fontSize: '14px' }}
+              />
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '24px' }}>
+            <label style={{ display: 'block', color: '#cbd5e1', fontSize: '13px', fontWeight: 700, marginBottom: '6px' }}>{t.notesLabel}</label>
+            <textarea
+              rows={3}
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              placeholder="e.g. Altitude 2200m, Ambient temperature -45°C ~ +40°C, IEC 62271 & GOST compliant, dual redundant protection."
+              style={{ width: '100%', padding: '10px 14px', background: '#040810', border: '1px solid #1e293b', borderRadius: '4px', color: '#fff', fontSize: '14px', resize: 'vertical' }}
+            />
+          </div>
+
+          <div style={{ background: '#040810', border: '1px solid #1e293b', borderRadius: '4px', padding: '14px', marginBottom: '24px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+              <span style={{ color: '#00e5ff', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                LIVE STRUCTURED REQUISITION PREVIEW / ТЕХНИЧЕСКИЙ ОПРОСНЫЙ ЛИСТ
+              </span>
+              <button
+                type="button"
+                onClick={handleCopy}
+                style={{ background: 'transparent', border: '1px solid #334155', color: '#94a3b8', padding: '4px 10px', borderRadius: '4px', fontSize: '12px', cursor: 'pointer' }}
+              >
+                {copied ? t.copied : t.btnCopy}
+              </button>
+            </div>
+            <pre style={{ margin: 0, color: '#a5f3fc', fontSize: '12px', fontFamily: 'monospace', whiteSpace: 'pre-wrap', lineHeight: '1.5' }}>
+              {specText}
+            </pre>
+          </div>
+
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+            <button type="submit" className="button button-orange" style={{ cursor: 'pointer' }}>
+              {t.btnSubmit}
+            </button>
+            <a className="button button-dark" href={emailUrl}>
+              {t.btnEmail}
+            </a>
+            <a className="button button-outline" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              {t.btnWhatsapp}
+            </a>
+          </div>
+        </form>
+      )}
+    </div>
+  );
+}
+
 function ContactPage({ locale }: { locale: Locale }) {
   const text = ui[locale];
   const meta = checklistMeta[locale];
@@ -7956,6 +8262,12 @@ function ContactPage({ locale }: { locale: Locale }) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="section" style={{ background: '#070f1e', borderTop: '1px solid rgba(0, 229, 255, 0.15)', padding: '60px 0' }}>
+          <div className="wrap">
+            <InstantEngineeringInquiryGateway locale={locale} />
           </div>
         </section>
       </main>
