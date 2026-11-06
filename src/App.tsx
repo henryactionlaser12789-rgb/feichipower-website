@@ -5764,6 +5764,249 @@ function HeroVisualWithFallback() {
   );
 }
 
+function SizingSuiteSection({ locale }: { locale: Locale }) {
+  const [activeCategory, setActiveCategory] = useState<'all' | 'grid' | 'substation' | 'protection'>('all');
+
+  const suiteText = {
+    zh: {
+      eyebrow: '工程计算套件 · 十八大重工交互选型引擎',
+      title: '交互式十八大重工与超高压电网工程计算套件',
+      copy: '覆盖 35kV–220kV 高压电缆护层、金属氧化物避雷器、空心限流电抗器、高压软起动、中性点接地、GIL管道输电、谐波治理及车载变电站等 18 大专业领域，输入工程负荷即时生成严谨选型计算书与单线图。',
+      all: '全部 18 大工程引擎',
+      grid: '高压电网与电缆输电',
+      substation: '变电站成套与电能质量',
+      protection: '配电保护与电机控制',
+    },
+    en: {
+      eyebrow: 'ENGINEERING SUITE · 18 INTERACTIVE SIZING ENGINES',
+      title: '18-Engine Power Grid & Substation Engineering Sizing Suite',
+      copy: 'Instant electrical simulation, thermal limits, and single-line diagram generation across 18 specialized high-voltage and substation engineering domains. Enter your grid parameters below for immediate design verification and WhatsApp export.',
+      all: 'All 18 Sizing Engines',
+      grid: 'HV Cable & Grid Transmission',
+      substation: 'Substations & Power Quality',
+      protection: 'Protection, Motor & Control',
+    },
+    ru: {
+      eyebrow: 'ИНЖЕНЕРНЫЙ КОМПЛЕКС · 18 РАСЧЕТНЫХ МОДУЛЕЙ',
+      title: 'Комплекс из 18 инженерных расчетных модулей для энергосистем',
+      copy: 'Мгновенный расчет параметров кабельных линий 35-220 кВ, ОПН, реакторов, УППВ, ЗНГ, КТПП, фильтров ФКУ и передвижных подстанций ПСМ-110 с формированием опросных листов по ГОСТ.',
+      all: 'Все 18 расчетных модулей',
+      grid: 'Высоковольтные сети и КЛ',
+      substation: 'Подстанции и качество сети',
+      protection: 'Защита и автоматика',
+    },
+    ja: {
+      eyebrow: 'エンジニアリングスイート · 18大設備計算エンジン',
+      title: '18大電力エンジニアリング選型・設備計算スイート',
+      copy: '高圧ケーブル、避雷器、限流リアクトル、高圧ソフトスタータ、中性点接地、GIL、高調波フィルタ、移動変電所など18分野の設備仕様を瞬時に算出。',
+      all: '全 18 選型エンジン',
+      grid: '高圧送電・ケーブル',
+      substation: '変電所・電力品質',
+      protection: '保護制御・機器',
+    },
+    es: {
+      eyebrow: 'SUITE DE INGENIERÍA · 18 MOTORES DE CÁLCULO',
+      title: 'Suite Integral de 18 Motores de Cálculo para Redes y Subestaciones',
+      copy: 'Simulación y cálculo inmediato para cables de alta tensión, pararrayos MOA, reactancias limitadoras, arrancadores suaves, puesta a tierra NGR, líneas GIL y subestaciones móviles.',
+      all: 'Todos los 18 Motores',
+      grid: 'Redes y Transmisión',
+      substation: 'Subestaciones y Calidad',
+      protection: 'Protección y Control',
+    },
+  }[locale] || {
+    eyebrow: 'ENGINEERING SUITE · 18 INTERACTIVE SIZING ENGINES',
+    title: '18-Engine Power Grid & Substation Engineering Sizing Suite',
+    copy: 'Instant electrical simulation, thermal limits, and single-line diagram generation across 18 specialized high-voltage and substation engineering domains.',
+    all: 'All 18 Sizing Engines',
+    grid: 'HV Cable & Grid Transmission',
+    substation: 'Substations & Power Quality',
+    protection: 'Protection, Motor & Control',
+  };
+
+  const engines = [
+    { id: 'calc-hv-cable', num: '#18', cat: 'grid', title: { zh: '35kV–220kV 高压电缆附件与护层电压', en: '35kV–220kV HV Cable Accessories & Sheath Voltage', ru: 'Кабельная арматура 35-220 кВ', ja: '35kV–220kV 高圧ケーブル接続部', es: 'Accesorios para Cables de 35-220kV' }[locale] || '35kV–220kV HV Cable Accessories' },
+    { id: 'calc-moa-arrester', num: '#17', cat: 'grid', title: { zh: '变电站氧化锌避雷器(MOA)绝缘配合', en: 'Substation ZnO Surge Arrester (MOA)', ru: 'ОПН-П 10-35 кВ и координация изоляции', ja: '酸化亜鉛避雷器(MOA)・絶縁協調', es: 'Pararrayos de Óxido Metálico (MOA)' }[locale] || 'Substation ZnO Surge Arrester (MOA)' },
+    { id: 'calc-air-reactor', num: '#16', cat: 'grid', title: { zh: '50kA 干式空心限流电抗器', en: '50kA Air-Core Current-Limiting Reactor', ru: 'Реакторы РТОС 10-35 кВ', ja: '50kA 空心限流リアクトル', es: 'Reactancia Limitadora de Núcleo de Aire' }[locale] || '50kA Air-Core Current-Limiting Reactor' },
+    { id: 'calc-soft-starter', num: '#15', cat: 'protection', title: { zh: '10kV–35kV 电机磁控/固态软起动', en: '10kV–35kV Motor MCR/Solid-State Soft Starter', ru: 'УППВ / ВУП 10-35 кВ плавный пуск', ja: '高圧電動機 磁気制御・ソフトスタータ', es: 'Arrancador Suave de 10-35kV' }[locale] || '10kV–35kV Motor Soft Starter' },
+    { id: 'calc-ngr-grounding', num: '#14', cat: 'protection', title: { zh: '10kV–35kV 中性点接地电阻柜(NGR)', en: '10kV–35kV Neutral Grounding Resistor (NGR)', ru: 'Резисторы ЗНГ 10-35 кВ и ДГР', ja: '中性点接地抵抗器(NGR)', es: 'Resistencia de Puesta a Tierra (NGR)' }[locale] || '10kV–35kV Neutral Grounding Resistor' },
+    { id: 'calc-gil-line', num: '#13', cat: 'grid', title: { zh: '110kV–220kV 气体绝缘输电线路(GIL)', en: '110kV–220kV Gas-Insulated Lines (GIL)', ru: 'КТПП / GIL 110-220 кВ токопроводы', ja: 'ガス絶縁送電線路(GIL)', es: 'Líneas Aisladas en Gas (GIL)' }[locale] || '110kV–220kV Gas-Insulated Lines (GIL)' },
+    { id: 'calc-apf-filter', num: '#12', cat: 'substation', title: { zh: '10kV–35kV 高压谐波治理 APF/FC', en: '10kV–35kV Active APF & Passive FC Filter', ru: 'ФКУ-35 / ФСУ-10 фильтры гармоник', ja: '高圧アクティブフィルタ(APF)・FC', es: 'Filtro de Armónicos APF/FC' }[locale] || '10kV–35kV Active APF & Passive FC Filter' },
+    { id: 'calc-mobile-substation', num: '#11', cat: 'substation', title: { zh: '35kV–110kV 车载移动式变电站', en: '35kV–110kV Mobile Containerized Substation', ru: 'Передвижные подстанции ПСМ-110', ja: '35kV–110kV 車載移動式変電所', es: 'Subestación Móvil de 35-110kV' }[locale] || '35kV–110kV Mobile Substation' },
+    { id: 'calc-ncit-mu', num: '#10', cat: 'grid', title: { zh: '110kV–220kV 光电互感器与合并单元', en: '110kV–220kV Optical NCIT & Merging Unit', ru: 'Оптические NCIT и блоки MU', ja: '光ファイバ変成器(NCIT)・MU', es: 'Transformadores Ópticos NCIT y MU' }[locale] || '110kV–220kV Optical NCIT & Merging Unit' },
+    { id: 'calc-svg-reactive', num: '#09', cat: 'substation', title: { zh: '10kV–35kV 动态无功补偿 SVG/STATCOM', en: '10kV–35kV Static Var Generator SVG/STATCOM', ru: 'СТАТКОМ / SVG 10-35 кВ', ja: '静止型無効電力発生装置(SVG)', es: 'Generador Estático de Var SVG' }[locale] || '10kV–35kV Static Var Generator SVG' },
+    { id: 'calc-transformer-kva', num: '#08', cat: 'substation', title: { zh: '电力变压器容量kVA与能效损耗', en: 'Power Transformer kVA & Efficiency Loss', ru: 'Силовые трансформаторы ТМГ/ТСЛ', ja: '変圧器 容量(kVA)・損失計算', es: 'Transformador kVA y Eficiencia' }[locale] || 'Power Transformer kVA Sizer' },
+    { id: 'calc-trv-breaker', num: '#07', cat: 'protection', title: { zh: '40.5kV–252kV 断路器开断与TRV', en: '40.5kV–252kV Circuit Breaker Breaking & TRV', ru: 'Выключатели 40.5-252 кВ (TRV)', ja: '高圧遮断器 遮断容量・TRV', es: 'Interruptores de Alta Tensión y TRV' }[locale] || 'HV Circuit Breaker TRV Sizer' },
+    { id: 'calc-disconnector-ice', num: '#06', cat: 'protection', title: { zh: '35kV–110kV 隔离开关与破冰力矩', en: '35kV–110kV Disconnector & Ice-Break Torque', ru: 'Разъединители РГП 35-110 кВ', ja: '高圧断路器・着氷破砕トルク', es: 'Seccionadores y Par de Hielo' }[locale] || '35kV–110kV Disconnector Sizer' },
+    { id: 'calc-busbar-thermal', num: '#05', cat: 'protection', title: { zh: '35kV 铜铝母线热稳定与动稳定', en: '35kV Busbar Thermal & Dynamic Sizer', ru: 'Шинные мосты 35 кВ', ja: '母線 熱的・動的短絡耐量', es: 'Barras Colectoras de 35kV' }[locale] || '35kV Busbar Thermal Sizer' },
+    { id: 'calc-pv-bess-drop', num: '#04', cat: 'protection', title: { zh: '光储集电电缆压降与经济截面', en: 'Solar PV & BESS Cable Voltage Drop', ru: 'Кабельные линии СЭС/ВЭС', ja: '太陽光・蓄電ケーブル電圧降下', es: 'Caída de Tensión Solar y BESS' }[locale] || 'PV & BESS Cable Drop Sizer' },
+    { id: 'calc-flisr-recloser', num: '#03', cat: 'protection', title: { zh: '智能真空重合器自愈保护(FLISR)', en: 'Smart Recloser & FLISR Protection', ru: 'Реклоузеры вакуумные FLISR', ja: 'スマートリクローザ・FLISR', es: 'Reconectador en Vacío y FLISR' }[locale] || 'Smart Recloser FLISR Sizer' },
+    { id: 'nitrogen-sizer', num: '#02', cat: 'protection', title: { zh: '采空区注氮防灭火与工业PSA制氮', en: 'PSA Nitrogen Generator & Gob Inerting', ru: 'Азотные станции FC-N2', ja: '産業用PSA窒素発生装置', es: 'Generador de Nitrógeno PSA' }[locale] || 'PSA Nitrogen Generator Sizer' },
+    { id: 'calc-sld-configurator', num: '#01', cat: 'substation', title: { zh: '模块化预装式箱式变电站 SLD 配置', en: 'Packaged Prefab Substation SLD Single-Line', ru: 'КТП / 2КТПН схемы SLD', ja: 'プレハブ変電所 SLD単線結線図', es: 'Subestación Prefabricada SLD' }[locale] || 'Packaged Substation SLD Sizer' },
+  ];
+
+  const filteredEngines = activeCategory === 'all' ? engines : engines.filter(e => e.cat === activeCategory);
+
+  const scrollToEngine = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  return (
+    <section id="substation-sizer" className="section sld-section section-darker">
+      <div className="wrap">
+        <div className="sizing-suite-header-wrap">
+          <SectionTitle
+            eyebrow={suiteText.eyebrow}
+            title={suiteText.title}
+            copy={suiteText.copy}
+          />
+          <div className="sizing-suite-category-bar">
+            <button
+              type="button"
+              className={`sizing-suite-cat-btn ${activeCategory === 'all' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('all')}
+            >
+              <span>{suiteText.all}</span>
+              <span className="sizing-suite-cat-count">18</span>
+            </button>
+            <button
+              type="button"
+              className={`sizing-suite-cat-btn ${activeCategory === 'grid' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('grid')}
+            >
+              <span>⚡ {suiteText.grid}</span>
+              <span className="sizing-suite-cat-count">5</span>
+            </button>
+            <button
+              type="button"
+              className={`sizing-suite-cat-btn ${activeCategory === 'substation' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('substation')}
+            >
+              <span>🏭 {suiteText.substation}</span>
+              <span className="sizing-suite-cat-count">5</span>
+            </button>
+            <button
+              type="button"
+              className={`sizing-suite-cat-btn ${activeCategory === 'protection' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('protection')}
+            >
+              <span>🛡️ {suiteText.protection}</span>
+              <span className="sizing-suite-cat-count">8</span>
+            </button>
+          </div>
+          <div className="engine-quick-jump-grid">
+            {filteredEngines.map((e) => (
+              <button
+                key={e.id}
+                type="button"
+                className="engine-jump-chip"
+                onClick={() => scrollToEngine(e.id)}
+              >
+                <span className="engine-chip-num">{e.num}</span>
+                <span className="engine-chip-title">{e.title}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* 18 Calculation Engines with individual IDs for smooth navigation */}
+        {(activeCategory === 'all' || activeCategory === 'grid') && (
+          <div id="calc-hv-cable">
+            <HighVoltageCableAccessorySizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'grid') && (
+          <div id="calc-moa-arrester">
+            <SubstationSurgeArresterSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'grid') && (
+          <div id="calc-air-reactor">
+            <AirCoreCurrentLimitingReactorSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'protection') && (
+          <div id="calc-soft-starter">
+            <HighVoltageSoftStarterSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'protection') && (
+          <div id="calc-ngr-grounding">
+            <NeutralGroundingResistorSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'grid') && (
+          <div id="calc-gil-line">
+            <GilTransmissionLineSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'substation') && (
+          <div id="calc-apf-filter">
+            <HarmonicFilterApfSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'substation') && (
+          <div id="calc-mobile-substation">
+            <MobileSubstationSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'grid') && (
+          <div id="calc-ncit-mu">
+            <NcitOpticalTransformerSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'substation') && (
+          <div id="calc-transformer-kva">
+            <TransformerKvaSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'substation') && (
+          <div id="calc-svg-reactive">
+            <SvgReactiveCalculator locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'protection') && (
+          <div id="calc-trv-breaker">
+            <TrvBreakerSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'protection') && (
+          <div id="calc-disconnector-ice">
+            <DisconnectorSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'protection') && (
+          <div id="calc-busbar-thermal">
+            <BusbarThermalSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'protection') && (
+          <div id="calc-pv-bess-drop">
+            <PvBessCableDropSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'protection') && (
+          <div id="calc-flisr-recloser">
+            <FlisrProtectionSizer locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'substation') && (
+          <div id="calc-sld-configurator">
+            <SldConfigurator locale={locale} />
+          </div>
+        )}
+        {(activeCategory === 'all' || activeCategory === 'protection') && (
+          <div id="nitrogen-sizer">
+            <NitrogenSizer locale={locale} />
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 function Home({ locale }: { locale: Locale }) {
   const text = ui[locale];
   return (
@@ -5873,34 +6116,8 @@ function Home({ locale }: { locale: Locale }) {
         {/* Unified 80+ Global Overseas Track Record & EPC Matrix (Single Authoritative Showcase) */}
         <OverseasProjectsTrackRecord locale={locale} />
 
-        {/* Interactive Dual Sizing Engines Section */}
-        <section id="substation-sizer" className="section sld-section section-darker">
-          <div className="wrap">
-            <SectionTitle
-              eyebrow="ENGINEERING INTERACTION & SIZING CALCULATORS"
-              title={locale === 'zh' ? '交互式十八大重工与超高压电缆工程计算工具箱：高压电缆附件/护层感应电压、金属氧化物避雷器MOA、限流电抗器CLR、高压电机软起动MCR/固态、中性点接地电阻NGR、气体绝缘输电线路GIL、高压谐波治理APF、车载移动变电站、光电互感器合并单元、变压器、SVG无功、高压断路器TRV、隔离开关破冰、母线热稳定、光储压降、智能重合器自愈、箱变与制氮机选型' : 'Comprehensive 18-Engine Engineering Sizing Suite: HV Cable Accessories & Sheath Induced Voltage, Metal-Oxide Surge Arresters MOA, Current-Limiting Reactor CLR, Motor Soft Starters MCR/SSS, Neutral Grounding Resistor NGR, Gas-Insulated Lines GIL, Harmonic Active Filters APF/FC, Mobile Substations, Optical NCIT & Merging Units, Transformers, STATCOM, HV Breakers TRV, Disconnectors Ice-Breaking, Busbars, Solar Skid, Smart Recloser FLISR, SLD & Nitrogen'}
-              copy={locale === 'zh' ? '输入您的电网负荷、电缆长度与护层接地方式、短路电流、避雷器绝缘裕度、限流电抗率、电机轴功率、中性点接地阻值、GIL走廊长度、谐波目标THD、断路器TRV开断、隔离开关破冰力矩、车载变电站轴荷公路限值、光电互感器SV流速率、线路接地电容或光储集电参数，系统实时完成高精度电气核算并生成一键技术方案。' : 'Specify your grid active load, cable length & sheath earthing scheme, short-circuit withstand, surge arrester BIL margin %, reactor reactance %, motor kW, NGR resistance, GIL corridor length, target harmonic THD, breaker TRV duty, disconnector ice torque, mobile substation axle loads, optical NCIT SV traffic, reactive harmonics, ground capacitance, or solar skid parameters to generate instant model proposals and engineering dossiers.'}
-            />
-            <HighVoltageCableAccessorySizer locale={locale} />
-            <SubstationSurgeArresterSizer locale={locale} />
-            <AirCoreCurrentLimitingReactorSizer locale={locale} />
-            <HighVoltageSoftStarterSizer locale={locale} />
-            <NeutralGroundingResistorSizer locale={locale} />
-            <GilTransmissionLineSizer locale={locale} />
-            <HarmonicFilterApfSizer locale={locale} />
-            <MobileSubstationSizer locale={locale} />
-            <NcitOpticalTransformerSizer locale={locale} />
-            <TransformerKvaSizer locale={locale} />
-            <SvgReactiveCalculator locale={locale} />
-            <TrvBreakerSizer locale={locale} />
-            <DisconnectorSizer locale={locale} />
-            <BusbarThermalSizer locale={locale} />
-            <PvBessCableDropSizer locale={locale} />
-            <FlisrProtectionSizer locale={locale} />
-            <SldConfigurator locale={locale} />
-            <NitrogenSizer locale={locale} />
-          </div>
-        </section>
+        {/* 18-Engine Power Grid & Substation Engineering Sizing Suite (Categorized & Filterable) */}
+        <SizingSuiteSection locale={locale} />
 
         {/* 3D Chamber Anatomy Section */}
         <SubstationAnatomy locale={locale} />
