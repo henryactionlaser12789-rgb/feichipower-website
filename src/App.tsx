@@ -6757,10 +6757,7 @@ function CasesPage({ locale }: { locale: Locale }) {
       <main>
         <PageHero eyebrow={text.casesEyebrow} title={text.casesTitle} copy={text.casesCopy} image={fieldImages[0]} />
 
-        {/* Global Reference Projects & Commissioning Showcase */}
-        <GlobalProjectsShowcase locale={locale} />
-
-        {/* 49+ Global Overseas Track Record & EPC Matrix */}
+        {/* Unified 80+ Global Overseas Track Record & EPC Matrix (Single Authoritative Showcase) */}
         <OverseasProjectsTrackRecord locale={locale} />
 
         {/* 81+ Strategic Partners & Collaborative Ecosystem */}
@@ -6784,72 +6781,6 @@ function CasesPage({ locale }: { locale: Locale }) {
               <div>
                 <strong>30+ Countries</strong>
                 <span>Global Inquiries & Partnerships</span>
-              </div>
-            </div>
-
-            {/* Official 38P Brochure Project Track Record */}
-            <div style={{ marginTop: '48px' }}>
-              <SectionTitle
-                eyebrow="GLOBAL EPC & DOMESTIC TRACK RECORD"
-                title={locale === 'zh' ? '官方画册重点工程业绩与全球交付案例' : 'Global Reference Projects & Track Record (Official Brochure)'}
-                copy={locale === 'zh' ? '从几内亚西芒杜铁矿、沙特循环电站，到沈阳地铁与奥迪一汽新能源，飞驰电气以卓越品质护航全球电力基建。' : 'From Simandou Iron Ore Port in Guinea to Saudi Arabia power stations, Shenyang Metro and Audi-FAW solar, Feichi delivers verified power solutions.'}
-              />
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginTop: '24px' }}>
-                {projectList.map((sec, idx) => (
-                  <div key={idx} style={{ background: 'var(--panel)', border: '1px solid var(--border)', borderRadius: '8px', padding: '24px' }}>
-                    <h3 style={{ color: 'var(--orange)', fontSize: '18px', margin: '0 0 16px', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '10px' }}>
-                      {sec.category[locale] || sec.category.en}
-                    </h3>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
-                      {sec.items.map((item, i) => (
-                        <div key={i} style={{ background: 'var(--panel-2)', border: '1px solid var(--border-subtle)', borderRadius: '6px', padding: '16px' }}>
-                          <h4 style={{ margin: '0 0 8px', fontSize: '15px', color: 'var(--text)' }}>
-                            {locale === 'zh' ? item.zh : item.name}
-                          </h4>
-                          <p style={{ margin: '0 0 6px', fontSize: '13px', color: 'var(--cyan)', fontWeight: 600 }}>
-                            {item.equip}
-                          </p>
-                          <p style={{ margin: 0, fontSize: '12px', color: 'var(--muted)', lineHeight: 1.5 }}>
-                            {item.highlight}
-                          </p>
-                          {'deepDive' in item && item.deepDive && (
-                            <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px dashed rgba(148, 163, 184, 0.2)', fontSize: '12px' }}>
-                              <div style={{ marginBottom: '4px' }}>
-                                <span style={{ color: '#f59e0b', fontWeight: 700 }}>• Challenge: </span>
-                                <span style={{ color: '#cbd5e1' }}>{item.deepDive.challenge}</span>
-                              </div>
-                              <div style={{ marginBottom: '4px' }}>
-                                <span style={{ color: '#06b6d4', fontWeight: 700 }}>• Solution: </span>
-                                <span style={{ color: '#cbd5e1' }}>{item.deepDive.solution}</span>
-                              </div>
-                              <div>
-                                <span style={{ color: '#10b981', fontWeight: 700 }}>• Result: </span>
-                                <span style={{ color: '#6ee7b7' }}>{item.deepDive.result}</span>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Strategic Partnerships */}
-            <StrategicPartnershipSection locale={locale} />
-
-            {/* Official 2026 Multilingual Catalog Download Center */}
-            <OfficialCatalogDownloadSection locale={locale} />
-
-            <div className="case-note" style={{ marginTop: '36px' }}>
-              <ShieldCheck size={24} />
-              <div>
-                <strong>Authentic Manufacturing & Project Evidence</strong>
-                <p>
-                  All project references, type test reports and authorizations are drawn directly from Shenyang Feichi Electrical Equipment Co., Ltd. official 38-page brochure and engineering archives.
-                </p>
               </div>
             </div>
           </div>
