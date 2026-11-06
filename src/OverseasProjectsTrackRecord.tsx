@@ -11,11 +11,11 @@ export function OverseasProjectsTrackRecord({ locale }: { locale: Locale }) {
   const [viewMode, setViewMode] = useState<'grid' | 'table'>('grid');
 
   const regionLabels: Record<string, Record<Locale, string>> = {
-    all: { zh: '全部海外项目 (49+)', en: 'All Global Projects (49+)', ru: 'Все зарубежные проекты (49+)', es: 'Todos los Proyectos (49+)', ja: 'すべての海外プロジェクト (49+)' },
+    all: { zh: '全部重点项目 (80+)', en: 'All Flagship Projects (80+)', ru: 'Все ключевые проекты (80+)', es: 'Todos los Proyectos (80+)', ja: 'すべてのプロジェクト (80+)' },
     americas: { zh: '美洲大区 (墨西哥/尼加拉瓜/秘鲁)', en: 'Americas (Mexico, Nicaragua, Peru)', ru: 'Америка (Мексика, Никарагуа, Перу)', es: 'América (México, Nicaragua, Perú)', ja: 'アメリカ州 (メキシコ/ニカラグア/ペルー)' },
     sea: { zh: '东南亚与大洋洲 (菲律宾/印尼/孟加拉)', en: 'Southeast Asia & Pacific (Philippines, Indonesia)', ru: 'ЮВА и Пацифика (Филиппины, Индонезия)', es: 'Sudeste Asiático (Filipinas, Indonesia)', ja: '東南アジア (フィリピン/インドネシア)' },
-    cis: { zh: '中亚与独联体 (蒙古/吉尔吉斯斯坦)', en: 'Central Asia & CIS (Mongolia, Kyrgyzstan)', ru: 'Центральная Азия и СНГ (Монголия, Кыргызстан)', es: 'Asia Central y CEI (Mongolia, Kirguistán)', ja: '中央アジア・CIS (モンゴル/キルギス)' },
-    mea: { zh: '中东与非洲 (几内亚/沙特/伊拉克/尼日利亚)', en: 'Middle East & Africa (Guinea, Saudi, Iraq)', ru: 'Ближний Восток и Африка (Гвинея, Саудовская Аравия)', es: 'Oriente Medio y África (Guinea, Arabia Saudita)', ja: '中東・アフリカ (ギニア/サウジ/イラク)' },
+    cis: { zh: '中亚与独联体 (蒙古/哈萨克/吉尔吉斯)', en: 'Central Asia & CIS (Mongolia, Kazakhstan, Kyrgyzstan)', ru: 'Центральная Азия и СНГ (Монголия, Казахстан, Кыргызстан)', es: 'Asia Central y CEI (Mongolia, Kazajistán, Kirguistán)', ja: '中央アジア・CIS (モンゴル/カザフスタン/キルギス)' },
+    mea: { zh: '中东与非洲 (几内亚/沙特/伊拉克/尼日利亚)', en: 'Middle East & Africa (Guinea, Saudi, Iraq, Nigeria)', ru: 'Ближний Восток и Африка (Гвинея, Саудовская Аравия, Ирак)', es: 'Oriente Medio y África (Guinea, Arabia Saudita, Irak)', ja: '中東・アフリカ (ギニア/サウジ/イラク)' },
   };
 
   const sectorLabels: Record<string, Record<Locale, string>> = {
@@ -55,17 +55,17 @@ export function OverseasProjectsTrackRecord({ locale }: { locale: Locale }) {
           </span>
           <h2 style={{ font: '900 32px/1.2 var(--display)', color: '#ffffff', letterSpacing: '-0.02em', marginTop: '10px' }}>
             {locale === 'zh'
-              ? '全球 49+ 重大出海项目业绩全览与履约矩阵'
+              ? '全球 80+ 海内外重大工程业绩全览与履约矩阵'
               : locale === 'ru'
-              ? 'Глобальный реестр 49+ реализованных международных EPC проектов'
-              : 'Global Track Record: 49+ Overseas Projects & EPC Delivery Matrix'}
+              ? 'Глобальный реестр 80+ реализованных международных и национальных EPC проектов'
+              : 'Global Track Record: 80+ Flagship Projects & Global EPC Delivery Matrix'}
           </h2>
           <p style={{ color: '#94a3b8', fontSize: '15px', maxWidth: '820px', margin: '14px auto 0' }}>
             {locale === 'zh'
-              ? '覆盖美洲、中亚独联体、东南亚、中东及非洲等 18 个国家和地区，累计交付逾 1,600 台套中高压开关柜、箱变与预制舱设备。'
+              ? '覆盖美洲、中亚独联体、东南亚、中东及非洲等 20+ 个国家与地区，深度服务千万吨级钢铁基地、特大矿山、城市地铁与大型新能源升压电站。'
               : locale === 'ru'
-              ? 'Опыт поставок в 18 стран мира: Латинская Америка, Центральная Азия и СНГ, ЮВА, Ближний Восток и Африка. Более 1600 комплектов высоковольтного оборудования.'
-              : 'Delivered to 18 countries across the Americas, Central Asia, CIS, SE Asia, and Africa. Over 1,600 sets of HV/LV switchgear, modular substations, and transformers.'}
+              ? 'Опыт поставок в 20+ стран мира: Латинская Америка, Центральная Азия и СНГ, ЮВА, Ближний Восток, Африка и ключевые промышленные комплексы.'
+              : 'Delivered to 20+ countries across the Americas, Central Asia, CIS, SE Asia, and Africa. Proven track record across mining hubs, heavy metallurgy, subways, and utility-scale solar/wind substations.'}
           </p>
 
           {/* Quick Metrics */}
