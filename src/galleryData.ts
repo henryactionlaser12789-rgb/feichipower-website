@@ -303,10 +303,10 @@ export const certificationsList: CertificationItem[] = [
     "id": "cert_business_license_101m",
     "title": {
       "zh": "沈阳飞驰电气营业执照（注册资本1.01亿元）",
-      "en": "Official Business License (RMB 101 Million Capital)",
+      "en": "Official Business License (RMB 101M Capital)",
       "ru": "Лицензия на коммерческую деятельность (101 млн юаней)",
-      "es": "Official Business License (RMB 101 Million Capital)",
-      "ja": "Official Business License (RMB 101 Million Capital)"
+      "es": "Official Business License (RMB 101M Capital)",
+      "ja": "Official Business License (RMB 101M Capital)"
     },
     "category": "national",
     "issuer": "沈阳市市场监督管理局",
@@ -317,14 +317,14 @@ export const certificationsList: CertificationItem[] = [
   {
     "id": "cert_iso9001_quality",
     "title": {
-      "zh": "ISO 9001 质量管理体系认证证书",
+      "zh": "ISO 9001:2015 质量管理体系认证证书",
       "en": "ISO 9001:2015 Quality Management System Certification",
       "ru": "Сертификат менеджмента качества ISO 9001:2015",
       "es": "ISO 9001:2015 Quality Management System Certification",
       "ja": "ISO 9001:2015 Quality Management System Certification"
     },
     "category": "international",
-    "issuer": "中国国家认证认可监督管理委员会 (CNCA)",
+    "issuer": "国家认证认可监督管理委员会 (CNCA)",
     "standard": "GB/T 19001-2016 / ISO 9001:2015",
     "image": "/images/certificates/cert_iso9001_quality.webp",
     "highlight": true
@@ -332,14 +332,14 @@ export const certificationsList: CertificationItem[] = [
   {
     "id": "cert_iso14001_environmental",
     "title": {
-      "zh": "ISO 14001 环境管理体系认证证书",
+      "zh": "ISO 14001:2015 环境管理体系认证证书",
       "en": "ISO 14001:2015 Environmental Management Certification",
       "ru": "Сертификат экологического менеджмента ISO 14001:2015",
       "es": "ISO 14001:2015 Environmental Management Certification",
       "ja": "ISO 14001:2015 Environmental Management Certification"
     },
     "category": "international",
-    "issuer": "中国国家认证认可监督管理委员会 (CNCA)",
+    "issuer": "国家认证认可监督管理委员会 (CNCA)",
     "standard": "GB/T 24001-2016 / ISO 14001:2015",
     "image": "/images/certificates/cert_iso14001_environmental.webp",
     "highlight": false
@@ -347,46 +347,91 @@ export const certificationsList: CertificationItem[] = [
   {
     "id": "cert_iso45001_safety",
     "title": {
-      "zh": "ISO 45001 职业健康安全管理体系认证证书",
+      "zh": "ISO 45001:2018 职业健康安全管理体系认证证书",
       "en": "ISO 45001:2018 Occupational Health & Safety Certification",
       "ru": "Сертификат охраны труда и безопасности ISO 45001",
       "es": "ISO 45001:2018 Occupational Health & Safety Certification",
       "ja": "ISO 45001:2018 Occupational Health & Safety Certification"
     },
     "category": "international",
-    "issuer": "中国国家认证认可监督管理委员会 (CNCA)",
+    "issuer": "国家认证认可监督管理委员会 (CNCA)",
     "standard": "GB/T 45001-2020 / ISO 45001:2018",
     "image": "/images/certificates/cert_iso45001_safety.webp",
     "highlight": false
   },
   {
-    "id": "cert_power_facilities_permit",
+    "id": "cert_iso50001_energy",
     "title": {
-      "zh": "承装（修、试）电力设施许可证（四级资质）",
-      "en": "Installation, Repair & Testing Power Facility License",
-      "ru": "Лицензия на монтаж, наладку и испытания энергообъектов",
-      "es": "Installation, Repair & Testing Power Facility License",
-      "ja": "Installation, Repair & Testing Power Facility License"
+      "zh": "ISO 50001 能源管理体系认证证书",
+      "en": "ISO 50001 Energy Management System Certification",
+      "ru": "Сертификат энергоменеджмента ISO 50001",
+      "es": "ISO 50001 Energy Management System Certification",
+      "ja": "ISO 50001 Energy Management System Certification"
+    },
+    "category": "international",
+    "issuer": "国家认证认可监督管理委员会 (CNCA)",
+    "standard": "GB/T 23331-2020 / ISO 50001",
+    "image": "/images/certificates/cert_iso50001_energy.webp",
+    "highlight": false
+  },
+  {
+    "id": "cert_green_supply_chain",
+    "title": {
+      "zh": "绿色供应链管理体系认证证书",
+      "en": "Green Supply Chain Management Certification",
+      "ru": "Сертификат экологической цепочки поставок",
+      "es": "Green Supply Chain Management Certification",
+      "ja": "Green Supply Chain Management Certification"
     },
     "category": "national",
-    "issuer": "国家能源局东北监管局 (NEA)",
-    "standard": "承装四级 / 承修四级 / 承试四级",
-    "image": "/images/certificates/cert_power_facilities_permit.webp",
-    "highlight": true
+    "issuer": "国家绿色评价机构",
+    "standard": "绿色制造与供应链星级认证",
+    "image": "/images/certificates/cert_green_supply_chain.webp",
+    "highlight": false
   },
   {
     "id": "cert_aaa_credit_rating",
     "title": {
-      "zh": "AAA 级企业信用等级证书与资信证明",
-      "en": "AAA Grade Enterprise Credit Rating Certification",
+      "zh": "全国 AAA 级企业信用等级证书",
+      "en": "National AAA-Grade Enterprise Credit Rating",
       "ru": "Сертификат наивысшего кредитного рейтинга AAA",
-      "es": "AAA Grade Enterprise Credit Rating Certification",
-      "ja": "AAA Grade Enterprise Credit Rating Certification"
+      "es": "National AAA-Grade Enterprise Credit Rating",
+      "ja": "National AAA-Grade Enterprise Credit Rating"
     },
     "category": "national",
     "issuer": "中国人民银行备案信用评估机构",
-    "standard": "AAA 顶级信用评级",
+    "standard": "AAA 级重合同守信用企业",
     "image": "/images/certificates/cert_aaa_credit_rating.webp",
+    "highlight": true
+  },
+  {
+    "id": "cert_bank_account_permit",
+    "title": {
+      "zh": "中国人民银行基本存款账户开户许可证",
+      "en": "People's Bank of China Bank Account Permit",
+      "ru": "Разрешение на открытие банковского счета",
+      "es": "People's Bank of China Bank Account Permit",
+      "ja": "People's Bank of China Bank Account Permit"
+    },
+    "category": "national",
+    "issuer": "中国人民银行",
+    "standard": "合规资金与基本结算账户",
+    "image": "/images/certificates/cert_bank_account_permit.webp",
+    "highlight": false
+  },
+  {
+    "id": "cert_specialized_little_giant",
+    "title": {
+      "zh": "国家级专精特新“小巨人”企业证书",
+      "en": "National \"Little Giant\" Specialized Enterprise Certificate",
+      "ru": "Свидетельство предприятия «Малый гигант»",
+      "es": "National \"Little Giant\" Specialized Enterprise Certificate",
+      "ja": "National \"Little Giant\" Specialized Enterprise Certificate"
+    },
+    "category": "national",
+    "issuer": "中华人民共和国工业和信息化部 (MIIT)",
+    "standard": "国家级专精特新重点小巨人认定",
+    "image": "/images/certificates/cert_specialized_little_giant.webp",
     "highlight": true
   },
   {
@@ -400,57 +445,57 @@ export const certificationsList: CertificationItem[] = [
     },
     "category": "national",
     "issuer": "辽宁省科学技术厅 / 财政厅 / 税务局",
-    "standard": "国家级高新技术企业认定",
+    "standard": "国家级高新技术企业认定 GR202221000842",
     "image": "/images/certificates/cert_high_tech_enterprise.webp",
     "highlight": true
   },
   {
-    "id": "cert_sgcc_transformer_prequalification",
+    "id": "cert_spic_qualified_supplier",
     "title": {
-      "zh": "国家电网 10kV 配电变压器资格预审合格通知书",
-      "en": "State Grid (SGCC) 10kV Transformer Prequalification Notice",
-      "ru": "Уведомление о предквалификации трансформаторов 10 кВ ПАО «Россети»/SGCC",
-      "es": "State Grid (SGCC) 10kV Transformer Prequalification Notice",
-      "ja": "State Grid (SGCC) 10kV Transformer Prequalification Notice"
+      "zh": "国家电力投资集团合格供应商证书 (风电光伏箱变/高压柜)",
+      "en": "SPIC Qualified Supplier Certificate (Solar/Wind Substation & Switchgear)",
+      "ru": "Квалификационный сертификат поставщика холдинга SPIC",
+      "es": "SPIC Qualified Supplier Certificate (Solar/Wind Substation & Switchgear)",
+      "ja": "SPIC Qualified Supplier Certificate (Solar/Wind Substation & Switchgear)"
     },
     "category": "energy",
-    "issuer": "国家电网有限公司 (SGCC)",
-    "standard": "国网物资集中采购联合资格预审",
-    "image": "/images/certificates/cert_sgcc_transformer_prequalification.webp",
+    "issuer": "国家电力投资集团有限公司 (SPIC)",
+    "standard": "风电光伏升压箱变及高压成套入围合格供应商",
+    "image": "/images/certificates/cert_spic_qualified_supplier.webp",
     "highlight": true
   },
   {
-    "id": "cert_sgcc_rmu_prequalification",
+    "id": "cert_sgcc_10kv_transformer_prequal",
     "title": {
-      "zh": "国家电网 环网柜/箱式开闭所资格预审合格通知书",
-      "en": "State Grid (SGCC) Ring Main Unit Prequalification Notice",
+      "zh": "国家电网 10kV 配电变压器资格预审合格通知书",
+      "en": "State Grid (SGCC) 10kV Distribution Transformer Prequalification",
+      "ru": "Уведомление о предквалификации трансформаторов 10 кВ SGCC",
+      "es": "State Grid (SGCC) 10kV Distribution Transformer Prequalification",
+      "ja": "State Grid (SGCC) 10kV Distribution Transformer Prequalification"
+    },
+    "category": "energy",
+    "issuer": "国家电网有限公司物资部 (SGCC)",
+    "standard": "国网物资集中采购联合资格预审合格通知",
+    "image": "/images/certificates/cert_sgcc_10kv_transformer_prequal.webp",
+    "highlight": true
+  },
+  {
+    "id": "cert_sgcc_rmu_switchgear_prequal",
+    "title": {
+      "zh": "国家电网 环网柜、环网箱（箱式开闭所）资格预审通知书",
+      "en": "State Grid (SGCC) Ring Main Unit (RMU) Prequalification Notice",
       "ru": "Уведомление о предквалификации КРУЭ и реклоузеров SGCC",
-      "es": "State Grid (SGCC) Ring Main Unit Prequalification Notice",
-      "ja": "State Grid (SGCC) Ring Main Unit Prequalification Notice"
+      "es": "State Grid (SGCC) Ring Main Unit (RMU) Prequalification Notice",
+      "ja": "State Grid (SGCC) Ring Main Unit (RMU) Prequalification Notice"
     },
     "category": "energy",
     "issuer": "国家电网有限公司 (SGCC)",
     "standard": "国网配网设备物资采购联合资格预审",
-    "image": "/images/certificates/cert_sgcc_rmu_prequalification.webp",
+    "image": "/images/certificates/cert_sgcc_rmu_switchgear_prequal.webp",
     "highlight": true
   },
   {
-    "id": "cert_sgcc_box_substation_prequalification",
-    "title": {
-      "zh": "国家电网 10kV 预装式箱式变电站资格预审通知书",
-      "en": "State Grid 10kV Prefabricated Compact Substation Notice",
-      "ru": "Уведомление о предквалификации КТПН 10 кВ SGCC",
-      "es": "State Grid 10kV Prefabricated Compact Substation Notice",
-      "ja": "State Grid 10kV Prefabricated Compact Substation Notice"
-    },
-    "category": "energy",
-    "issuer": "国家电网有限公司 (SGCC)",
-    "standard": "国网集中采购资格预审合格通知书",
-    "image": "/images/certificates/cert_sgcc_box_substation_prequalification.webp",
-    "highlight": true
-  },
-  {
-    "id": "cert_sgcc_jp_cabinet_prequalification",
+    "id": "cert_sgcc_jp_cabinet_prequal",
     "title": {
       "zh": "国家电网 配电箱（JP柜）资格预审合格通知书",
       "en": "State Grid (SGCC) JP Low-Voltage Distribution Cabinet Notice",
@@ -461,163 +506,343 @@ export const certificationsList: CertificationItem[] = [
     "category": "energy",
     "issuer": "国家电网有限公司 (SGCC)",
     "standard": "国网配电箱集中采购合格通知",
-    "image": "/images/certificates/cert_sgcc_jp_cabinet_prequalification.webp",
+    "image": "/images/certificates/cert_sgcc_jp_cabinet_prequal.webp",
     "highlight": false
   },
   {
-    "id": "cert_csg_transformer_substation_prequal",
+    "id": "cert_sgcc_pole_mounted_transformer_prequal",
     "title": {
-      "zh": "南方电网 10kV SCB 干变与预装式变电站资格预审证明",
-      "en": "China Southern Power Grid (CSG) 10kV Substation Prequalification",
-      "ru": "Сертификат квалификации трансформаторов и КТПН CSG",
-      "es": "China Southern Power Grid (CSG) 10kV Substation Prequalification",
-      "ja": "China Southern Power Grid (CSG) 10kV Substation Prequalification"
+      "zh": "国家电网 10kV 柱上变压器台成套设备物资采购资格预审通知书",
+      "en": "State Grid 10kV Pole-Mounted Transformer Package Prequalification",
+      "ru": "Квалификационное свидетельство столбовых КТП 10 кВ SGCC",
+      "es": "State Grid 10kV Pole-Mounted Transformer Package Prequalification",
+      "ja": "State Grid 10kV Pole-Mounted Transformer Package Prequalification"
+    },
+    "category": "energy",
+    "issuer": "国家电网有限公司 (SGCC)",
+    "standard": "国网联合资格预审合格配套设备供应商",
+    "image": "/images/certificates/cert_sgcc_pole_mounted_transformer_prequal.webp",
+    "highlight": true
+  },
+  {
+    "id": "cert_sgcc_box_substation_prequal",
+    "title": {
+      "zh": "国家电网 10kV 箱式变电站资格预审合格通知书",
+      "en": "State Grid (SGCC) 10kV Compact Box Substation Prequalification",
+      "ru": "Уведомление о предквалификации КТПН 10 кВ SGCC",
+      "es": "State Grid (SGCC) 10kV Compact Box Substation Prequalification",
+      "ja": "State Grid (SGCC) 10kV Compact Box Substation Prequalification"
+    },
+    "category": "energy",
+    "issuer": "国家电网有限公司物资部 (SGCC)",
+    "standard": "国网箱式变电站集中采购合格供应商",
+    "image": "/images/certificates/cert_sgcc_box_substation_prequal.webp",
+    "highlight": true
+  },
+  {
+    "id": "cert_csg_dry_transformer_prequal",
+    "title": {
+      "zh": "南方电网 10kV SCB 干式变压器联合资格预审合格证明",
+      "en": "China Southern Power Grid (CSG) 10kV SCB Transformer Prequalification",
+      "ru": "Свидетельство предквалификации сухих трансформаторов CSG",
+      "es": "China Southern Power Grid (CSG) 10kV SCB Transformer Prequalification",
+      "ja": "China Southern Power Grid (CSG) 10kV SCB Transformer Prequalification"
     },
     "category": "energy",
     "issuer": "中国南方电网有限责任公司 (CSG)",
-    "standard": "南网供应链物资采购联合资格预审",
-    "image": "/images/certificates/cert_csg_transformer_substation_prequal.webp",
+    "standard": "南网供应链物资采购联合资格预审合格供应商",
+    "image": "/images/certificates/cert_csg_dry_transformer_prequal.webp",
     "highlight": true
   },
   {
-    "id": "report_kyn28_type_test",
+    "id": "cert_csg_box_substation_prequal",
     "title": {
-      "zh": "KYN28A-12 铠装移开式交流金属封闭开关设备型式试验报告",
-      "en": "KYN28A-12 Metal-Clad Switchgear Full Type-Test Report",
-      "ru": "Протокол типовых испытаний КРУ KYN28A-12 (31.5 кА/1с)",
-      "es": "KYN28A-12 Metal-Clad Switchgear Full Type-Test Report",
-      "ja": "KYN28A-12 Metal-Clad Switchgear Full Type-Test Report"
+      "zh": "南方电网 10kV 预装式变电站资格预审合格证明",
+      "en": "China Southern Power Grid (CSG) 10kV Prefabricated Substation Notice",
+      "ru": "Свидетельство предквалификации КТПН 10 кВ CSG",
+      "es": "China Southern Power Grid (CSG) 10kV Prefabricated Substation Notice",
+      "ja": "China Southern Power Grid (CSG) 10kV Prefabricated Substation Notice"
+    },
+    "category": "energy",
+    "issuer": "中国南方电网有限责任公司 (CSG)",
+    "standard": "南网预装式变电站物资采购合格供应商",
+    "image": "/images/certificates/cert_csg_box_substation_prequal.webp",
+    "highlight": true
+  },
+  {
+    "id": "cert_csg_lv_distribution_prequal",
+    "title": {
+      "zh": "南方电网 0.4kV 低压配电箱资格预审合格证明",
+      "en": "China Southern Power Grid (CSG) 0.4kV LV Distribution Box Notice",
+      "ru": "Свидетельство предквалификации щитов 0.4 кВ CSG",
+      "es": "China Southern Power Grid (CSG) 0.4kV LV Distribution Box Notice",
+      "ja": "China Southern Power Grid (CSG) 0.4kV LV Distribution Box Notice"
+    },
+    "category": "energy",
+    "issuer": "中国南方电网有限责任公司 (CSG)",
+    "standard": "南网低压配电箱采购合格证明",
+    "image": "/images/certificates/cert_csg_lv_distribution_prequal.webp",
+    "highlight": false
+  },
+  {
+    "id": "cert_schneider_mvnex_license",
+    "title": {
+      "zh": "施耐德电气 MVneX 智能中压开关柜原厂技术授权证书",
+      "en": "Schneider Electric MVneX Medium-Voltage Switchgear License",
+      "ru": "Авторизованный сертификат Schneider Electric MVneX 12-24 кВ",
+      "es": "Schneider Electric MVneX Medium-Voltage Switchgear License",
+      "ja": "Schneider Electric MVneX Medium-Voltage Switchgear License"
+    },
+    "category": "international",
+    "issuer": "施耐德电气（中国）有限公司",
+    "standard": "Schneider Electric 官方原厂成套技术授权",
+    "image": "/images/certificates/cert_schneider_mvnex_license.webp",
+    "highlight": true
+  },
+  {
+    "id": "cert_siemens_siboard_partner",
+    "title": {
+      "zh": "西门子 SIBOARD 智能成套配电设备授权合作伙伴证书",
+      "en": "Siemens SIBOARD Authorized Switchgear Partner Certificate",
+      "ru": "Сертификат авторизованного партнера Siemens SIBOARD",
+      "es": "Siemens SIBOARD Authorized Switchgear Partner Certificate",
+      "ja": "Siemens SIBOARD Authorized Switchgear Partner Certificate"
+    },
+    "category": "international",
+    "issuer": "西门子（中国）有限公司",
+    "standard": "Siemens 原厂配电技术战略合作授权",
+    "image": "/images/certificates/cert_siemens_siboard_partner.webp",
+    "highlight": true
+  },
+  {
+    "id": "cert_abb_mns_switchgear_license",
+    "title": {
+      "zh": "ABB MNS 2.0 低压抽出式开关柜授权制造证书",
+      "en": "ABB MNS 2.0 Low-Voltage Switchgear Manufacturing License",
+      "ru": "Сертификат авторизованного производителя ABB MNS 2.0",
+      "es": "ABB MNS 2.0 Low-Voltage Switchgear Manufacturing License",
+      "ja": "ABB MNS 2.0 Low-Voltage Switchgear Manufacturing License"
+    },
+    "category": "international",
+    "issuer": "ABB（中国）有限公司",
+    "standard": "ABB 官方技术授权与质量保证",
+    "image": "/images/certificates/cert_abb_mns_switchgear_license.webp",
+    "highlight": true
+  },
+  {
+    "id": "cert_abb_unisafe_license",
+    "title": {
+      "zh": "ABB UniSafe 12kV 空气绝缘中压开关柜授权制造证书",
+      "en": "ABB UniSafe 12kV Air-Insulated Switchgear License",
+      "ru": "Сертификат авторизации ABB UniSafe 12 кВ",
+      "es": "ABB UniSafe 12kV Air-Insulated Switchgear License",
+      "ja": "ABB UniSafe 12kV Air-Insulated Switchgear License"
+    },
+    "category": "international",
+    "issuer": "ABB（中国）有限公司",
+    "standard": "ABB UniSafe 中压成套授权制造",
+    "image": "/images/certificates/cert_abb_unisafe_license.webp",
+    "highlight": true
+  },
+  {
+    "id": "cert_schneider_blokset_license",
+    "title": {
+      "zh": "施耐德电气 BlokSeT 预智低压成套设备授权制造证书",
+      "en": "Schneider Electric BlokSeT Intelligent LV Switchgear License",
+      "ru": "Авторизация Schneider Electric BlokSeT 0.4 кВ",
+      "es": "Schneider Electric BlokSeT Intelligent LV Switchgear License",
+      "ja": "Schneider Electric BlokSeT Intelligent LV Switchgear License"
+    },
+    "category": "international",
+    "issuer": "施耐德电气（中国）有限公司",
+    "standard": "Schneider BlokSeT 高端低压配电系统授权",
+    "image": "/images/certificates/cert_schneider_blokset_license.webp",
+    "highlight": true
+  },
+  {
+    "id": "report_fc_air_12_rmu_load_switch",
+    "title": {
+      "zh": "FC-AIR-12 环保气体绝缘真空环网负荷开关柜检验报告",
+      "en": "FC-AIR-12 Eco-Gas Insulated Ring Main Unit Type-Test Report",
+      "ru": "Протокол испытаний КРУЭ с экологическим газом FC-AIR-12",
+      "es": "FC-AIR-12 Eco-Gas Insulated Ring Main Unit Type-Test Report",
+      "ja": "FC-AIR-12 Eco-Gas Insulated Ring Main Unit Type-Test Report"
+    },
+    "category": "type_test",
+    "issuer": "国家高压电器产品质量检验检测中心",
+    "standard": "IEC 62271-200 / GB/T 3906 (25kA 4s)",
+    "image": "/images/certificates/report_fc_air_12_rmu_load_switch.webp",
+    "highlight": true
+  },
+  {
+    "id": "report_fc_air_12_breaker_rmu",
+    "title": {
+      "zh": "FC-AIR-12(V) 环保气体真空绝缘断路器柜型式试验报告",
+      "en": "FC-AIR-12(V) Eco-Gas Vacuum Circuit Breaker Switchgear Report",
+      "ru": "Протокол испытаний ячейки выключателя КРУЭ FC-AIR-12(V)",
+      "es": "FC-AIR-12(V) Eco-Gas Vacuum Circuit Breaker Switchgear Report",
+      "ja": "FC-AIR-12(V) Eco-Gas Vacuum Circuit Breaker Switchgear Report"
+    },
+    "category": "type_test",
+    "issuer": "国家高压电器质量监督检验中心",
+    "standard": "IEC 62271-100 / GB/T 1984",
+    "image": "/images/certificates/report_fc_air_12_breaker_rmu.webp",
+    "highlight": true
+  },
+  {
+    "id": "report_xgn_40_5_c_gis",
+    "title": {
+      "zh": "XGN-40.5(Z) 40.5kV 气体绝缘交流金属封闭开关设备(C-GIS)试验报告",
+      "en": "XGN-40.5(Z) 40.5kV C-GIS Gas-Insulated Switchgear Type-Test Report",
+      "ru": "Протокол испытаний КРУЭ 40.5 кВ XGN-40.5 (31.5 кА/4с)",
+      "es": "XGN-40.5(Z) 40.5kV C-GIS Gas-Insulated Switchgear Type-Test Report",
+      "ja": "XGN-40.5(Z) 40.5kV C-GIS Gas-Insulated Switchgear Type-Test Report"
     },
     "category": "type_test",
     "issuer": "国家高压电器质量监督检验中心 (NHVS)",
-    "standard": "IEC 62271-200 / GB/T 3906 (IAC AFLR 31.5kA 1s)",
-    "image": "/images/certificates/report_kyn28_type_test.webp",
+    "standard": "IEC 62271-200 / GB/T 3906 (40.5kV 31.5kA)",
+    "image": "/images/certificates/report_xgn_40_5_c_gis.webp",
     "highlight": true
   },
   {
-    "id": "report_kyn61_type_test",
+    "id": "report_cast_resin_busway_4000a",
     "title": {
-      "zh": "KYN61-40.5 40.5kV 高压开关柜国家型式试验报告",
-      "en": "KYN61-40.5 40.5kV HV Metal-Clad Switchgear Type-Test Report",
-      "ru": "Протокол типовых испытаний высоковольтного КРУ 40.5 кВ KYN61",
-      "es": "KYN61-40.5 40.5kV HV Metal-Clad Switchgear Type-Test Report",
-      "ja": "KYN61-40.5 40.5kV HV Metal-Clad Switchgear Type-Test Report"
+      "zh": "FC-HP-F 4000A-1600A 浇注高密绝缘母线槽型式试验报告",
+      "en": "FC-HP-F 4000A-1600A Cast Resin Insulated Busway Type-Test",
+      "ru": "Протокол испытаний литого шинопровода 4000А FC-HP-F (IP68)",
+      "es": "FC-HP-F 4000A-1600A Cast Resin Insulated Busway Type-Test",
+      "ja": "FC-HP-F 4000A-1600A Cast Resin Insulated Busway Type-Test"
     },
     "category": "type_test",
-    "issuer": "国家高压电器质量监督检验中心 (NHVS)",
-    "standard": "IEC 62271-200 / GB/T 3906 (31.5kA 4s)",
-    "image": "/images/certificates/report_kyn61_type_test.webp",
-    "highlight": true
+    "issuer": "国家电器产品质量监督检验中心",
+    "standard": "IEC 61439-6 / GB/T 7251.6 (IP68 / 100kA)",
+    "image": "/images/certificates/report_cast_resin_busway_4000a.webp",
+    "highlight": false
   },
   {
-    "id": "report_box_substation_type_test",
+    "id": "report_scb14_100_10_dry_transformer",
     "title": {
-      "zh": "YB/ZGS 10-35kV 预装式箱式变电站型式试验报告",
-      "en": "YB/ZGS 10-35kV Prefabricated Compact Substation Type-Test Report",
-      "ru": "Протокол типовых испытаний КТПН 10-35 кВ (IEC 62271-202)",
-      "es": "YB/ZGS 10-35kV Prefabricated Compact Substation Type-Test Report",
-      "ja": "YB/ZGS 10-35kV Prefabricated Compact Substation Type-Test Report"
-    },
-    "category": "type_test",
-    "issuer": "国家高压电器产品质量监督检验中心",
-    "standard": "IEC 62271-202 / GB/T 17467-2020",
-    "image": "/images/certificates/report_box_substation_type_test.webp",
-    "highlight": true
-  },
-  {
-    "id": "report_scb_dry_transformer_type_test",
-    "title": {
-      "zh": "SCB11/13/14 10-35kV 环氧树脂浇注干式变压器型式试验报告",
-      "en": "SCB11/13/14 Cast Resin Dry-Type Transformer Type-Test Report",
-      "ru": "Протокол типовых испытаний сухого трансформатора ТСЛ/SCB",
-      "es": "SCB11/13/14 Cast Resin Dry-Type Transformer Type-Test Report",
-      "ja": "SCB11/13/14 Cast Resin Dry-Type Transformer Type-Test Report"
+      "zh": "SCB14-100/10 环氧树脂浇注干式电力变压器型式试验报告",
+      "en": "SCB14-100/10 Cast Resin Dry Transformer Full Type-Test Report",
+      "ru": "Протокол типовых испытаний сухого трансформатора SCB14-100/10",
+      "es": "SCB14-100/10 Cast Resin Dry Transformer Full Type-Test Report",
+      "ja": "SCB14-100/10 Cast Resin Dry Transformer Full Type-Test Report"
     },
     "category": "type_test",
     "issuer": "国家变压器质量监督检验中心 (CTQC)",
     "standard": "IEC 60076-11 / GB/T 1094.11 (局放 < 5pC)",
-    "image": "/images/certificates/report_scb_dry_transformer_type_test.webp",
+    "image": "/images/certificates/report_scb14_100_10_dry_transformer.webp",
     "highlight": true
   },
   {
-    "id": "report_oil_immersed_transformer_type_test",
+    "id": "report_scb14_2000_10_dry_transformer",
     "title": {
-      "zh": "S11/S13-M 10-35kV 全密封油浸式配电变压器型式试验报告",
-      "en": "S11/S13-M Hermetically Sealed Oil Transformer Type-Test Report",
-      "ru": "Протокол типовых испытаний масляного трансформатора ТМГ",
-      "es": "S11/S13-M Hermetically Sealed Oil Transformer Type-Test Report",
-      "ja": "S11/S13-M Hermetically Sealed Oil Transformer Type-Test Report"
+      "zh": "SCB14-2000/10 二级能效干式电力变压器国家型式试验报告",
+      "en": "SCB14-2000/10 Energy-Efficient Dry Transformer Type-Test Report",
+      "ru": "Протокол испытаний энергоэффективного трансформатора SCB14-2000/10",
+      "es": "SCB14-2000/10 Energy-Efficient Dry Transformer Type-Test Report",
+      "ja": "SCB14-2000/10 Energy-Efficient Dry Transformer Type-Test Report"
     },
     "category": "type_test",
-    "issuer": "国家变压器质量监督检验中心 (CTQC)",
-    "standard": "IEC 60076-1 / GB/T 1094.1",
-    "image": "/images/certificates/report_oil_immersed_transformer_type_test.webp",
+    "issuer": "国家变压器质量检验检测中心",
+    "standard": "IEC 60076-11 / GB 20052 二级能效标准",
+    "image": "/images/certificates/report_scb14_2000_10_dry_transformer.webp",
     "highlight": true
   },
   {
-    "id": "report_rmu_gas_insulated_type_test",
+    "id": "report_scb18_500_10_dry_transformer",
     "title": {
-      "zh": "FC-SRM-12 全绝缘全密封共箱式环网柜型式试验报告",
-      "en": "FC-SRM-12 Gas-Insulated Ring Main Unit (C-GIS) Type-Test Report",
-      "ru": "Протокол испытаний моноблочного КРУЭ FC-SRM-12 (IP67)",
-      "es": "FC-SRM-12 Gas-Insulated Ring Main Unit (C-GIS) Type-Test Report",
-      "ja": "FC-SRM-12 Gas-Insulated Ring Main Unit (C-GIS) Type-Test Report"
+      "zh": "SCB18-500/10 新一级能效超低损耗干式变压器试验报告",
+      "en": "SCB18-500/10 Grade-1 Energy Efficiency Dry Transformer Report",
+      "ru": "Протокол испытаний сухого трансформатора SCB18-500/10 (Класс 1)",
+      "es": "SCB18-500/10 Grade-1 Energy Efficiency Dry Transformer Report",
+      "ja": "SCB18-500/10 Grade-1 Energy Efficiency Dry Transformer Report"
     },
     "category": "type_test",
-    "issuer": "国家高压电器产品检验检测中心",
-    "standard": "IEC 62271-200 / GB/T 3906 (20kA 4s)",
-    "image": "/images/certificates/report_rmu_gas_insulated_type_test.webp",
+    "issuer": "国家变压器质量监督检验中心",
+    "standard": "IEC 60076-11 / GB 20052-2020 一级能效",
+    "image": "/images/certificates/report_scb18_500_10_dry_transformer.webp",
     "highlight": true
   },
   {
-    "id": "report_lv_distribution_type_test",
+    "id": "report_scb18_2500_10_dry_transformer",
     "title": {
-      "zh": "GGD / GCK / MNS 交流低压成套开关设备 3C/型式试验报告",
-      "en": "GGD / GCK / MNS Low-Voltage Switchgear CCC & Type-Test Report",
-      "ru": "Протокол испытаний НКУ серии GGD/MNS (ГОСТ IEC 61439)",
-      "es": "GGD / GCK / MNS Low-Voltage Switchgear CCC & Type-Test Report",
-      "ja": "GGD / GCK / MNS Low-Voltage Switchgear CCC & Type-Test Report"
+      "zh": "SCB18-2500/10 2500kVA 大容量干式变压器国家型式试验报告",
+      "en": "SCB18-2500/10 2500kVA High-Capacity Dry Transformer Type-Test",
+      "ru": "Протокол испытаний трансформатора большой мощности SCB18-2500",
+      "es": "SCB18-2500/10 2500kVA High-Capacity Dry Transformer Type-Test",
+      "ja": "SCB18-2500/10 2500kVA High-Capacity Dry Transformer Type-Test"
     },
     "category": "type_test",
-    "issuer": "中国质量认证中心 (CQC) / 国家电器质检中心",
-    "standard": "IEC 61439-2 / GB/T 7251.12",
-    "image": "/images/certificates/report_lv_distribution_type_test.webp",
-    "highlight": false
+    "issuer": "国家变压器质量检验检测中心",
+    "standard": "IEC 60076-11 (2500kVA 阻抗 6.0%)",
+    "image": "/images/certificates/report_scb18_2500_10_dry_transformer.webp",
+    "highlight": true
   },
   {
-    "id": "cert_patent_substation_temp_control",
+    "id": "report_s13_m_rl_wound_core_transformer",
     "title": {
-      "zh": "发明专利：集装箱式变电站智能微气候与自适应散热系统",
-      "en": "Invention Patent: Modular Substation Smart Thermal Microclimate",
-      "ru": "Патент на изобретение: Интеллектуальное терморегулирование КТПН",
-      "es": "Invention Patent: Modular Substation Smart Thermal Microclimate",
-      "ja": "Invention Patent: Modular Substation Smart Thermal Microclimate"
+      "zh": "S13-M·RL-400/10 立体卷铁心配电变压器型式试验报告",
+      "en": "S13-M.RL-400/10 3D Wound Core Distribution Transformer Report",
+      "ru": "Протокол испытаний трансформатора с 3D витым сердечником S13",
+      "es": "S13-M.RL-400/10 3D Wound Core Distribution Transformer Report",
+      "ja": "S13-M.RL-400/10 3D Wound Core Distribution Transformer Report"
+    },
+    "category": "type_test",
+    "issuer": "国家变压器质量监督检验中心",
+    "standard": "IEC 60076-1 / 3D 三角立体卷铁心低噪低损",
+    "image": "/images/certificates/report_s13_m_rl_wound_core_transformer.webp",
+    "highlight": true
+  },
+  {
+    "id": "report_s20_m_rl_50_10_transformer",
+    "title": {
+      "zh": "S20-M·RL-50/10 新一级能效油浸式配电变压器型式试验报告",
+      "en": "S20-M.RL-50/10 Grade-1 Energy Efficiency Oil Transformer Report",
+      "ru": "Протокол испытаний масляного трансформатора S20 1-го класса",
+      "es": "S20-M.RL-50/10 Grade-1 Energy Efficiency Oil Transformer Report",
+      "ja": "S20-M.RL-50/10 Grade-1 Energy Efficiency Oil Transformer Report"
+    },
+    "category": "type_test",
+    "issuer": "国家变压器质量检验中心",
+    "standard": "IEC 60076-1 / GB 20052-2020 一级能效",
+    "image": "/images/certificates/report_s20_m_rl_50_10_transformer.webp",
+    "highlight": true
+  },
+  {
+    "id": "cert_patent_smart_substation_climate",
+    "title": {
+      "zh": "发明专利：模块化集装箱式变电站智能微气候调控系统",
+      "en": "Invention Patent: Modular Container Substation Microclimate System",
+      "ru": "Патент на изобретение: Система терморегулирования КТПН",
+      "es": "Invention Patent: Modular Container Substation Microclimate System",
+      "ja": "Invention Patent: Modular Container Substation Microclimate System"
     },
     "category": "patent",
     "issuer": "国家知识产权局 (CNIPA)",
     "standard": "中国发明专利 ZL 2020 1 0849281.X",
-    "image": "/images/certificates/cert_patent_substation_temp_control.webp",
+    "image": "/images/certificates/cert_patent_smart_substation_climate.webp",
     "highlight": true
   },
   {
-    "id": "cert_patent_switchgear_isolation",
+    "id": "cert_patent_switchgear_interlocking",
     "title": {
-      "zh": "实用新型专利：高压铠装开关柜防误动作双重闭锁隔离触头装置",
-      "en": "Utility Patent: Dual-Interlocking Disconnecting Contact Device",
-      "ru": "Патент: Двойная защитная блокировка контактов КРУ",
-      "es": "Utility Patent: Dual-Interlocking Disconnecting Contact Device",
-      "ja": "Utility Patent: Dual-Interlocking Disconnecting Contact Device"
+      "zh": "实用新型专利：高压铠装开关柜防误动作双重机械闭锁装置",
+      "en": "Utility Patent: HV Metal-Clad Switchgear Dual Interlocking Device",
+      "ru": "Патент: Механическая блокировка выкатного элемента КРУ",
+      "es": "Utility Patent: HV Metal-Clad Switchgear Dual Interlocking Device",
+      "ja": "Utility Patent: HV Metal-Clad Switchgear Dual Interlocking Device"
     },
     "category": "patent",
     "issuer": "国家知识产权局 (CNIPA)",
     "standard": "中国实用新型专利 ZL 2021 2 1928471.2",
-    "image": "/images/certificates/cert_patent_switchgear_isolation.webp",
+    "image": "/images/certificates/cert_patent_switchgear_interlocking.webp",
     "highlight": false
   },
   {
-    "id": "cert_patent_flameproof_nitrogen",
+    "id": "cert_patent_nitrogen_extinguishing",
     "title": {
-      "zh": "实用新型专利：矿用隔爆型高纯度注氮防火灭火成套装置",
+      "zh": "实用新型专利：矿用隔爆型高纯度变压器注氮灭火防火装置",
       "en": "Utility Patent: Mining Flameproof PSA Nitrogen Fire-Suppression",
       "ru": "Патент: Взрывозащищенный азотный комплекс пожаротушения",
       "es": "Utility Patent: Mining Flameproof PSA Nitrogen Fire-Suppression",
@@ -626,22 +851,7 @@ export const certificationsList: CertificationItem[] = [
     "category": "patent",
     "issuer": "国家知识产权局 (CNIPA)",
     "standard": "中国实用新型专利 ZL 2022 2 0837291.6",
-    "image": "/images/certificates/cert_patent_flameproof_nitrogen.webp",
+    "image": "/images/certificates/cert_patent_nitrogen_extinguishing.webp",
     "highlight": true
-  },
-  {
-    "id": "cert_patent_transformer_low_pd",
-    "title": {
-      "zh": "实用新型专利：超低局放耐高温环氧浇注干式变压器绝缘屏蔽结构",
-      "en": "Utility Patent: Ultra-Low Partial Discharge Dry Transformer Coil",
-      "ru": "Патент: Обмотка сухого трансформатора со сверхнизким ЧР",
-      "es": "Utility Patent: Ultra-Low Partial Discharge Dry Transformer Coil",
-      "ja": "Utility Patent: Ultra-Low Partial Discharge Dry Transformer Coil"
-    },
-    "category": "patent",
-    "issuer": "国家知识产权局 (CNIPA)",
-    "standard": "中国实用新型专利 ZL 2023 2 1048291.4",
-    "image": "/images/certificates/cert_patent_transformer_low_pd.webp",
-    "highlight": false
   }
 ];

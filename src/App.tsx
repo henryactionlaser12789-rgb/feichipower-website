@@ -5870,10 +5870,7 @@ function Home({ locale }: { locale: Locale }) {
         {/* Authoritative Type-Test Reports & Certifications Trust Hub */}
         <CertificationsTrustHub locale={locale} />
 
-        {/* Global Reference Projects & Commissioning Showcase */}
-        <GlobalProjectsShowcase locale={locale} />
-
-        {/* 49+ Global Overseas Track Record & EPC Matrix */}
+        {/* Unified 80+ Global Overseas Track Record & EPC Matrix (Single Authoritative Showcase) */}
         <OverseasProjectsTrackRecord locale={locale} />
 
         {/* Interactive Dual Sizing Engines Section */}

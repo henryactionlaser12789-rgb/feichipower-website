@@ -10,7 +10,7 @@ export interface OverseasProjectItem {
   equipmentSummary: string;
   quantity: number | string;
   client: string;
-  image: string;
+  image?: string | null;
   highlight?: boolean;
 }
 
@@ -39,8 +39,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "配电箱FCMCCBF：FCMCCBF",
     "quantity": 258,
     "client": "中国能源建设集团东北电力第一工程有限公司",
-    "image": "/images/curated/project_saudi_power.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "overseas-02",
@@ -66,8 +66,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "铠装移开式交流金属开关设备：KYN61-40.5",
     "quantity": 16,
     "client": "沈阳飞驰斯玛特电气有限公司",
-    "image": "/images/curated/box_substation_solar.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "overseas-03",
@@ -93,7 +93,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "配电箱FCMCCBF：FCMCCBF | 预制舱YC：YCⅠ",
     "quantity": 3,
     "client": "北京合锐赛尔电力科技股份有限公司山东分公司",
-    "image": "/images/curated/project_simandou_guinea.webp",
+    "image": "/images/curated/precast_cabin_ehouse.webp",
     "highlight": true
   },
   {
@@ -120,8 +120,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "欧式变电站：YBM20 -2700/11/0.48 | SF油浸式变压器：SF11-2700/11/0.48 | 环网柜：FC-SRM-12 两进一出、XGN口-40.5/1250-31.5、FC-SRM-12 一进三出+PT | 预制舱YC：YCⅠ | SFZ油浸式变压器：SFZ-1250034.5/11 | SCB11干式变压器：SCB11-100-11/0.4、SCB11-100-11-0.23 | S11油浸式变压器：S11-2700-11/0.48",
     "quantity": 25,
     "client": "中国能源建设集团东北电力第一工程有限公司",
-    "image": "/images/curated/project_audifaw_solar.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "overseas-05",
@@ -147,8 +147,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "交流低压配电柜：GGD",
     "quantity": 4,
     "client": "山东金人电气有限公司、山东电工电气集团智能电气有限公司",
-    "image": "/images/curated/box_substation_solar.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "overseas-06",
@@ -174,8 +174,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "预制舱YC：YCⅠ",
     "quantity": 5,
     "client": "北京安珂罗工程技术有限公司",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "overseas-07",
@@ -201,8 +201,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "铠装移开式交流金属封闭开关设备：UniSafe-12",
     "quantity": 11,
     "client": "大连中巨控制系统有限公司",
-    "image": "/images/curated/unisafe_switchgear.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "overseas-08",
@@ -228,8 +228,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "动力箱：XL21 | SCB10干式变压器：SCB10-500-0.46/0.38、SCB10-1250-13.2/0.46、SCB10-1000-0.46/0.38 | 开闭站：XGW□ | 铠装移开式交流金属开关设备KYN28：KYN28A-12 | 低压抽出式开关柜：MNS | 预制舱YC：YCⅠ | 低压母线桥：FC-CCKX-2000A-密集型-IP42",
     "quantity": 60,
     "client": "辽宁金通金属材料发展有限公司、深圳市群佳威科技有限公司",
-    "image": "/images/syfcdq/project_philippines_pcpc_solar_ehouse.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "overseas-09",
@@ -255,7 +255,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "风电光伏箱变ZGS18：ZGS18-3300/24.9/0.8 | S18油浸式变压器：S18-3300KVA/24.9/0.8",
     "quantity": 123,
     "client": "山东金人电气有限公司、山东电工电气集团智能电气有限公司",
-    "image": "/images/curated/box_substation_solar.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -282,7 +282,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "S-M油浸式变压器：S-M-2000-11/0.42 | 预制舱YC：YCⅠ | 铠装移开式交流金属开关设备KYN28：KYN28A-12 | 交流低压配电柜：GGD | 直流屏GZDW：GZDW-DC110V/38AH | 低压母线桥：FC-CCKX-4000A-空气型-IP42",
     "quantity": 18,
     "client": "沈阳飞驰斯玛特电气有限公司",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -310,7 +310,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "quantity": 6,
     "client": "沈阳飞驰斯玛特电气有限公司",
     "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
-    "highlight": false
+    "highlight": true
   },
   {
     "id": "overseas-12",
@@ -336,7 +336,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "配电箱FCMCCBF：FCMCCBF | 动力箱：XL21 | 低压抽出式开关柜：MNS | 预制舱YC：YCⅠ | 铠装移开式交流金属开关设备KYN28：KYN28A-12 | 交流低压配电柜：GGD",
     "quantity": 24,
     "client": "新疆联达国际贸易有限责任公司",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -363,7 +363,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "动力箱：XL21",
     "quantity": 2,
     "client": "沈阳品川信息技术有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -390,7 +390,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "欧式变电站：YBP20 -2*630KVA | 充气柜：FC-SRM-12",
     "quantity": 2,
     "client": "辽宁思远电气有限公司",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -417,7 +417,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "交流低压配电柜：GGD",
     "quantity": 16,
     "client": "沈阳飞驰斯玛特电气有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -444,7 +444,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "低压母线桥：FC-CCKX-630A-密集型-IP42、FC-CCKX-2500A-密集型-IP40 | 铠装移开式交流金属开关设备KYN28：KYN28A-12 | 低压抽出式开关柜：MNS | SCB18干式变压器：SCB18-1000-7.2/0.48-0.27、SCB18-400-7.2/0.48-0.27、SCB18-125-0.48/0.38-0.22",
     "quantity": 69,
     "client": "徐州中煤汉泰建筑工业化有限公司",
-    "image": "/images/curated/project_saudi_power.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -472,7 +472,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "quantity": 1,
     "client": "山东电工电气集团智能电气有限公司",
     "image": "/images/syfcdq/project_mexico_penasco_solar.webp",
-    "highlight": false
+    "highlight": true
   },
   {
     "id": "overseas-18",
@@ -498,7 +498,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "配电箱FCMCCBF：FCMCCBF",
     "quantity": 4,
     "client": "沈阳飞驰斯玛特电气有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -525,7 +525,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "铠装移开式交流金属开关设备KYN28：KYN28A-12 | 接地变及消弧线圈成套装置：DKSC-800/10.5-315/0.4KV | 高压母线桥：FC-CCKX-2000A-空气型-IP42",
     "quantity": 18,
     "client": "中成进出口股份有限公司",
-    "image": "/images/curated/project_kazakhstan_coke.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -552,7 +552,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "配电箱FCMCCBF：FCMCCBF | 动力箱：XL21 | Blokset：Blokset",
     "quantity": 117,
     "client": "北京信达共创机械设备有限公司",
-    "image": "/images/syfcdq/project_dalian_airport.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -579,7 +579,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "预制舱YC：YCⅠ | 低压抽出式开关柜：MNS | 接地变小电阻装置：AL-BNR-13.8KV | ",
     "quantity": 15,
     "client": "河北电力装备有限公司",
-    "image": "/images/syfcdq/project_philippines_pcpc_solar_ehouse.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -606,7 +606,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "铠装移开式交流金属开关设备KYN28：KYN28A-12 | 交流低压配电柜：GGD | 油浸式变压器：S11-1600-10/0.4",
     "quantity": 15,
     "client": "沈阳飞驰斯玛特电气有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -633,7 +633,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "铠装移开式交流金属开关设备KYN28：KYN28A-12 | 高压母线桥：FC-CCKX-1600A-空气型-IP40",
     "quantity": 19,
     "client": "辽宁思远电气有限公司",
-    "image": "/images/curated/unisafe_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -660,7 +660,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "电缆分支箱：DF-0.4KV",
     "quantity": 1,
     "client": "沈阳飞驰斯玛特电气有限公司",
-    "image": "/images/curated/unisafe_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -687,7 +687,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "低压抽出式开关柜：GCS",
     "quantity": 6,
     "client": "辽宁思远电气有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -698,7 +698,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
       "en": "Saudi Arabia",
       "ru": "Саудовская Аравия",
       "es": "Arabia Saudita",
-      "ja": "サウジア拉伯"
+      "ja": "サウジアラビア"
     },
     "countryCode": "SA",
     "flag": "🇸🇦",
@@ -709,13 +709,13 @@ export const overseasProjectsList: OverseasProjectItem[] = [
       "en": "Saudi Arabia - 沙特PP12联合循环电站扩建项目",
       "ru": "Саудовская Аравия - 沙特PP12联合循环电站扩建项目",
       "es": "Arabia Saudita - 沙特PP12联合循环电站扩建项目",
-      "ja": "サウジア拉伯 - 沙特PP12联合循环电站扩建项目"
+      "ja": "サウジアラビア - 沙特PP12联合循环电站扩建项目"
     },
     "equipmentSummary": "低压抽出式开关柜：MNS | 交流低压配电柜：GGD",
     "quantity": 307,
     "client": "河北电力装备有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
-    "highlight": false
+    "image": "/images/curated/project_saudi_power.webp",
+    "highlight": true
   },
   {
     "id": "overseas-27",
@@ -741,7 +741,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "电缆分支箱：DF-0.4KV",
     "quantity": 213,
     "client": "沈阳普沃电力电缆有限公司",
-    "image": "/images/curated/unisafe_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -768,7 +768,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "元件（E-House）",
     "quantity": 1,
     "client": "山东电工电气集团智能电气有限公司",
-    "image": "/images/syfcdq/project_mexico_penasco_solar.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -796,7 +796,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "quantity": 308,
     "client": "中国港湾工程有限责任公司、施耐德电气（中国）有限公司",
     "image": "/images/curated/project_simandou_guinea.webp",
-    "highlight": false
+    "highlight": true
   },
   {
     "id": "overseas-30",
@@ -822,7 +822,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "SC10：SC10-100-6.3/0.4",
     "quantity": 2,
     "client": "沈阳飞驰斯玛特电气有限公司",
-    "image": "/images/curated/unisafe_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -849,7 +849,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "配电箱FCMCCBF：FCMCCBF",
     "quantity": 13,
     "client": "沈阳飞驰斯玛特电气有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -876,7 +876,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "低压抽出式开关柜：MNS2.0",
     "quantity": 3,
     "client": "沈阳普沃电力电缆有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -903,7 +903,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "低压抽出式开关柜：MNS2.0 | 充气柜：充气柜safe | 欧式变电站：YBM20 -12/400KVA、YBM20 -12/2*800KVA",
     "quantity": 18,
     "client": "沈阳飞驰斯玛特电气有限公司",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -930,7 +930,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "欧式变电站：YBM20 -12/1600KVA",
     "quantity": 2,
     "client": "辽宁亚威电气有限公司",
-    "image": "/images/syfcdq/project_philippines_pcpc_solar_ehouse.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -957,7 +957,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "配电箱：JXF",
     "quantity": 26,
     "client": "河北电力装备有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -984,7 +984,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "动力箱：XL21 | 配电箱FCMCCBF：FCMCCBF | SCB14干式变压器：SCB14-500-10/0.4 | 欧式变电站：YBM20 -12/500KVA",
     "quantity": 21,
     "client": "山东骏驰电气有限公司",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1011,7 +1011,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "高压母线桥：FC-CCKX-1250A-空气型-IP40 | 铠装移开式交流金属开关设备KYN28：KYN28A-12",
     "quantity": 11,
     "client": "沈阳飞驰斯玛特电气有限公司",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1038,7 +1038,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "低压抽出式开关柜：MNS2.0",
     "quantity": 6,
     "client": "大连金弘机电设备有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1065,7 +1065,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "交流低压配电柜：GGD",
     "quantity": 3,
     "client": "沈阳华讯通电子科技工程有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1092,7 +1092,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "动力箱：XL21 | 防爆箱：FBX | 配电箱：JXF",
     "quantity": 134,
     "client": "中铝国际工程股份有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1119,7 +1119,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "欧式变电站：YBM20 -12/2500KVA",
     "quantity": 1,
     "client": "辽宁亚威电气有限公司",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1146,8 +1146,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "欧式变电站：YB口 -12/2000KVA、YB口 -12/1000KVA、YB口 -12/1250KVA",
     "quantity": 6,
     "client": "辽宁亚威电气有限公司",
-    "image": "/images/curated/box_substation_solar.webp",
-    "highlight": false
+    "image": "/images/syfcdq/project_philippines_pcpc_solar_ehouse.webp",
+    "highlight": true
   },
   {
     "id": "overseas-43",
@@ -1173,7 +1173,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "动力箱：XL21 | 预制舱YC：YCⅡ、YCⅠ | 铠装移开式交流金属开关设备KYN28：KYN28A-12",
     "quantity": 26,
     "client": "中国能源建设集团东北电力第一工程有限公司",
-    "image": "/images/curated/box_substation_solar.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1200,7 +1200,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "配电箱：JXF | 动力箱：XL21",
     "quantity": 4,
     "client": "葫芦岛电力设备有限公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1227,7 +1227,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "高压母线桥：FC-CCKX-1250A-空气型-IP40 | 铠装移开式交流金属开关设备KYN28：KYN28A-12 | 铠装移开式交流金属开关设备：KYN61-40.5",
     "quantity": 79,
     "client": "辽宁思远电气有限公司",
-    "image": "/images/curated/unisafe_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1254,7 +1254,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "S11油浸式变压器：S11-8800/40.5 | 充气柜：FC-SRM-12 | 逆变一体机：YB-4400/40.5",
     "quantity": 51,
     "client": "山东电工电气集团智能电气有限公司",
-    "image": "/images/syfcdq/project_mexico_penasco_solar.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1281,7 +1281,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "配电箱：JXF | 动力箱：XL21 | SCB14干式变压器：SCB14-1250-10/0.4、SCB14-1000-10/0.4、SCB14-500-10/0.4 | 低压母线桥：FC-CCKX-2000A-空气型-IP42 | 铠装移开式交流金属开关设备KYN28：KYN28A-12 | 低压抽出式开关柜：MNS | 欧式变电站：YBM20 -12/500KVA | SCB13干式变压器：SCB13-500-10/0.4 | 油浸式变压器：S11-500-10/0.4",
     "quantity": 294,
     "client": "中国黄金集团有限公司",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1308,7 +1308,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "SCB10干式变压器：SCB10-400-6.6/0.4",
     "quantity": 1,
     "client": "长春龙源电力设备有限公司",
-    "image": "/images/curated/project_saudi_power.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1335,7 +1335,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "交流低压配电柜：GGD",
     "quantity": 4,
     "client": "辽宁康威机电工程有限责任公司",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
+    "image": null,
     "highlight": false
   },
   {
@@ -1389,8 +1389,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "高压成套配电设备及动力变压器",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/project_steel_base.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-102",
@@ -1416,8 +1416,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "矿山高压开关柜及重型整流变压器",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/project_kazakhstan_coke.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-103",
@@ -1443,8 +1443,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "电解铝供电高压开关柜",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/project_steel_base.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-104",
@@ -1470,8 +1470,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "破碎输送系统高压开关柜与变电站",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-105",
@@ -1497,8 +1497,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "矿井防爆供电高压开关设备",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/project_kazakhstan_coke.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-106",
@@ -1551,8 +1551,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "35kV/10kV 环网供电系统及配电箱群",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/project_shenyang_metro.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-108",
@@ -1578,8 +1578,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "高扬程大流量水泵高压变频配电设备",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/unisafe_switchgear.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-109",
@@ -1605,8 +1605,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "模块化预制舱式变电站及港口供电成套",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-110",
@@ -1632,7 +1632,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "2КТПН 极寒保温变电站及防冻高压成套",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
+    "image": "/images/curated/project_kazakhstan_coke.webp",
     "highlight": true
   },
   {
@@ -1659,8 +1659,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "35kV 模块化预制舱与耐高温变电单元",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-112",
@@ -1686,8 +1686,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "耐腐蚀中压开关设备与风电组合箱变",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/project_wind_power.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-113",
@@ -1713,8 +1713,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "施耐德授权 MVnex 24kV 紧凑型开关柜",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/project_kazakhstan_coke.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-114",
@@ -1740,8 +1740,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "储能系统舱、光伏变流升压一体机及柴发配电",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/box_substation_solar.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-115",
@@ -1767,8 +1767,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "34.5kV 升压变电站与集电线路成套",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/box_substation_solar.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-116",
@@ -1794,8 +1794,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "35kV 预装式变电站与智能配电柜",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-117",
@@ -1821,8 +1821,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "35kV 风光汇集预制舱与升压变台",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-118",
@@ -1848,8 +1848,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "35kV 箱式变电站与集电线路成套",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/box_substation_solar.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-119",
@@ -1875,8 +1875,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "高压配电装置、大功率电动机启动柜",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/unisafe_switchgear.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-120",
@@ -1902,8 +1902,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "变流升压一体机及智能箱变预制舱群",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/precast_cabin_ehouse.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-121",
@@ -1929,8 +1929,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "制氢整流变压器与一体化变配电舱",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/unisafe_switchgear.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-122",
@@ -1956,8 +1956,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "ZGS 系列 35kV 升压组合式变电站",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/project_wind_power.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-123",
@@ -1983,8 +1983,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "耐严寒光伏预制舱与干式变压器",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/box_substation_solar.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-124",
@@ -2037,8 +2037,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "高可靠低压配电屏与母线槽系统",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-126",
@@ -2064,8 +2064,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "精密列头柜与高低压成套配电",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-127",
@@ -2091,8 +2091,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "高洁净度低谐波供配电成套设备",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/unisafe_switchgear.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-128",
@@ -2118,8 +2118,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "高稳定性干式变压器与双电源自动切换配电柜",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/unisafe_switchgear.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-129",
@@ -2145,8 +2145,8 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "SCB 系列低噪音环氧干变与医疗安全配电箱",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/syfcdq/project_sukandaya_lv_switchgear.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   },
   {
     "id": "project-130",
@@ -2172,7 +2172,7 @@ export const overseasProjectsList: OverseasProjectItem[] = [
     "equipmentSummary": "医用不间断双回路配电成套与直流屏",
     "quantity": 1,
     "client": "国家重点工业与基建工程",
-    "image": "/images/curated/unisafe_switchgear.webp",
-    "highlight": true
+    "image": null,
+    "highlight": false
   }
 ];

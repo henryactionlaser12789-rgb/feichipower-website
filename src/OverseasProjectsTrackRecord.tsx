@@ -222,36 +222,59 @@ export function OverseasProjectsTrackRecord({ locale }: { locale: Locale }) {
                   boxShadow: item.highlight ? '0 8px 24px rgba(56, 189, 248, 0.1)' : 'none',
                 }}
               >
-                {/* Image & Header */}
-                <div style={{ position: 'relative', width: '100%', height: '175px', background: '#020617', overflow: 'hidden' }}>
-                  <img
-                    src={item.image}
-                    alt={item.title.zh}
-                    loading="lazy"
-                    decoding="async"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
-                  <div style={{ position: 'absolute', top: '10px', left: '10px', display: 'flex', gap: '6px' }}>
-                    <span style={{ background: 'rgba(15, 23, 42, 0.85)', backdropFilter: 'blur(4px)', color: '#f8fafc', padding: '3px 9px', borderRadius: '4px', fontSize: '11.5px', fontWeight: 700, border: '1px solid rgba(255, 255, 255, 0.15)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <span>{item.flag}</span> {item.country[locale] || item.country.en}
-                    </span>
-                    {item.highlight && (
-                      <span style={{ background: 'rgba(234, 88, 12, 0.9)', color: '#ffffff', padding: '3px 8px', borderRadius: '4px', fontSize: '10.5px', fontWeight: 800, textTransform: 'uppercase' }}>
-                        FLAGSHIP
+                {/* Image or SLD Blueprint Technical Card */}
+                {item.image ? (
+                  <div style={{ position: 'relative', width: '100%', height: '175px', background: '#020617', overflow: 'hidden' }}>
+                    <img
+                      src={item.image}
+                      alt={item.title[locale] || item.title.zh}
+                      loading="lazy"
+                      decoding="async"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                    <div style={{ position: 'absolute', top: '10px', left: '10px', display: 'flex', gap: '6px' }}>
+                      <span style={{ background: 'rgba(15, 23, 42, 0.85)', backdropFilter: 'blur(4px)', color: '#f8fafc', padding: '3px 9px', borderRadius: '4px', fontSize: '11.5px', fontWeight: 700, border: '1px solid rgba(255, 255, 255, 0.15)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <span>{item.flag}</span> {item.country[locale] || item.country.en}
                       </span>
-                    )}
+                      {item.highlight && (
+                        <span style={{ background: 'rgba(234, 88, 12, 0.9)', color: '#ffffff', padding: '3px 8px', borderRadius: '4px', fontSize: '10.5px', fontWeight: 800, textTransform: 'uppercase' }}>
+                          VERIFIED SITE
+                        </span>
+                      )}
+                    </div>
+                    <div style={{ position: 'absolute', bottom: '8px', right: '10px' }}>
+                      <span style={{ background: 'rgba(2, 132, 199, 0.9)', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: 700 }}>
+                        QTY: {item.quantity} SETS
+                      </span>
+                    </div>
                   </div>
-                  <div style={{ position: 'absolute', bottom: '8px', right: '10px' }}>
-                    <span style={{ background: 'rgba(2, 132, 199, 0.9)', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: 700 }}>
-                      QTY: {item.quantity} SETS
-                    </span>
+                ) : (
+                  <div style={{ position: 'relative', width: '100%', height: '135px', background: 'linear-gradient(135deg, #091322, #0f1d32)', borderBottom: '1px solid rgba(56, 189, 248, 0.2)', padding: '16px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden' }}>
+                    {/* Technical Blueprint Grid Pattern */}
+                    <div style={{ position: 'absolute', inset: 0, opacity: 0.15, backgroundImage: 'linear-gradient(rgba(56, 189, 248, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.3) 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
+                    <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ background: 'rgba(15, 23, 42, 0.85)', color: '#f8fafc', padding: '3px 9px', borderRadius: '4px', fontSize: '11.5px', fontWeight: 700, border: '1px solid rgba(56, 189, 248, 0.3)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <span>{item.flag}</span> {item.country[locale] || item.country.en}
+                      </span>
+                      <span style={{ color: '#38bdf8', fontSize: '11px', fontFamily: 'monospace', fontWeight: 600 }}>
+                        IEC / GOST SLD SPEC
+                      </span>
+                    </div>
+                    <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                      <span style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                        {locale === 'zh' ? '成套供货技术履约' : 'Equipment Delivery Spec'}
+                      </span>
+                      <span style={{ background: 'rgba(2, 132, 199, 0.35)', border: '1px solid rgba(56, 189, 248, 0.4)', color: '#e0f2fe', padding: '2px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: 700 }}>
+                        QTY: {item.quantity} SETS
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Details Body */}
                 <div style={{ padding: '16px 18px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <h3 style={{ font: '700 15px/1.4 var(--display)', color: '#f8fafc', marginBottom: '8px' }}>
-                    {item.title.zh}
+                    {item.title[locale] || item.title.en || item.title.zh}
                   </h3>
 
                   <div style={{ background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(51, 65, 85, 0.5)', borderRadius: '6px', padding: '8px 12px', marginBottom: '12px', fontSize: '12px', color: '#cbd5e1', lineHeight: '1.45', flex: 1 }}>
