@@ -203,32 +203,139 @@
     .btn-card-action { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--primary); text-decoration: none; }
     .btn-card-action:hover { text-decoration: underline; }
 
+    /* Strategic Partners & Ecosystem Section */
+    .partner-section {
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 50px 20px 60px;
+    }
+    .partner-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 36px;
+    }
+    .partner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 82, 204, 0.08);
+      color: var(--primary);
+      border: 1px solid rgba(0, 82, 204, 0.2);
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .partner-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .partner-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .partner-card {
+      background: #fafbfc;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .partner-card:hover {
+      background: #ffffff;
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(9, 30, 66, 0.08);
+    }
+    .partner-logo-box {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      transition: all 0.2s;
+    }
+    .partner-card:hover .partner-logo-box {
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(0, 82, 204, 0.15);
+    }
+    .partner-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .partner-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.3;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .partner-role {
+      font-size: 11.5px;
+      color: var(--primary);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .partner-auth-tag {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-top: 3px;
+      line-height: 1.2;
+    }
+
     /* Sizer Tabs & Engine Container */
     .sizer-wrapper { background: #fff; border-radius: 12px; border: 1.5px solid var(--border); box-shadow: 0 8px 30px rgba(9,30,66,0.08); overflow: hidden; }
     .sizer-nav-tabs { display: flex; background: var(--dark); border-bottom: 2px solid rgba(255,255,255,0.1); }
-    .sizer-tab-btn { flex: 1; padding: 18px 24px; background: none; border: none; color: #dfe1e6; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s; }
+    .sizer-tab-btn { flex: 1; padding: 14px 20px; background: none; border: none; color: #dfe1e6; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s; }
     .sizer-tab-btn.active { background: #172b4d; color: var(--accent); border-bottom: 3px solid var(--accent); }
-    .sizer-tab-content { display: none; padding: 32px; }
+    .sizer-tab-content { display: none; padding: 24px; }
     .sizer-tab-content.active { display: block; }
 
-    .engine-layout { display: grid; grid-template-columns: 1fr 1.15fr; gap: 32px; }
-    .engine-inputs { background: #fafbfc; border: 1.5px solid var(--border); border-radius: 8px; padding: 24px; }
-    .engine-outputs { background: #ffffff; border: 1.5px solid var(--border); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
-    .form-item { margin-bottom: 16px; }
-    .form-item label { display: block; font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
-    .form-item select, .form-item input { width: 100%; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 6px; font-size: 14px; color: var(--text); outline: none; }
+    .engine-layout { display: grid; grid-template-columns: 1fr 1.15fr; gap: 24px; }
+    .engine-inputs { background: #fafbfc; border: 1.5px solid var(--border); border-radius: 8px; padding: 20px; }
+    .engine-outputs { background: #ffffff; border: 1.5px solid var(--border); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+    .form-item { margin-bottom: 12px; }
+    .form-item label { display: block; font-size: 12.5px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+    .form-item select, .form-item input { width: 100%; padding: 8px 10px; border: 1.5px solid var(--border); border-radius: 6px; font-size: 13px; color: var(--text); outline: none; }
     .form-item select:focus, .form-item input:focus { border-color: var(--primary); }
-    .kpi-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
-    .kpi-res-box { background: #f4f5f7; border: 1px solid var(--border); border-radius: 6px; padding: 12px; }
-    .kpi-res-label { font-size: 11px; font-weight: 600; color: #6b778c; text-transform: uppercase; }
-    .kpi-res-val { font-size: 17px; font-weight: 700; color: var(--dark); margin-top: 4px; }
-    .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 18px; font-size: 13px; }
-    .specs-table th, .specs-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+    .kpi-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .kpi-res-box { background: #f4f5f7; border: 1px solid var(--border); border-radius: 6px; padding: 10px; }
+    .kpi-res-label { font-size: 10.5px; font-weight: 600; color: #6b778c; text-transform: uppercase; }
+    .kpi-res-val { font-size: 15px; font-weight: 700; color: var(--dark); margin-top: 2px; }
+    .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 12px; }
+    .specs-table th, .specs-table td { padding: 6px 8px; border-bottom: 1px solid var(--border); text-align: left; }
     .specs-table th { color: #6b778c; font-weight: 600; }
-    .lead-banner { background: linear-gradient(135deg, #091e42 0%, #0052cc 100%); color: #fff; padding: 18px; border-radius: 8px; text-align: center; }
-    .lead-banner h4 { font-size: 14.5px; margin-bottom: 4px; }
-    .lead-banner p { font-size: 12px; color: #dfe1e6; margin-bottom: 12px; }
-    .btn-download-trigger { background: var(--accent); color: var(--dark); border: none; padding: 9px 18px; font-size: 13px; font-weight: 700; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+    .lead-banner { background: linear-gradient(135deg, #091e42 0%, #0052cc 100%); color: #fff; padding: 14px 18px; border-radius: 8px; text-align: center; }
+    .lead-banner h4 { font-size: 13.5px; margin-bottom: 3px; }
+    .lead-banner p { font-size: 11.5px; color: #dfe1e6; margin-bottom: 10px; }
+    .btn-download-trigger { background: var(--accent); color: var(--dark); border: none; padding: 8px 16px; font-size: 12.5px; font-weight: 700; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
     .btn-download-trigger:hover { background: var(--accent-hover); }
 
     /* RFQ Form Styles */
@@ -365,6 +472,147 @@
   </div>
 </header>
 
+<!-- Strategic Partners & Collaborative Ecosystem -->
+<section class="partner-section" id="partners-section">
+  <div class="container">
+    <div class="partner-header">
+      <span class="partner-badge">Verified OEM Authorizations & Global Client References</span>
+      <h2 class="partner-title">Strategic Partners & Collaborative Ecosystem</h2>
+      <p class="partner-subtitle">Holding official manufacturing licenses from global electrical giants and serving national power grids & heavy industries for 20+ years.</p>
+    </div>
+
+    <div class="partner-grid">
+      <!-- 1. Schneider Electric -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+            <rect width="100" height="100" rx="12" fill="#009530"/>
+            <path d="M26 50C26 36.7 36.7 26 50 26C58.8 26 66.4 30.7 70.5 37.8L59.2 44.3C57.2 40.5 53.8 38 50 38C43.4 38 38 43.4 38 50C38 56.6 43.4 62 50 62C53.8 62 57.2 59.5 59.2 55.7L70.5 62.2C66.4 69.3 58.8 74 50 74C36.7 74 26 63.3 26 50Z" fill="#FFFFFF"/>
+            <circle cx="50" cy="50" r="5" fill="#3DCD58"/>
+          </svg>
+        </div>
+        <div class="partner-info">
+          <div class="partner-name">Schneider Electric <span style="color:#009530;font-size:11px;">● Official OEM</span></div>
+          <div class="partner-role">Blokset & MVneX Licensed Partner</div>
+          <div class="partner-auth-tag">Form 4b Draw-Out LV / MV Switchgear</div>
+        </div>
+      </div>
+
+      <!-- 2. ABB -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+            <rect width="100" height="100" rx="12" fill="#FF000F"/>
+            <path d="M22 64L32 36H44L34 64H22ZM42 64L52 36H64L54 64H42ZM62 64L72 36H84L74 64H62Z" fill="#FFFFFF"/>
+            <rect x="25" y="52" width="20" height="4" fill="#FF000F"/>
+            <rect x="45" y="52" width="20" height="4" fill="#FF000F"/>
+          </svg>
+        </div>
+        <div class="partner-info">
+          <div class="partner-name">ABB Global <span style="color:#FF000F;font-size:11px;">● Strategic OEM</span></div>
+          <div class="partner-role">UniSafe & MDmax Licensed Partner</div>
+          <div class="partner-auth-tag">12kV-24kV AIS & Digital Switchboards</div>
+        </div>
+      </div>
+
+      <!-- 3. Siemens -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+            <rect width="100" height="100" rx="12" fill="#00646E"/>
+            <text x="50" y="58" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-weight="900" font-size="19" fill="#00FFB9" text-anchor="middle" letter-spacing="1">SIEMENS</text>
+          </svg>
+        </div>
+        <div class="partner-info">
+          <div class="partner-name">Siemens <span style="color:#00646E;font-size:11px;">● System Partner</span></div>
+          <div class="partner-role">SIBOARD Technology Alliance</div>
+          <div class="partner-auth-tag">Standardized LV Distribution & PLC Control</div>
+        </div>
+      </div>
+
+      <!-- 4. State Grid Corporation of China (SGCC) -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+            <rect width="100" height="100" rx="12" fill="#00695C"/>
+            <circle cx="50" cy="50" r="30" stroke="#80CBC4" stroke-width="4"/>
+            <path d="M35 50H65M50 35V65M40 40L60 60M40 60L60 40" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="partner-info">
+          <div class="partner-name">State Grid (SGCC) <span style="color:#00695C;font-size:11px;">● Qualified</span></div>
+          <div class="partner-role">Joint Prequalification Holder</div>
+          <div class="partner-auth-tag">10kV Transformers, RMU & Substations</div>
+        </div>
+      </div>
+
+      <!-- 5. China Southern Power Grid (CSG) -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+            <rect width="100" height="100" rx="12" fill="#0D47A1"/>
+            <path d="M26 62L50 26L74 62H26Z" stroke="#42A5F5" stroke-width="5" fill="none"/>
+            <path d="M40 62L50 44L60 62H40Z" fill="#FFFFFF"/>
+          </svg>
+        </div>
+        <div class="partner-info">
+          <div class="partner-name">Southern Grid (CSG) <span style="color:#0D47A1;font-size:11px;">● Qualified</span></div>
+          <div class="partner-role">Approved Equipment Vendor</div>
+          <div class="partner-auth-tag">10kV SCB Cast Resin & Prefab Substations</div>
+        </div>
+      </div>
+
+      <!-- 6. SPIC (State Power Investment Corp) -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+            <rect width="100" height="100" rx="12" fill="#E65100"/>
+            <circle cx="50" cy="50" r="28" fill="#FFF3E0"/>
+            <path d="M32 58C32 44 44 32 58 32M42 68C42 54 54 42 68 42" stroke="#E65100" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="partner-info">
+          <div class="partner-name">SPIC Clean Energy <span style="color:#E65100;font-size:11px;">● Key Supplier</span></div>
+          <div class="partner-role">Solar & Wind Step-Up Substations</div>
+          <div class="partner-auth-tag">Utility PV Step-Up Skids & HV Switchgear</div>
+        </div>
+      </div>
+
+      <!-- 7. PetroChina / Sinopec Energy -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+            <rect width="100" height="100" rx="12" fill="#C62828"/>
+            <circle cx="50" cy="46" r="20" fill="#FFEB3B"/>
+            <path d="M28 72C35 64 65 64 72 72H28Z" fill="#FFFFFF"/>
+          </svg>
+        </div>
+        <div class="partner-info">
+          <div class="partner-name">PetroChina / Sinopec <span style="color:#C62828;font-size:11px;">● Vendor</span></div>
+          <div class="partner-role">Hazardous Area Distribution</div>
+          <div class="partner-auth-tag">Ex d Flameproof Cabinets & FC-N2 Inerting</div>
+        </div>
+      </div>
+
+      <!-- 8. National Coal Energy & Metallurgy -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+            <rect width="100" height="100" rx="12" fill="#37474F"/>
+            <path d="M30 68L50 28L70 68H30Z" fill="#78909C"/>
+            <path d="M45 40L55 60M55 40L45 60" stroke="#ECEFF1" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="partner-info">
+          <div class="partner-name">China Coal & Energy <span style="color:#37474F;font-size:11px;">● MA/KA Certified</span></div>
+          <div class="partner-role">Mining Flameproof KBSGZY</div>
+          <div class="partner-auth-tag">6kV/1.14kV Mobile Substations & Inerting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Products Section -->
 <section class="section-wrap" id="products-section">
   <div class="container">
@@ -459,10 +707,10 @@
 <!-- Dual Engineering Sizers Section -->
 <section class="section-wrap gray" id="sizer-section">
   <div class="container">
-    <div class="section-title-box">
-      <span class="section-tag">Interactive Engineering Tools</span>
-      <h2 class="section-title">Pre-Engineered Equipment Sizing Engines</h2>
-      <p class="section-desc">Instantly compute dimensions, footprint, busbar ratings, and gas requirements. Download complete editable CAD (.DWG) and tender specification dossiers.</p>
+    <div class="section-title-box" style="margin-bottom: 28px;">
+      <span class="section-tag">Interactive Sizing Suite</span>
+      <h2 class="section-title">Engineering Sizing Calculators</h2>
+      <p class="section-desc" style="font-size: 13.5px; margin-top: 6px; max-width: 600px;">Compute equipment dimensions, busbar ratings, and gas specs with instant CAD (.DWG) dossier downloads.</p>
     </div>
 
     <div class="sizer-wrapper">
