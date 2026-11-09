@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feichi Power - 63,000 m² Manufacturing Facility & High-Voltage Testing Labs</title>
+  <style>
+    :root {
+      --primary: #0052cc;
+      --dark: #091e42;
+      --accent: #ff9900;
+      --gray-bg: #f4f5f7;
+      --border: #dfe1e6;
+      --text: #172b4d;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: #fff; color: var(--text); line-height: 1.6; }
+    .hero-section { background: linear-gradient(135deg, #091e42 0%, #0052cc 100%); color: #fff; padding: 60px 20px; text-align: center; }
+    .hero-section h1 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+    .hero-section p { font-size: 16px; color: #ebecf0; max-width: 750px; margin: 0 auto 24px; }
+    .kpi-strip { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 24px; }
+    .kpi-item h3 { font-size: 28px; font-weight: 800; color: #ffc400; }
+    .kpi-item p { font-size: 13px; color: #dfe1e6; text-transform: uppercase; }
+    
+    .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+    .section-header { text-align: center; margin-bottom: 40px; }
+    .section-header h2 { font-size: 26px; color: var(--dark); font-weight: 700; }
+    .section-header p { font-size: 14px; color: #5e6c84; margin-top: 6px; }
+
+    .workshop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    .workshop-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.2s; }
+    .workshop-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+    .card-banner { height: 180px; background: #091e42; color: #fff; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .card-banner span { font-size: 40px; }
+    .card-body { padding: 24px; }
+    .card-body h3 { font-size: 18px; color: var(--dark); margin-bottom: 10px; }
+    .card-body p { font-size: 13.5px; color: #42526e; margin-bottom: 16px; }
+    .spec-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { background: #f4f5f7; border: 1px solid var(--border); padding: 3px 8px; border-radius: 4px; font-size: 11.5px; font-weight: 600; color: #0052cc; }
+
+    .lab-spotlight { background: #f8f9fb; border: 1.5px solid #dcdfe6; border-radius: 12px; padding: 36px; margin: 60px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    .lab-info h3 { font-size: 22px; color: var(--dark); margin-bottom: 12px; }
+    .lab-info ul { list-style: none; margin-top: 14px; }
+    .lab-info li { padding: 8px 0; border-bottom: 1px solid #ebecf0; font-size: 13.5px; display: flex; align-items: center; gap: 8px; }
+    .lab-info li strong { color: var(--dark); }
+
+    .cta-banner { background: var(--dark); color: #fff; border-radius: 10px; padding: 36px; text-align: center; margin-top: 40px; }
+    .cta-banner h3 { font-size: 22px; margin-bottom: 8px; }
+    .cta-banner p { font-size: 14px; color: #dfe1e6; margin-bottom: 20px; }
+    .btn-cta { background: var(--accent); color: #091e42; padding: 12px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; }
+    
+    @media (max-width: 768px) {
+      .lab-spotlight { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1>63,000 m² Advanced Substation & Switchgear Manufacturing Base</h1>
+  <p>Engineered in Shenyang, China (Est. 2004, RMB 101M Capital). Integrated end-to-end CNC sheet metal cutting, vacuum epoxy casting, ABB & Schneider authorized assembly, and national type-test laboratories.</p>
+  
+  <div class="kpi-strip">
+    <div class="kpi-item">
+      <h3>63,000 m²</h3>
+      <p>Direct Factory Footprint</p>
+    </div>
+    <div class="kpi-item">
+      <h3>RMB 101M</h3>
+      <p>Registered Capital</p>
+    </div>
+    <div class="kpi-item">
+      <h3>< 5 pC</h3>
+      <p>Guaranteed Partial Discharge</p>
+    </div>
+    <div class="kpi-item">
+      <h3>31.5 kA / 1s</h3>
+      <p>IAC AFLR Arc Tested</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section-header">
+    <h2>End-to-End Modernized Heavy Manufacturing Workshops</h2>
+    <p>Ensuring micro-millimeter dimensional precision, ISO 12944 C5-M marine anti-corrosion, and 30+ years zero-maintenance reliability.</p>
+  </div>
+
+  <div class="workshop-grid">
+    <!-- Card 1 -->
+    <div class="workshop-card">
+      <div class="card-banner" style="background: linear-gradient(135deg, #172b4d, #0052cc)">
+        <span>⚡</span>
+      </div>
+      <div class="card-body">
+        <h3>1. Precision CNC Laser & Cor-Ten Steel Enclosure Workshop</h3>
+        <p>Equipped with 20kW fiber laser cutters, high-tonnage CNC press brakes, and automated robotic welding rigs. Handles heavy 09Г2С / Cor-Ten weather-resistant steel for Arctic -60°C and coastal C5-M environments.</p>
+        <div class="spec-pills">
+          <span class="pill">Sa 2.5 Sandblasting</span>
+          <span class="pill">≥240μm C5-M Coating</span>
+          <span class="pill">100mm PU Insulation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="workshop-card">
+      <div class="card-banner" style="background: linear-gradient(135deg, #0747a6, #36b37e)">
+        <span>🧪</span>
+      </div>
+      <div class="card-body">
+        <h3>2. 1-3 mbar Vacuum Quartz-Sand Epoxy Casting Hall</h3>
+        <p>Thin-insulation vacuum epoxy casting plant for Class F/H dry-type transformers. Ensures partial discharge strictly below 5pC, high short-circuit dynamic withstand, and self-extinguishing flame retardancy.</p>
+        <div class="spec-pills">
+          <span class="pill">< 5pC Partial Discharge</span>
+          <span class="pill">Class H Nomex</span>
+          <span class="pill">F1/E2/C2 Certified</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="workshop-card">
+      <div class="card-banner" style="background: linear-gradient(135deg, #091e42, #ff9900)">
+        <span>🏢</span>
+      </div>
+      <div class="card-body">
+        <h3>3. ABB & Schneider Authorized Switchgear Assembly Lines</h3>
+        <p>Dedicated standardized assembly bays for Schneider Electric Blokset LV draw-out switchboards (up to 6300A, Form 4b) and ABB UniSafe MV air-insulated switchgear (KYN28A / KRU 10-35kV) with 5-prevention mechanical interlocking.</p>
+        <div class="spec-pills">
+          <span class="pill">Schneider Blokset</span>
+          <span class="pill">ABB UniSafe / MDmax</span>
+          <span class="pill">LSC2B-PM Partition</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="workshop-card">
+      <div class="card-banner" style="background: linear-gradient(135deg, #253858, #4c9aff)">
+        <span>🚢</span>
+      </div>
+      <div class="card-body">
+        <h3>4. E-House Modular Substation Integration & FAT Platform</h3>
+        <p>Integrated containerized substation assembly (БМЗ / E-House) pre-installed with MV/LV switchgear, dry transformers, DC UPS battery chargers, HVAC microclimate units, and IEC 61850 SCADA automation.</p>
+        <div class="spec-pills">
+          <span class="pill">Plug & Play Grid</span>
+          <span class="pill">IEC 61850 SCADA</span>
+          <span class="pill">FM200 / Aerosol Fire</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testing Lab Spotlight -->
+  <div class="lab-spotlight">
+    <div class="lab-info">
+      <div style="font-size:12px;font-weight:700;color:#0052cc;text-transform:uppercase;margin-bottom:6px">Quality Assurance & FAT Protocols</div>
+      <h3>National Lab Stamped High-Voltage Testing Complex</h3>
+      <p>Every single unit undergoes rigorous multi-stage testing before leaving our Shenyang plant to ensure zero defects on arrival:</p>
+      <ul>
+        <li>✅ <strong>Partial Discharge Analysis:</strong> Real-time shielded room PD measurement (Guaranteed &lt; 5pC).</li>
+        <li>✅ <strong>Power Frequency Dielectric Withstand:</strong> High-voltage AC withstand testing up to 95kV / 1 min.</li>
+        <li>✅ <strong>Lightning Impulse Withstand (BIL):</strong> Verified up to 200kV standard lightning wave (1.2/50μs).</li>
+        <li>✅ <strong>Mechanical Interlocking & Relay Tests:</strong> 100% microcomputer protection & SCADA integration verification.</li>
+      </ul>
+    </div>
+    <div style="background:#091e42;color:#fff;padding:28px;border-radius:8px">
+      <h4 style="font-size:16px;color:#ffc400;margin-bottom:10px">Seaworthy Heavy Export Packaging</h4>
+      <p style="font-size:13px;color:#ebecf0;line-height:1.5">All export box substations and switchgear are vacuum-sealed with multi-layer vapor barrier foil, desiccant charges, and reinforced solid-timber fumigated skids (ISPM 15 compliant) ensuring rust-free oceanic transit.</p>
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <h3>Plan a Factory Audit or Virtual Video FAT Walkthrough</h3>
+    <p>Request our full vendor prequalification dossier, factory video tour, or arrange a live video FAT test with our Lead Electrical Engineer Henry.</p>
+    <a href="https://feichipower.com/en/contact" class="btn-cta">Request Vendor Qualification Dossier</a>
+  </div>
+</div>
+
+</body>
+</html>

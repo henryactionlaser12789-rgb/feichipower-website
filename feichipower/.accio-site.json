@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 2,
+  "siteId": "gvu1t7uhv0xte26a",
+  "name": "feichipower",
+  "kind": "static-html",
+  "devCommand": "vite",
+  "buildCommand": "vite build",
+  "outputDir": "dist",
+  "entry": "index.html",
+  "createdBy": "accio-site-builder",
+  "createdAt": "2026-11-09T07:25:00.000Z",
+  "siteIdSyncStatus": "synced",
+  "subdomain": "feichipower",
+  "publishedUrl": "https://feichipower.site.accio.ai",
+  "publishedAt": "2026-11-09T07:53:12.255Z",
+  "deployId": "dep_1794210790492_7e91acec"
+}

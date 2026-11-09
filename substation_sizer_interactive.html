@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feichi Power - Smart Packaged Substation (SLD) Sizing Engine</title>
+  <style>
+    :root {
+      --primary: #0052cc;
+      --primary-dark: #0747a6;
+      --accent: #ff9900;
+      --dark: #091e42;
+      --bg: #f8f9fb;
+      --border: #dcdfe6;
+      --text: #172b4d;
+      --success: #36b37e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px 20px;
+    }
+
+    .sizer-card {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 35px rgba(9, 30, 66, 0.08);
+      overflow: hidden;
+    }
+
+    .sizer-header {
+      background: var(--dark);
+      color: #fff;
+      padding: 28px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .sizer-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .std-badge {
+      background: rgba(255, 153, 0, 0.2);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .sizer-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      min-height: 520px;
+    }
+
+    .input-pane {
+      padding: 32px 36px;
+      border-right: 1px solid var(--border);
+      background: #ffffff;
+    }
+
+    .output-pane {
+      padding: 32px 36px;
+      background: #fcfdfe;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pane-title {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #ebecf0;
+    }
+
+    .form-item {
+      margin-bottom: 18px;
+    }
+
+    .form-item label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .form-item select,
+    .form-item input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+    }
+
+    .form-item select:focus,
+    .form-item input:focus {
+      border-color: var(--primary);
+    }
+
+    /* Result Cards */
+    .result-kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .kpi-box {
+      background: #ffffff;
+      border: 1.5px solid #ebecf0;
+      border-radius: 8px;
+      padding: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .kpi-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6b778c;
+      text-transform: uppercase;
+    }
+
+    .kpi-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-top: 4px;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .specs-table th, .specs-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #ebecf0;
+      text-align: left;
+    }
+
+    .specs-table th {
+      color: #6b778c;
+      font-weight: 600;
+    }
+
+    .lead-magnet-cta {
+      background: linear-gradient(135deg, #091e42 0%, #0052cc 100%);
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .lead-magnet-cta h4 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .lead-magnet-cta p {
+      font-size: 12px;
+      color: #dfe1e6;
+      margin-bottom: 14px;
+    }
+
+    .btn-download-dossier {
+      background: var(--accent);
+      color: #091e42;
+      border: none;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-download-dossier:hover {
+      background: #ffb84d;
+      transform: translateY(-1px);
+    }
+
+    /* Lead Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(9, 30, 66, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      border-radius: 10px;
+      max-width: 480px;
+      width: 90%;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #6b778c;
+    }
+
+    @media (max-width: 820px) {
+      .sizer-layout {
+        grid-template-columns: 1fr;
+      }
+      .input-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sizer-card">
+  <div class="sizer-header">
+    <h1>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#ff9900"><path d="M11 15H6l7-14v8h5l-7 14v-8z"/></svg>
+      <span>Feichi Substation Engineering Sizer (IEC / GOST)</span>
+    </h1>
+    <div class="std-badge">IEC 62271-202 & ГОСТ 14695-80 Compliant</div>
+  </div>
+
+  <div class="sizer-layout">
+    <!-- Input Pane -->
+    <div class="input-pane">
+      <div class="pane-title">1. Electrical Grid Requirements</div>
+      
+      <div class="form-item">
+        <label for="voltageIn">Primary High Voltage (kV)</label>
+        <select id="voltageIn" onchange="calculateSizing()">
+          <option value="35">35 kV (33 kV / 35 kV / 38.5 kV)</option>
+          <option value="24">24 kV (20 kV / 22 kV / 24 kV)</option>
+          <option value="10" selected>10 kV (6 kV / 10 kV / 11 kV)</option>
+        </select>
+      </div>
+
+      <div class="form-item">
+        <label for="loadKva">Total Load / Transformer Rating</label>
+        <select id="loadKva" onchange="calculateSizing()">
+          <option value="630">630 kVA</option>
+          <option value="1000">1,000 kVA (1 MVA)</option>
+          <option value="1250" selected>1,250 kVA (1.25 MVA)</option>
+          <option value="1600">1,600 kVA (1.6 MVA)</option>
+          <option value="2000">2,000 kVA (2.0 MVA)</option>
+          <option value="2500">2,500 kVA (2.5 MVA)</option>
+          <option value="3150">3,150 kVA (3.15 MVA)</option>
+        </select>
+      </div>
+
+      <div class="form-item">
+        <label for="transType">Transformer Winding & Core Technology</label>
+        <select id="transType" onchange="calculateSizing()">
+          <option value="oil">Hermetically Sealed Oil-Immersed (ТМГ / S13-S22)</option>
+          <option value="dry">Cast Resin Dry-Type Class H (ТСЗЛ / Low Loss)</option>
+        </select>
+      </div>
+
+      <div class="form-item">
+        <label for="envCondition">Operating Environment & Enclosure</label>
+        <select id="envCondition" onchange="calculateSizing()">
+          <option value="arctic">Arctic Cold -60°C (УХЛ1 + 100mm PU + PTC Microclimate)</option>
+          <option value="standard" selected>Standard Industrial (IEC 62271-202 -25°C to +45°C)</option>
+          <option value="coastal">Coastal / Marine (ISO 12944 C5-M Cor-Ten Steel)</option>
+        </select>
+      </div>
+
+      <div class="form-item">
+        <label for="mvSwitch">MV Switchgear Incomer Topology</label>
+        <select id="mvSwitch" onchange="calculateSizing()">
+          <option value="kyn28">KYN28A-24 / UniSafe Air-Insulated Withdrawable</option>
+          <option value="rmu">Compact Gas-Insulated RMU (SF6-Free Clean Air)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Output Pane -->
+    <div class="output-pane">
+      <div>
+        <div class="pane-title">2. Pre-Engineered Sizing Results</div>
+        
+        <div class="result-kpi-grid">
+          <div class="kpi-box">
+            <div class="kpi-label">Recommended Unit Model</div>
+            <div class="kpi-value" id="resModel" style="color:#0052cc">YB-10/0.4-1250</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-label">Est. Footprint & Dimensions</div>
+            <div class="kpi-value" id="resDim">4200 × 2400 mm</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-label">Estimated Total Weight</div>
+            <div class="kpi-value" id="resWeight">~ 6,800 kg</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-label">Thermal Efficiency / Losses</div>
+            <div class="kpi-value" id="resLoss">< 1.2% No-Load</div>
+          </div>
+        </div>
+
+        <table class="specs-table">
+          <tr>
+            <th>Primary Busbar Rating:</th>
+            <td id="resBusbar">630 A / 25 kA (3s)</td>
+          </tr>
+          <tr>
+            <th>Internal Arc Rating (IAC):</th>
+            <td>IAC AFLR 31.5 kA / 1s</td>
+          </tr>
+          <tr>
+            <th>Enclosure Protection:</th>
+            <td id="resIp">IP54 / Thermal Cladding</td>
+          </tr>
+          <tr>
+            <th>Applicable Standards:</th>
+            <td>IEC 62271-202, IEC 60076, ГОСТ 14695</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Lead Magnet Box -->
+      <div class="lead-magnet-cta">
+        <h4>⚡ Download Official Engineering Package (PDF + CAD)</h4>
+        <p>Get the complete sizing calculation sheet, editable DWG single-line diagram (SLD), and tender-ready specification dossier.</p>
+        <button class="btn-download-dossier" onclick="openLeadModal()">
+          <span>Download CAD SLD & Specification Dossier</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lead Capture Modal -->
+<div class="modal-overlay" id="leadModal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeLeadModal()">&times;</span>
+    <h3 style="font-size:18px;color:#091e42;margin-bottom:8px">Send Engineering CAD & Sizing Dossier</h3>
+    <p style="font-size:13px;color:#5e6c84;margin-bottom:20px">Enter your professional email to receive the complete AutoCAD (.DWG) drawing package and technical data sheet for this configuration.</p>
+    
+    <form onsubmit="handleLeadSubmit(event)">
+      <div class="form-item">
+        <label>Your Full Name *</label>
+        <input type="text" id="leadName" placeholder="e.g. Dmitry Volkov / Ahmed Al-Mansoor" required>
+      </div>
+      <div class="form-item">
+        <label>Corporate Work Email *</label>
+        <input type="email" id="leadEmail" placeholder="e.g. name@epc-contractor.com" required>
+      </div>
+      <div class="form-item">
+        <label>Company / Project Name *</label>
+        <input type="text" id="leadCompany" placeholder="e.g. Al-Diyar Power Infrastructure" required>
+      </div>
+      <button type="submit" class="btn-download-dossier" style="width:100%;justify-content:center;padding:12px;background:#0052cc;color:#fff;margin-top:10px">
+        Instant Email Delivery (CAD + PDF)
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function calculateSizing() {
+    const v = document.getElementById('voltageIn').value;
+    const kva = document.getElementById('loadKva').value;
+    const t = document.getElementById('transType').value;
+    const env = document.getElementById('envCondition').value;
+
+    let model = (v === '35' ? 'YB-35/0.4-' : 'YB-10/0.4-') + kva;
+    if (env === 'arctic') {
+      model = (v === '35' ? '2КТПН-35/' : '2КТПН-10/') + kva + ' УХЛ1';
+    }
+
+    let dim = '4200 × 2400 × 2600 mm';
+    let weight = '~ 6,800 kg';
+    if (parseInt(kva) >= 2000) {
+      dim = '5800 × 2600 × 2900 mm';
+      weight = '~ 11,500 kg';
+    } else if (parseInt(kva) <= 1000) {
+      dim = '3600 × 2200 × 2400 mm';
+      weight = '~ 5,200 kg';
+    }
+
+    document.getElementById('resModel').innerText = model;
+    document.getElementById('resDim').innerText = dim;
+    document.getElementById('resWeight').innerText = weight;
+    document.getElementById('resLoss').innerText = t === 'dry' ? 'Class H (< 0.8% No-load)' : 'S13-S22 Hermetic Low-Loss';
+    document.getElementById('resBusbar').innerText = parseInt(kva) >= 2000 ? '1250 A / 31.5 kA (3s)' : '630 A / 25 kA (3s)';
+    document.getElementById('resIp').innerText = env === 'arctic' ? 'IP54 + 100mm PU Thermal (Arctic)' : (env === 'coastal' ? 'IP55 C5-M Cor-Ten Steel' : 'IP44/IP54 Standard');
+  }
+
+  function openLeadModal() {
+    document.getElementById('leadModal').style.display = 'flex';
+  }
+
+  function closeLeadModal() {
+    document.getElementById('leadModal').style.display = 'none';
+  }
+
+  function handleLeadSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('leadEmail').value;
+    alert(`Success! The engineering package (CAD DWG + PDF Dossier) has been queued for dispatch to ${email}. Our Lead Electrical Engineer Henry will follow up if you need custom SLD adaptation.`);
+    closeLeadModal();
+  }
+
+  calculateSizing();
+</script>
+
+</body>
+</html>

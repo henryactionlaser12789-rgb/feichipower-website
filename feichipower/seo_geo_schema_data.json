@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Feichi Power Official Schema.org & GEO Knowledge Graph Entities",
+  "description": "Production-ready JSON-LD schemas for feichipower.com to achieve maximum Rich Snippets in Google/Yandex and authoritative citation by LLMs (ChatGPT, Claude, Perplexity).",
+  "schemas": {
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://feichipower.com/#organization",
+      "name": "Shenyang Feichi Electrical Equipment Co., Ltd.",
+      "alternateName": ["Feichi Power", "Feichi Electrical", "沈阳飞驰电气设备有限公司"],
+      "url": "https://feichipower.com",
+      "logo": "https://feichipower.com/images/feichi_logo.png",
+      "foundingDate": "2004",
+      "legalName": "沈阳飞驰电气设备有限公司",
+      "taxID": "91210106757962453U",
+      "description": "National 'Little Giant' specialized manufacturer of 10kV-35kV/110kV packaged compact box substations, metal-clad switchgear, modular E-Houses, power transformers, and smart mining PSA nitrogen generation systems.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shenyang High-Tech Industrial Development Zone",
+        "addressLocality": "Shenyang",
+        "addressRegion": "Liaoning",
+        "postalCode": "110000",
+        "addressCountry": "CN"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+86-155-6620-6930",
+          "contactType": "Technical Director / Foreign Trade Engineering",
+          "email": "henry@feichipower.com",
+          "availableLanguage": ["English", "Russian", "Spanish", "Chinese"]
+        }
+      ],
+      "hasCredential": [
+        "National 'Little Giant' Specialized Enterprise",
+        "National High-Tech Enterprise (GR202221000842)",
+        "Schneider Electric Blokset Authorized Strategic Partner",
+        "ABB UniSafe & MDmax Authorized Strategic Partner",
+        "ISO 9001:2015 / ISO 14001:2015 / ISO 45001:2018",
+        "EAC / TR CU 004/2011 & TR CU 012/2011 Certified",
+        "Mining Safety Certificate Ex d I Mb (MA/KA)"
+      ]
+    },
+    "products": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "@id": "https://feichipower.com/en/products/box-substation#product",
+        "name": "Prefabricated Compact Box-Type Substation 10kV-35kV (КТПН / 2КТПН)",
+        "image": "https://feichipower.com/images/products/box_substation_35kv.jpg",
+        "description": "Outdoor packaged prefabricated box-type substation integrating MV switchgear, high-efficiency power transformer (50kVA-3150kVA), and LV distribution units. Dual-certified to IEC 62271-202 and GOST 14695-80 for Siberian Arctic (-60°C) and utility microgrids.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Feichi Power"
+        },
+        "manufacturer": {
+          "@id": "https://feichipower.com/#organization"
+        },
+        "category": "High Voltage Power Equipment > Substations",
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "USD",
+          "price": "Custom Project BTO",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition"
+        },
+        "additionalProperty": [
+          {"@type": "PropertyValue", "name": "Primary Voltage", "value": "10 kV / 24 kV / 35 kV"},
+          {"@type": "PropertyValue", "name": "Secondary Voltage", "value": "0.4 kV / 0.69 kV"},
+          {"@type": "PropertyValue", "name": "Capacity Range", "value": "50 kVA - 3,150 kVA"},
+          {"@type": "PropertyValue", "name": "Enclosure Rating", "value": "IP54 / IP55 C5-M Heavy Anti-Corrosion"},
+          {"@type": "PropertyValue", "name": "Temperature Range", "value": "-60°C to +45°C (ГОСТ 15150 УХЛ1)"}
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "@id": "https://feichipower.com/en/products/mv-lv-switchgear#product",
+        "name": "Medium & Low Voltage Metal-Clad Switchgear (KYN28A / Blokset / UniSafe)",
+        "image": "https://feichipower.com/images/products/kyn28a_switchgear.jpg",
+        "description": "High-performance air-insulated withdrawable metal-clad switchgear assemblies with 4-compartment segregation (LSC2B-PM), IAC AFLR 31.5kA internal arc classification, officially authorized by Schneider Electric and ABB.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Feichi Power"
+        },
+        "manufacturer": {
+          "@id": "https://feichipower.com/#organization"
+        },
+        "additionalProperty": [
+          {"@type": "PropertyValue", "name": "Rated Voltage", "value": "0.4 kV - 35 kV"},
+          {"@type": "PropertyValue", "name": "Rated Current", "value": "Up to 4,000 A (MV) / 6,300 A (LV)"},
+          {"@type": "PropertyValue", "name": "Short-Time Withstand Current", "value": "31.5 kA / 40 kA (3s)"},
+          {"@type": "PropertyValue", "name": "Arc Protection Response", "value": "< 7 ms Optical-Fiber Detection"}
+        ]
+      }
+    ],
+    "faq": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://feichipower.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can Feichi substations comply with Russian GOST and Siberian Arctic conditions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Feichi manufactures 2КТПН and БМЗ modular substations certified to ГОСТ 14695-80 and ГОСТ 15150-69 УХЛ1 climate standards (-60°C to +40°C). Our arctic-grade substations feature 100mm PU insulation cladding, automatic PTC microclimate heating, and heavy-duty Cor-Ten steel chassis (09Г2С)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Feichi hold official licenses from global giants like Schneider Electric and ABB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Feichi holds official authorized panel builder licenses for Schneider Electric Blokset LV switchgear (up to 6300A, Form 4b segregation) and ABB UniSafe MV air-insulated switchgear & MDmax intelligent digital switchboards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the typical manufacturing lead time for customized compact substations and E-Houses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard 10kV-35kV packaged compact substations are manufactured within 20-30 working days. Large customized containerized E-Houses (БМЗ) and utility-scale PV/BESS MV Skids take 35-45 working days, including full factory acceptance testing (FAT) and vacuum seaworthy packaging."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Feichi supply official type-test reports from accredited high-voltage laboratories?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All export equipment carries official stamped Type-Test Certificates from National High-Voltage Quality Inspection Centers (NHVS) verifying temperature rise, dielectric withstand (BIL up to 200kV), short-circuit withstand (up to 40kA/3s), and internal arc containment (IAC AFLR 31.5kA/1s)."
+          }
+        }
+      ]
+    }
+  }
+}

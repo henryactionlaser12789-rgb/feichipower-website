@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feichi Power - Engineering Fast-Track RFQ & SLD Submission</title>
+  <style>
+    :root {
+      --primary: #0052cc;
+      --primary-dark: #0747a6;
+      --accent: #ff9900;
+      --dark: #091e42;
+      --gray-light: #f4f5f7;
+      --gray-border: #dfe1e6;
+      --text: #172b4d;
+      --text-muted: #5e6c84;
+      --success: #36b37e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--gray-light);
+      color: var(--text);
+      padding: 40px 20px;
+    }
+
+    .rfq-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(9, 30, 66, 0.08);
+      overflow: hidden;
+      border: 1px solid var(--gray-border);
+    }
+
+    .rfq-header {
+      background: linear-gradient(135deg, #091e42 0%, #0052cc 100%);
+      color: #ffffff;
+      padding: 32px 40px;
+      position: relative;
+    }
+
+    .badge-tag {
+      display: inline-block;
+      background: rgba(255, 153, 0, 0.2);
+      border: 1px solid var(--accent);
+      color: #ffc400;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .rfq-header h2 {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .rfq-header p {
+      font-size: 15px;
+      color: #ebecf0;
+      max-width: 700px;
+      line-height: 1.5;
+    }
+
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 13px;
+      color: #dfe1e6;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .trust-item svg {
+      width: 16px;
+      height: 16px;
+      fill: #36b37e;
+    }
+
+    .rfq-body {
+      padding: 36px 40px;
+    }
+
+    .form-section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid #ebecf0;
+      padding-bottom: 8px;
+    }
+
+    .section-num {
+      background: var(--primary);
+      color: #fff;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--gray-border);
+      border-radius: 6px;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.15);
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .checkbox-card {
+      border: 1.5px solid var(--gray-border);
+      border-radius: 6px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: #fafbfc;
+    }
+
+    .checkbox-card:hover {
+      border-color: var(--primary);
+      background: #f4f5f7;
+    }
+
+    .checkbox-card input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .checkbox-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* Dropzone Upload */
+    .dropzone-box {
+      border: 2px dashed #4c9aff;
+      background: #f4f8ff;
+      border-radius: 8px;
+      padding: 28px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .dropzone-box:hover {
+      background: #ebf3ff;
+      border-color: var(--primary);
+    }
+
+    .dropzone-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 10px;
+      fill: var(--primary);
+    }
+
+    .dropzone-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .dropzone-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .file-preview-list {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f4f5f7;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    /* Submit Bar */
+    .submit-bar {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--gray-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .nda-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      max-width: 450px;
+    }
+
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 14px 32px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 82, 204, 0.25);
+    }
+
+    .btn-submit:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 82, 204, 0.35);
+    }
+
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .rfq-header, .rfq-body {
+        padding: 24px 20px;
+      }
+      .submit-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-submit {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rfq-container">
+  <div class="rfq-header">
+    <div class="badge-tag">⚡ Direct Engineering & EPC Fast-Track</div>
+    <h2>Request Official Technical SLD Review & Budgetary Quote</h2>
+    <p>Submit your single-line diagram (SLD), load requirements, or tender specifications. Our technical engineering division will provide a pre-engineered design proposal within 24 hours.</p>
+    
+    <div class="trust-badges">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span>24h Official SLD Feedback</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span>Strict Commercial NDA</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span>Schneider & ABB Authorized Panels</span>
+      </div>
+    </div>
+  </div>
+
+  <form class="rfq-body" id="engineeringRfqForm">
+    <!-- Section 1: Project Details -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-num">1</span>
+        <span>Project & Operational Context</span>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="projectCountry">Project Destination Country *</label>
+          <select id="projectCountry" required>
+            <option value="">Select country / standard...</option>
+            <option value="RU">Russia / CIS (GOST Standard УХЛ1)</option>
+            <option value="KZ">Kazakhstan / Central Asia</option>
+            <option value="SA">Saudi Arabia / UAE / GCC (IEC / High Temp)</option>
+            <option value="CL">Chile / Peru / Latin America (Mining Standard)</option>
+            <option value="ID">Indonesia / Southeast Asia (Tropical)</option>
+            <option value="OTHER">Other Global Destination (IEC Standard)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="projectType">Industry Application *</label>
+          <select id="projectType" required>
+            <option value="">Select project type...</option>
+            <option value="Solar_PV_BESS">Utility Solar PV & BESS Microgrid (1500V MV Skid)</option>
+            <option value="Mining_Heavy">Mining & Heavy Industrial Substation (Flameproof / C5-M)</option>
+            <option value="Grid_Utility">Power Grid Utility Substation (State Grid / Distribution)</option>
+            <option value="Commercial_Data">Commercial Hub & Hyperscale Data Center</option>
+            <option value="Rail_Transport">Rail Transit & Traction Power Supply</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Technical Specifications -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-num">2</span>
+        <span>Electrical Equipment Scope & Key Parameters</span>
+      </div>
+      <div class="grid-3">
+        <div class="form-group">
+          <label for="primaryVoltage">Primary / Incomer Voltage *</label>
+          <select id="primaryVoltage" required>
+            <option value="35kV">35 kV (33 kV - 38.5 kV)</option>
+            <option value="24kV">24 kV (20 kV - 22 kV)</option>
+            <option value="10kV" selected>10 kV (6 kV - 11 kV)</option>
+            <option value="110kV">110 kV Modular Substation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="secondaryVoltage">Secondary Distribution Voltage</label>
+          <select id="secondaryVoltage">
+            <option value="0.4kV" selected>0.4 kV (400V / 380V)</option>
+            <option value="0.69kV">0.69 kV (690V Mining/Wind)</option>
+            <option value="10kV">10 kV Step-Up / Step-Down</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="transformerCapacity">Transformer Capacity (kVA)</label>
+          <input type="text" id="transformerCapacity" placeholder="e.g. 1250kVA, 2500kVA, 2x1600kVA">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Special Environmental & Safety Requirements</label>
+        <div class="checkbox-grid">
+          <label class="checkbox-card">
+            <input type="checkbox" name="envReq" value="Arctic_Cold">
+            <span class="checkbox-label">Arctic Cold (-60°C УХЛ1 PTC Heating)</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" name="envReq" value="Marine_C5M">
+            <span class="checkbox-label">Coastal / Marine C5-M Anti-Corrosion</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" name="envReq" value="High_Altitude">
+            <span class="checkbox-label">High Altitude (> 2,500m BIL Correction)</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" name="envReq" value="Schneider_Blokset">
+            <span class="checkbox-label">Schneider Blokset / ABB UniSafe License</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" name="envReq" value="Flameproof_Ex">
+            <span class="checkbox-label">Mining Explosion-Proof (Ex d I Mb)</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" name="envReq" value="Type_Test_Reports">
+            <span class="checkbox-label">National Lab Stamped Type-Test Dossier</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: SLD / CAD Attachment -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-num">3</span>
+        <span>Upload Project Single-Line Diagram (SLD) / Specs</span>
+      </div>
+      <div class="dropzone-box" id="dropzoneBox" onclick="document.getElementById('fileInput').click()">
+        <svg class="dropzone-icon" viewBox="0 0 24 24">
+          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+        </svg>
+        <div class="dropzone-title">Click to upload or drag & drop engineering drawings</div>
+        <div class="dropzone-hint">Supported: .DWG, .DXF, .PDF, .XLSX, .DOCX, .ZIP (Max file size: 50MB)</div>
+        <input type="file" id="fileInput" style="display:none" multiple onchange="handleFileSelect(event)">
+      </div>
+      <div class="file-preview-list" id="fileList"></div>
+    </div>
+
+    <!-- Section 4: Contact & Verification -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-num">4</span>
+        <span>Engineering Contact Information</span>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="contactName">Full Name *</label>
+          <input type="text" id="contactName" placeholder="e.g. Alexander Petrov / John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Corporate Work Email *</label>
+          <input type="email" id="contactEmail" placeholder="e.g. name@company-epc.com" required>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="companyName">Company / EPC Contractor Name *</label>
+          <input type="text" id="companyName" placeholder="e.g. Eurasian Grid Contracting LLC" required>
+        </div>
+        <div class="form-group">
+          <label for="contactPhone">WhatsApp / Phone Number</label>
+          <input type="tel" id="contactPhone" placeholder="+7 / +86 / +971 ...">
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Action -->
+    <div class="submit-bar">
+      <div class="nda-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#0052cc"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+        <span>All uploaded SLD schematics and RFQ specs are encrypted and protected under our standard EPC Commercial Non-Disclosure Agreement (NDA).</span>
+      </div>
+      <button type="submit" class="btn-submit">
+        <span>Submit Engineering RFQ (24h Feedback)</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function handleFileSelect(e) {
+    const list = document.getElementById('fileList');
+    list.innerHTML = '';
+    const files = e.target.files;
+    for (let i = 0; i < files.length; i++) {
+      const item = document.createElement('div');
+      item.className = 'file-item';
+      item.innerHTML = `<span>📄 <strong>${files[i].name}</strong> (${(files[i].size / 1024 / 1024).toFixed(2)} MB)</span><span style="color:#36b37e;font-weight:600">Ready</span>`;
+      list.appendChild(item);
+    }
+  }
+
+  document.getElementById('engineeringRfqForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for submitting your engineering inquiry! Our Technical Lead Henry (+86 155 6620 6930) and the engineering department will review your single-line diagram and provide formal technical feedback within 24 hours.');
+  });
+</script>
+
+</body>
+</html>
