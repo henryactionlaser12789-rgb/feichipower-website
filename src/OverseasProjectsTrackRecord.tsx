@@ -38,8 +38,7 @@ export function OverseasProjectsTrackRecord({ locale }: { locale: Locale }) {
         item.country.en.toLowerCase().includes(q) ||
         item.title.zh.toLowerCase().includes(q) ||
         item.title.en.toLowerCase().includes(q) ||
-        item.equipmentSummary.toLowerCase().includes(q) ||
-        item.client.toLowerCase().includes(q);
+        item.equipmentSummary.toLowerCase().includes(q);
       return matchRegion && matchSector && matchSearch;
     });
   }, [activeRegion, activeSector, searchQuery]);
@@ -277,21 +276,12 @@ export function OverseasProjectsTrackRecord({ locale }: { locale: Locale }) {
                     {item.title[locale] || item.title.en || item.title.zh}
                   </h3>
 
-                  <div style={{ background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(51, 65, 85, 0.5)', borderRadius: '6px', padding: '8px 12px', marginBottom: '12px', fontSize: '12px', color: '#cbd5e1', lineHeight: '1.45', flex: 1 }}>
+                  <div style={{ background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(51, 65, 85, 0.5)', borderRadius: '6px', padding: '8px 12px', marginBottom: '14px', fontSize: '12px', color: '#cbd5e1', lineHeight: '1.45', flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
                       <Zap size={13} style={{ color: '#38bdf8', marginTop: '3px', flexShrink: 0 }} />
                       <span>{item.equipmentSummary}</span>
                     </div>
                   </div>
-
-                  {item.client && (
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11.5px', color: '#64748b', marginBottom: '14px' }}>
-                      <Building2 size={12} style={{ flexShrink: 0 }} />
-                      <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        {locale === 'zh' ? '订货/总包单位: ' : 'Contractor: '} {item.client}
-                      </span>
-                    </div>
-                  )}
 
                   <a
                     className="button"
@@ -329,12 +319,11 @@ export function OverseasProjectsTrackRecord({ locale }: { locale: Locale }) {
                 <thead>
                   <tr style={{ background: 'rgba(30, 41, 59, 0.9)', borderBottom: '1px solid rgba(51, 65, 85, 0.8)', color: '#94a3b8' }}>
                     <th style={{ padding: '12px 14px', width: '50px' }}>#</th>
-                    <th style={{ padding: '12px 14px', width: '120px' }}>{locale === 'zh' ? '国家/地区' : 'Country'}</th>
-                    <th style={{ padding: '12px 14px', width: '280px' }}>{locale === 'zh' ? '海外项目名称' : 'Project Title'}</th>
-                    <th style={{ padding: '12px 14px' }}>{locale === 'zh' ? '核心交付产品与规格' : 'Delivered Products & Specs'}</th>
-                    <th style={{ padding: '12px 14px', width: '80px', textAlign: 'center' }}>{locale === 'zh' ? '数量' : 'Qty'}</th>
-                    <th style={{ padding: '12px 14px', width: '220px' }}>{locale === 'zh' ? '订货/总包单位' : 'Client / Contractor'}</th>
-                    <th style={{ padding: '12px 14px', width: '100px', textAlign: 'center' }}>{locale === 'zh' ? '技术对接' : 'Action'}</th>
+                    <th style={{ padding: '12px 14px', width: '130px' }}>{locale === 'zh' ? '国家/地区' : 'Country'}</th>
+                    <th style={{ padding: '12px 14px', width: '320px' }}>{locale === 'zh' ? '海外工程项目名称' : 'Project Title'}</th>
+                    <th style={{ padding: '12px 14px' }}>{locale === 'zh' ? '成套交付产品与技术规格' : 'Delivered Products & Specs'}</th>
+                    <th style={{ padding: '12px 14px', width: '90px', textAlign: 'center' }}>{locale === 'zh' ? '交付数量' : 'Qty'}</th>
+                    <th style={{ padding: '12px 14px', width: '110px', textAlign: 'center' }}>{locale === 'zh' ? '工程方案' : 'Action'}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -352,16 +341,13 @@ export function OverseasProjectsTrackRecord({ locale }: { locale: Locale }) {
                         {item.country[locale] || item.country.en}
                       </td>
                       <td style={{ padding: '10px 14px', color: '#38bdf8', fontWeight: 600 }}>
-                        {item.title.zh}
+                        {item.title[locale] || item.title.en || item.title.zh}
                       </td>
                       <td style={{ padding: '10px 14px', color: '#cbd5e1' }}>
                         {item.equipmentSummary}
                       </td>
                       <td style={{ padding: '10px 14px', textAlign: 'center', color: '#22c55e', fontWeight: 700 }}>
                         {item.quantity}
-                      </td>
-                      <td style={{ padding: '10px 14px', color: '#94a3b8', fontSize: '11.5px' }}>
-                        {item.client || '-'}
                       </td>
                       <td style={{ padding: '10px 14px', textAlign: 'center' }}>
                         <a
