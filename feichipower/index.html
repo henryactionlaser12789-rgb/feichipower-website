@@ -238,15 +238,26 @@
     .section-desc { font-size: 15px; color: var(--text-muted); max-width: 720px; margin: 8px auto 0; }
     .section-wrap.dark .section-desc { color: #c1c7d0; }
 
-    /* Products Grid */
+    /* Products Grid with Authentic Engineering Imagery */
     .prod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
-    .prod-card { background: #fff; border: 1.5px solid var(--border); border-radius: 10px; padding: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.2s, box-shadow 0.2s; }
+    .prod-card {
+      background: #fff; border: 1.5px solid var(--border); border-radius: 10px;
+      overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
     .prod-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(9,30,66,0.08); border-color: var(--primary); }
-    .prod-icon { font-size: 32px; margin-bottom: 12px; }
-    .prod-card h3 { font-size: 18px; color: var(--dark); font-weight: 700; margin-bottom: 8px; }
-    .prod-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
-    .tag-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
-    .tag-pills span { background: #f4f5f7; border: 1px solid var(--border); color: #0052cc; font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
+    .prod-img-box {
+      width: 100%; height: 180px; background: #0c2340; overflow: hidden; position: relative;
+    }
+    .prod-img-box img {
+      width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;
+    }
+    .prod-card:hover .prod-img-box img { transform: scale(1.04); }
+    .prod-content { padding: 22px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .prod-card h3 { font-size: 17px; color: var(--dark); font-weight: 700; margin-bottom: 8px; line-height: 1.35; }
+    .prod-card p { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
+    .tag-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .tag-pills span { background: #f4f5f7; border: 1px solid var(--border); color: #0052cc; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; }
     .btn-card-action { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--primary); text-decoration: none; }
     .btn-card-action:hover { text-decoration: underline; }
 
@@ -860,80 +871,116 @@
     <div class="prod-grid">
       <!-- Product 1 -->
       <div class="prod-card">
-        <div class="prod-icon">⚡</div>
-        <h3>10kV–35kV Prefabricated Compact Box Substation (2КТПН / БМЗ)</h3>
-        <p>Integrates MV gas/air switchgear, power transformer (50kVA-3150kVA), and LV distribution boards. Optional 100mm PU thermal cladding with PTC microclimate heating for -60°C arctic operation.</p>
-        <div class="tag-pills">
-          <span>ГОСТ 15150 УХЛ1</span>
-          <span>Cor-Ten 09Г2С</span>
-          <span>IP54/IP55 C5-M</span>
+        <div class="prod-img-box">
+          <img src="images/products/substation_prefabricated_box.jpg" alt="10kV-35kV Prefabricated Compact Box Substation">
         </div>
-        <a href="#rfq-section" class="btn-card-action">Inquire Substation Specs &rarr;</a>
+        <div class="prod-content">
+          <div>
+            <h3>10kV–35kV Prefabricated Compact Box Substation (2КТПН / БМЗ)</h3>
+            <p>Integrates MV gas/air switchgear, power transformer (50kVA-3150kVA), and LV distribution boards. Optional 100mm PU thermal cladding with PTC microclimate heating for -60°C arctic operation.</p>
+            <div class="tag-pills">
+              <span>ГОСТ 15150 УХЛ1</span>
+              <span>Cor-Ten 09Г2С</span>
+              <span>IP54/IP55 C5-M</span>
+            </div>
+          </div>
+          <a href="#rfq-section" class="btn-card-action">Inquire Substation Specs &rarr;</a>
+        </div>
       </div>
 
       <!-- Product 2 -->
       <div class="prod-card">
-        <div class="prod-icon">🏢</div>
-        <h3>MV Metal-Clad Air-Insulated Switchgear (KYN28A / UniSafe 10-35kV)</h3>
-        <p>Withdrawable metal-clad switchgear with 4-compartment segregation (LSC2B-PM) and 5-prevention mechanical interlocking. Stamped type-tests up to 40kA/3s and BIL 200kV.</p>
-        <div class="tag-pills">
-          <span>ABB UniSafe Auth.</span>
-          <span>IAC AFLR 31.5kA</span>
-          <span>Optical Arc &lt; 7ms</span>
+        <div class="prod-img-box">
+          <img src="images/products/switchgear_kyn28a_12kv_ais.jpg" alt="MV Metal-Clad Air-Insulated Switchgear">
         </div>
-        <a href="#rfq-section" class="btn-card-action">Inquire MV Switchgear &rarr;</a>
+        <div class="prod-content">
+          <div>
+            <h3>MV Metal-Clad Air-Insulated Switchgear (KYN28A / UniSafe 10-35kV)</h3>
+            <p>Withdrawable metal-clad switchgear with 4-compartment segregation (LSC2B-PM) and 5-prevention mechanical interlocking. Stamped type-tests up to 40kA/3s and BIL 200kV.</p>
+            <div class="tag-pills">
+              <span>ABB UniSafe Auth.</span>
+              <span>IAC AFLR 31.5kA</span>
+              <span>Optical Arc &lt; 7ms</span>
+            </div>
+          </div>
+          <a href="#rfq-section" class="btn-card-action">Inquire MV Switchgear &rarr;</a>
+        </div>
       </div>
 
       <!-- Product 3 -->
       <div class="prod-card">
-        <div class="prod-icon">🔌</div>
-        <h3>Schneider Electric Blokset LV Draw-Out Switchboards (Up to 6300A)</h3>
-        <p>Officially licensed Schneider Electric Blokset LV motor control centers (MCC) and power distribution switchboards. Form 4b internal segregation with intelligent digital power management.</p>
-        <div class="tag-pills">
-          <span>Schneider Blokset</span>
-          <span>Form 4b Segregation</span>
-          <span>Up to 6300A / 100kA</span>
+        <div class="prod-img-box">
+          <img src="images/products/switchgear_kyn28a_40_5kv.jpg" alt="Schneider Electric Blokset LV Draw-Out Switchboards">
         </div>
-        <a href="#rfq-section" class="btn-card-action">Inquire Blokset Panels &rarr;</a>
+        <div class="prod-content">
+          <div>
+            <h3>Schneider Electric Blokset LV Draw-Out Switchboards (Up to 6300A)</h3>
+            <p>Officially licensed Schneider Electric Blokset LV motor control centers (MCC) and power distribution switchboards. Form 4b internal segregation with intelligent digital power management.</p>
+            <div class="tag-pills">
+              <span>Schneider Blokset</span>
+              <span>Form 4b Segregation</span>
+              <span>Up to 6300A / 100kA</span>
+            </div>
+          </div>
+          <a href="#rfq-section" class="btn-card-action">Inquire Blokset Panels &rarr;</a>
+        </div>
       </div>
 
       <!-- Product 4 -->
       <div class="prod-card">
-        <div class="prod-icon">🚢</div>
-        <h3>Modular Prefabricated E-House & 1500V Solar PV / BESS MV Skids</h3>
-        <p>Integrated containerized substation solutions pre-commissioned with MV/LV switchboards, dry transformers, DC UPS, HVAC, and IEC 61850 SCADA automation for fast-track utility grids.</p>
-        <div class="tag-pills">
-          <span>Plug & Play Grid</span>
-          <span>1500V Inverter Skid</span>
-          <span>IEC 61850 SCADA</span>
+        <div class="prod-img-box">
+          <img src="images/products/ehouse_modular_substation_cabin.jpg" alt="Modular Prefabricated E-House & 1500V Solar PV">
         </div>
-        <a href="#rfq-section" class="btn-card-action">Inquire E-House Solutions &rarr;</a>
+        <div class="prod-content">
+          <div>
+            <h3>Modular Prefabricated E-House & 1500V Solar PV / BESS MV Skids</h3>
+            <p>Integrated containerized substation solutions pre-commissioned with MV/LV switchboards, dry transformers, DC UPS, HVAC, and IEC 61850 SCADA automation for fast-track utility grids.</p>
+            <div class="tag-pills">
+              <span>Plug & Play Grid</span>
+              <span>1500V Inverter Skid</span>
+              <span>IEC 61850 SCADA</span>
+            </div>
+          </div>
+          <a href="#rfq-section" class="btn-card-action">Inquire E-House Solutions &rarr;</a>
+        </div>
       </div>
 
       <!-- Product 5 -->
       <div class="prod-card">
-        <div class="prod-icon">🧪</div>
-        <h3>Cast Resin Dry-Type & Hermetic Oil Transformers (ТМГ / ТСЗЛ)</h3>
-        <p>1-3 mbar vacuum quartz-sand thin-insulation epoxy casting for Class H dry-type transformers (PD &lt; 5pC), and hermetically sealed corrugated oil transformers with zero moisture ingress.</p>
-        <div class="tag-pills">
-          <span>&lt; 5pC Partial Discharge</span>
-          <span>Class H Nomex</span>
-          <span>F1/E2/C2 Certified</span>
+        <div class="prod-img-box">
+          <img src="images/products/transformer_cast_resin_dry_scb18.jpg" alt="Cast Resin Dry-Type & Hermetic Oil Transformers">
         </div>
-        <a href="#rfq-section" class="btn-card-action">Inquire Transformers &rarr;</a>
+        <div class="prod-content">
+          <div>
+            <h3>Cast Resin Dry-Type & Hermetic Oil Transformers (ТМГ / ТСЗЛ)</h3>
+            <p>1-3 mbar vacuum quartz-sand thin-insulation epoxy casting for Class H dry-type transformers (PD &lt; 5pC), and hermetically sealed corrugated oil transformers with zero moisture ingress.</p>
+            <div class="tag-pills">
+              <span>&lt; 5pC Partial Discharge</span>
+              <span>Class H Nomex</span>
+              <span>F1/E2/C2 Certified</span>
+            </div>
+          </div>
+          <a href="#rfq-section" class="btn-card-action">Inquire Transformers &rarr;</a>
+        </div>
       </div>
 
       <!-- Product 6 -->
       <div class="prod-card">
-        <div class="prod-icon">💨</div>
-        <h3>FC-N2 Smart Mining & Industrial PSA Nitrogen Generation Systems</h3>
-        <p>Skid-mounted PSA nitrogen generation units (100–2500 Nm³/h @ 95%–99.999% purity). Dual certified for underground coal mine explosion protection (Ex d I Mb) and chemical pipeline blanketing.</p>
-        <div class="tag-pills">
-          <span>Ex d I Mb Mining</span>
-          <span>Dew Point &le; -45°C</span>
-          <span>Siemens S7-1200</span>
+        <div class="prod-img-box">
+          <img src="images/products/case_mining_energy_project.jpg" alt="FC-N2 Smart Mining & Industrial PSA Nitrogen Generation Systems">
         </div>
-        <a href="#rfq-section" class="btn-card-action">Inquire Nitrogen Systems &rarr;</a>
+        <div class="prod-content">
+          <div>
+            <h3>FC-N2 Smart Mining & Industrial PSA Nitrogen Generation Systems</h3>
+            <p>Skid-mounted PSA nitrogen generation units (100–2500 Nm³/h @ 95%–99.999% purity). Dual certified for underground coal mine explosion protection (Ex d I Mb) and chemical pipeline blanketing.</p>
+            <div class="tag-pills">
+              <span>Ex d I Mb Mining</span>
+              <span>Dew Point &le; -45°C</span>
+              <span>Siemens S7-1200</span>
+            </div>
+          </div>
+          <a href="#rfq-section" class="btn-card-action">Inquire Nitrogen Systems &rarr;</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1145,49 +1192,73 @@
     <div class="prod-grid">
       <!-- Workshop 1 -->
       <div class="prod-card">
-        <div class="prod-icon">⚙️</div>
-        <h3>1. Precision CNC Laser & Cor-Ten Steel Workshop</h3>
-        <p>20kW fiber laser cutters, high-tonnage CNC press brakes, and automated robotic welding rigs. Custom fabrication of heavy 09Г2С / Cor-Ten weather-resistant steel for Arctic -60°C and marine C5-M enclosures.</p>
-        <div class="tag-pills">
-          <span>Sa 2.5 Sandblasting</span>
-          <span>&ge;240&mu;m C5-M Coating</span>
-          <span>100mm PU Cladding</span>
+        <div class="prod-img-box">
+          <img src="images/products/factory_laser_cnc_workshop.jpg" alt="Precision CNC Laser & Cor-Ten Steel Workshop">
+        </div>
+        <div class="prod-content">
+          <div>
+            <h3>1. Precision CNC Laser & Cor-Ten Steel Workshop</h3>
+            <p>20kW fiber laser cutters, high-tonnage CNC press brakes, and automated robotic welding rigs. Custom fabrication of heavy 09Г2С / Cor-Ten weather-resistant steel for Arctic -60°C and marine C5-M enclosures.</p>
+            <div class="tag-pills">
+              <span>Sa 2.5 Sandblasting</span>
+              <span>&ge;240&mu;m C5-M Coating</span>
+              <span>100mm PU Cladding</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Workshop 2 -->
       <div class="prod-card">
-        <div class="prod-icon">🧪</div>
-        <h3>2. 1-3 mbar Vacuum Epoxy Casting Plant</h3>
-        <p>Thin-insulation vacuum quartz-sand epoxy casting plant for Class F/H dry-type transformers. Guarantees partial discharge strictly below 5pC and high dynamic short-circuit withstand.</p>
-        <div class="tag-pills">
-          <span>&lt; 5pC Partial Discharge</span>
-          <span>Class H Nomex</span>
-          <span>F1/E2/C2 Fire Safe</span>
+        <div class="prod-img-box">
+          <img src="images/products/factory_assembly_hall.jpg" alt="1-3 mbar Vacuum Epoxy Casting Plant">
+        </div>
+        <div class="prod-content">
+          <div>
+            <h3>2. 1-3 mbar Vacuum Epoxy Casting Plant</h3>
+            <p>Thin-insulation vacuum quartz-sand epoxy casting plant for Class F/H dry-type transformers. Guarantees partial discharge strictly below 5pC and high dynamic short-circuit withstand.</p>
+            <div class="tag-pills">
+              <span>&lt; 5pC Partial Discharge</span>
+              <span>Class H Nomex</span>
+              <span>F1/E2/C2 Fire Safe</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Workshop 3 -->
       <div class="prod-card">
-        <div class="prod-icon">🏢</div>
-        <h3>3. ABB & Schneider Authorized Assembly Bays</h3>
-        <p>Standardized assembly bays for Schneider Electric Blokset LV draw-out switchboards (up to 6300A, Form 4b) and ABB UniSafe MV air-insulated switchgear (10-35kV) with 5-prevention interlocking.</p>
-        <div class="tag-pills">
-          <span>Schneider Blokset</span>
-          <span>ABB UniSafe / MDmax</span>
-          <span>LSC2B-PM Segregated</span>
+        <div class="prod-img-box">
+          <img src="images/products/switchgear_kyn28a_12kv_ais.jpg" alt="ABB & Schneider Authorized Assembly Bays">
+        </div>
+        <div class="prod-content">
+          <div>
+            <h3>3. ABB & Schneider Authorized Assembly Bays</h3>
+            <p>Standardized assembly bays for Schneider Electric Blokset LV draw-out switchboards (up to 6300A, Form 4b) and ABB UniSafe MV air-insulated switchgear (10-35kV) with 5-prevention interlocking.</p>
+            <div class="tag-pills">
+              <span>Schneider Blokset</span>
+              <span>ABB UniSafe / MDmax</span>
+              <span>LSC2B-PM Segregated</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Workshop 4 -->
       <div class="prod-card">
-        <div class="prod-icon">🛡️</div>
-        <h3>4. National Stamped HV Testing Laboratory</h3>
-        <p>Full in-house Factory Acceptance Testing (FAT) complex. Equipped with real-time shielded room PD measurement, 95kV power-frequency AC withstand, and 200kV lightning impulse (BIL) testing.</p>
-        <div class="tag-pills">
-          <span>BIL 200kV Impulse</span>
-          <span>95kV/1min Withstand</span>
-          <span>IAC AFLR 31.5kA/1s</span>
+        <div class="prod-img-box">
+          <img src="images/products/factory_testing_lab_fat.jpg" alt="National Stamped HV Testing Laboratory">
+        </div>
+        <div class="prod-content">
+          <div>
+            <h3>4. National Stamped HV Testing Laboratory</h3>
+            <p>Full in-house Factory Acceptance Testing (FAT) complex. Equipped with real-time shielded room PD measurement, 95kV power-frequency AC withstand, and 200kV lightning impulse (BIL) testing.</p>
+            <div class="tag-pills">
+              <span>BIL 200kV Impulse</span>
+              <span>95kV/1min Withstand</span>
+              <span>IAC AFLR 31.5kA/1s</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1206,6 +1277,9 @@
     <div class="case-grid">
       <!-- Case 1 -->
       <div class="case-card">
+        <div class="prod-img-box" style="height: 160px;">
+          <img src="images/products/substation_zgs_wind_solar.jpg" alt="Siberian -52°C Mining 2КТПН Substation">
+        </div>
         <div class="case-top">
           <span class="case-badge">Arctic Permafrost Grid</span>
           <h3>Siberian -52°C Mining 2КТПН-2500kVA Substation</h3>
@@ -1226,6 +1300,9 @@
 
       <!-- Case 2 -->
       <div class="case-card">
+        <div class="prod-img-box" style="height: 160px;">
+          <img src="images/products/solar_bess_step_up_inverter_skid.jpg" alt="1500V Solar PV & BESS 35kV Modular Skid">
+        </div>
         <div class="case-top" style="background: linear-gradient(135deg, #172b4d, #0052cc);">
           <span class="case-badge" style="background:rgba(54,179,126,0.25);border-color:#36b37e;color:#57d9a3;">Utility Solar & BESS</span>
           <h3>1500V Solar PV & BESS 35kV Modular Skid Step-Up Station</h3>
@@ -1246,6 +1323,9 @@
 
       <!-- Case 3 -->
       <div class="case-card">
+        <div class="prod-img-box" style="height: 160px;">
+          <img src="images/products/case_guinea_rio_tinto_port_ehouse.jpg" alt="Smart Coal Mine Flameproof Mobile Substation">
+        </div>
         <div class="case-top" style="background: linear-gradient(135deg, #0c2340, #253858);">
           <span class="case-badge">Underground Mining</span>
           <h3>Smart Coal Mine Flameproof Mobile Substation & FC-N2 Inerting</h3>
