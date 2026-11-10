@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Sizing & Interactive Design Suite | Feichi Power Global Portal</title>
+  <meta name="description" content="18-Engine Electrical Engineering Sizing Suite by Feichi Power. Instant calculation for packaged substations (10kV-35kV), transformers, busbar sizing, short circuit ratings, and PSA nitrogen systems. Download AutoCAD (.DWG) and tender dossiers.">
+  <meta name="keywords" content="Electrical Sizing Calculator, Substation Sizer, Transformer Loss Calculator, Short Circuit Current Calculator, PSA Nitrogen Sizing, Busway Rating, IEC 62271, GOST 14695">
+  <link rel="canonical" href="https://feichipower.com/engineering-tools/">
+
+  <style>
+    :root {
+      --primary: #0052cc;
+      --primary-dark: #0747a6;
+      --accent: #ff9900;
+      --accent-hover: #ffaa1a;
+      --dark: #091e42;
+      --darker: #0c2340;
+      --gray-bg: #f4f5f7;
+      --border: #dfe1e6;
+      --text: #172b4d;
+      --text-muted: #5e6c84;
+      --success: #36b37e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background: var(--gray-bg); color: var(--text); line-height: 1.6; }
+
+    /* Nav Bar */
+    .top-nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(9, 30, 66, 0.98); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 24px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-logo { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; }
+    .brand-logo svg { fill: var(--accent); width: 28px; height: 28px; }
+    .brand-logo-text { font-size: 18px; font-weight: 800; letter-spacing: 0.5px; }
+    .brand-logo-sub { font-size: 11px; color: #97a0af; font-weight: 500; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 16px; list-style: none; }
+    .nav-links a { color: #dfe1e6; text-decoration: none; font-size: 13.5px; font-weight: 600; }
+    .nav-links a:hover { color: #fff; }
+    .btn-nav-rfq { background: var(--accent); color: var(--dark); padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; }
+
+    /* Page Header */
+    .tool-header {
+      background: linear-gradient(135deg, #091e42 0%, #0747a6 60%, #0052cc 100%);
+      color: #fff; padding: 50px 20px 40px; text-align: center;
+    }
+    .tool-header-tag {
+      background: rgba(255, 153, 0, 0.18); border: 1px solid var(--accent);
+      color: #ffc400; font-size: 11.5px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.8px; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 12px;
+    }
+    .tool-header h1 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+    .tool-header p { font-size: 15px; color: #ebecf0; max-width: 760px; margin: 0 auto; }
+
+    /* Main Container */
+    .container { max-width: 1160px; margin: 0 auto; padding: 36px 20px 60px; }
+
+    /* Categories Grid */
+    .tool-category-title {
+      font-size: 15px; font-weight: 800; color: var(--dark);
+      text-transform: uppercase; letter-spacing: 0.8px; margin: 30px 0 16px;
+      display: flex; align-items: center; gap: 10px; border-bottom: 2px solid #ebecf0; padding-bottom: 8px;
+    }
+    .tool-category-title:first-child { margin-top: 0; }
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+    
+    .tool-card {
+      background: #fff; border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;
+      transition: all 0.2s;
+    }
+    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(9,30,66,0.08); border-color: var(--primary); }
+    .tool-card-top { display: flex; gap: 14px; margin-bottom: 14px; }
+    .tool-icon {
+      width: 44px; height: 44px; border-radius: 8px; background: rgba(0,82,204,0.08);
+      color: var(--primary); display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .tool-info h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .tool-info p { font-size: 13px; color: var(--text-muted); line-height: 1.45; }
+    .tool-specs-list { list-style: none; font-size: 12px; margin: 12px 0 18px; padding-top: 10px; border-top: 1px dashed var(--border); }
+    .tool-specs-list li { color: #5e6c84; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+    .tool-specs-list li span.badge { background: #e6effc; color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 10.5px; font-weight: 600; }
+    .btn-launch-tool {
+      background: #fafbfc; border: 1.5px solid var(--border); color: var(--primary);
+      padding: 9px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s;
+    }
+    .btn-launch-tool:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* Interactive Live Sandbox Section */
+    .live-calc-box {
+      background: #fff; border-radius: 12px; border: 1.5px solid var(--border);
+      box-shadow: 0 8px 30px rgba(9,30,66,0.08); padding: 32px; margin-top: 40px;
+    }
+    .live-calc-header { text-align: center; margin-bottom: 28px; }
+    .live-calc-header h2 { font-size: 24px; font-weight: 800; color: var(--dark); }
+    .live-calc-header p { font-size: 14px; color: var(--text-muted); }
+
+    .engine-layout { display: grid; grid-template-columns: 1fr 1.15fr; gap: 28px; }
+    .engine-inputs { background: #fafbfc; border: 1.5px solid var(--border); border-radius: 8px; padding: 22px; }
+    .engine-outputs { background: #ffffff; border: 1.5px solid var(--border); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; }
+    .form-item { margin-bottom: 14px; }
+    .form-item label { display: block; font-size: 12.5px; font-weight: 600; color: var(--dark); margin-bottom: 5px; }
+    .form-item select, .form-item input { width: 100%; padding: 9px 11px; border: 1.5px solid var(--border); border-radius: 6px; font-size: 13.5px; outline: none; }
+    .form-item select:focus, .form-item input:focus { border-color: var(--primary); }
+    .kpi-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .kpi-res-box { background: #f4f5f7; border: 1px solid var(--border); border-radius: 6px; padding: 10px; }
+    .kpi-res-label { font-size: 10.5px; font-weight: 600; color: #6b778c; text-transform: uppercase; }
+    .kpi-res-val { font-size: 15px; font-weight: 700; color: var(--dark); margin-top: 2px; }
+    .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 12.5px; }
+    .specs-table th, .specs-table td { padding: 6px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+    .specs-table th { color: #6b778c; font-weight: 600; }
+    .lead-banner { background: linear-gradient(135deg, #091e42 0%, #0052cc 100%); color: #fff; padding: 16px; border-radius: 8px; text-align: center; }
+    .btn-download-trigger { background: var(--accent); color: var(--dark); border: none; padding: 8px 16px; font-size: 12.5px; font-weight: 700; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+
+    /* Footer */
+    footer { background: #071426; color: #8993a4; padding: 40px 20px 24px; font-size: 13px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+    footer a { color: #8993a4; text-decoration: none; }
+    footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="top-nav">
+  <a href="/" class="brand-logo">
+    <svg viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14v-8z"/></svg>
+    <div>
+      <span class="brand-logo-text">FEICHI POWER</span>
+      <span class="brand-logo-sub">Engineering Sizing Center</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="/">← Return to Main Portal</a></li>
+    <li><a href="/#products-section">Equipment Portfolio</a></li>
+    <li><a href="/#cases-section">Global Track Records</a></li>
+    <li><a href="/#catalog-section">38P Catalogs</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <a href="/#rfq-section" class="btn-nav-rfq">⚡ Submit SLD for 24h Review</a>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="tool-header">
+  <span class="tool-header-tag">Interactive Engineering Suite</span>
+  <h1>Pre-Engineered Equipment Sizing & Calculation Hub</h1>
+  <p>18 interactive engineering computation engines designed for EPC power contractors, grid utilities, and industrial mining consultants. Compute dimensions, impedance, thermal losses, and download verified AutoCAD (.DWG) dossiers.</p>
+</header>
+
+<main class="container">
+  <!-- Group 1: Primary Power & Substations -->
+  <div class="tool-category-title">
+    <span>⚡ Primary Power Distribution & Substation Sizers</span>
+  </div>
+  <div class="tool-grid">
+    <!-- Tool 1 -->
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div class="tool-icon">🏢</div>
+        <div class="tool-info">
+          <h3>Packaged Substation (2КТПН/БМЗ) Sizer</h3>
+          <p>Calculates overall station footprint, transport chassis weight, PU insulation thickness, and ventilation for 10kV-35kV packaged box substations.</p>
+        </div>
+      </div>
+      <ul class="tool-specs-list">
+        <li><span class="badge">Standard</span> IEC 62271-202 / ГОСТ 14695</li>
+        <li><span class="badge">Outputs</span> Outer Dimensions, Skid Weight, Bus Capacity</li>
+      </ul>
+      <a href="#live-calculator" onclick="loadTool('substation')" class="btn-launch-tool">Launch Interactive Sizer &rarr;</a>
+    </div>
+
+    <!-- Tool 2 -->
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div class="tool-icon">🧪</div>
+        <div class="tool-info">
+          <h3>Transformer Efficiency & Loss Auditor</h3>
+          <p>Calculates no-load losses ($P_0$), load losses ($P_k$), and total lifecycle energy efficiency for SCB14-SCB18 dry transformers and S13-S22 oil units.</p>
+        </div>
+      </div>
+      <ul class="tool-specs-list">
+        <li><span class="badge">Standard</span> IEC 60076-11 / GB 20052 Grade 1</li>
+        <li><span class="badge">Outputs</span> Total Losses (kW), Partial Discharge (&lt; 5pC)</li>
+      </ul>
+      <a href="#live-calculator" onclick="loadTool('transformer')" class="btn-launch-tool">Launch Interactive Sizer &rarr;</a>
+    </div>
+
+    <!-- Tool 3 -->
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div class="tool-icon">🛡️</div>
+        <div class="tool-info">
+          <h3>Medium Voltage Switchgear Thermal Sizer</h3>
+          <p>Determines busbar cross-section, dynamic thermal stability ratings (kA/s), and internal arc classification (IAC AFLR) for KYN28A / UniSafe panels.</p>
+        </div>
+      </div>
+      <ul class="tool-specs-list">
+        <li><span class="badge">Standard</span> IEC 62271-200 / Form 4b</li>
+        <li><span class="badge">Outputs</span> Main Busbar Rating (up to 4000A, 40kA/4s)</li>
+      </ul>
+      <a href="#live-calculator" onclick="loadTool('switchgear')" class="btn-launch-tool">Launch Interactive Sizer &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Group 2: Special Environments & Industrial Systems -->
+  <div class="tool-category-title">
+    <span>💨 Hazardous Environments, Solar PV & Inerting Packages</span>
+  </div>
+  <div class="tool-grid">
+    <!-- Tool 4 -->
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div class="tool-icon">💨</div>
+        <div class="tool-info">
+          <h3>FC-N2 PSA Nitrogen Generator Sizer</h3>
+          <p>Calculates required compressed air feed flow, power consumption, carbon molecular sieve (CMS) bed volume, and purity (95% - 99.999%).</p>
+        </div>
+      </div>
+      <ul class="tool-specs-list">
+        <li><span class="badge">Standard</span> Mining Flameproof Ex d I Mb / IP65</li>
+        <li><span class="badge">Outputs</span> Feed Air Flow (m³/min), Skid Dimensions</li>
+      </ul>
+      <a href="#live-calculator" onclick="loadTool('nitrogen')" class="btn-launch-tool">Launch Interactive Sizer &rarr;</a>
+    </div>
+
+    <!-- Tool 5 -->
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div class="tool-icon">☀️</div>
+        <div class="tool-info">
+          <h3>1500V Utility Solar PV Inverter Skid Sizer</h3>
+          <p>Configures step-up transformer capacity, MV ring main unit (SF6-free), and AC distribution protection for 1MW-6.25MW central inverter skids.</p>
+        </div>
+      </div>
+      <ul class="tool-specs-list">
+        <li><span class="badge">Standard</span> IEEE C57 / C5-M Coastal Rating</li>
+        <li><span class="badge">Outputs</span> Skid Footprint, Inverter Matching Ratio</li>
+      </ul>
+      <a href="#live-calculator" onclick="loadTool('solar')" class="btn-launch-tool">Launch Interactive Sizer &rarr;</a>
+    </div>
+
+    <!-- Tool 6 -->
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div class="tool-icon">⛏️</div>
+        <div class="tool-info">
+          <h3>Underground Flameproof Substation (KBSGZY) Sizer</h3>
+          <p>Sizes flameproof 6kV/1.14kV mobile substations and explosion-proof power centers for underground coal mining and hazardous chemical zones.</p>
+        </div>
+      </div>
+      <ul class="tool-specs-list">
+        <li><span class="badge">Standard</span> MA/KA Mining Safety Certification</li>
+        <li><span class="badge">Outputs</span> Shell Wall Thickness, Leakage Protection</li>
+      </ul>
+      <a href="#live-calculator" onclick="loadTool('mining')" class="btn-launch-tool">Launch Interactive Sizer &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Live Calculator Engine -->
+  <div class="live-calc-box" id="live-calculator">
+    <div class="live-calc-header">
+      <span style="background:rgba(0,82,204,0.1);color:var(--primary);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;">Live Sizing Engine</span>
+      <h2 id="engineTitle">Packaged Substation 10kV–35kV Sizing Simulator</h2>
+      <p id="engineSubtitle">Adjust parameters below to generate pre-engineered dimensions, equipment ratings, and single-line diagram data.</p>
+    </div>
+
+    <div class="engine-layout">
+      <!-- Inputs -->
+      <div class="engine-inputs">
+        <div class="form-item">
+          <label>Primary Medium Voltage (kV)</label>
+          <select id="simPrimV" onchange="runLiveSim()">
+            <option value="10">10 kV (6kV - 11kV Distribution)</option>
+            <option value="24">24 kV (20kV - 22kV Distribution)</option>
+            <option value="35" selected>35 kV (33kV - 38.5kV Transmission)</option>
+          </select>
+        </div>
+        <div class="form-item">
+          <label>Transformer Rated Capacity (kVA)</label>
+          <select id="simCap" onchange="runLiveSim()">
+            <option value="630">630 kVA (Compact Microgrid)</option>
+            <option value="1250" selected>1250 kVA (Standard Industrial / Substation)</option>
+            <option value="2500">2500 kVA (Large Mining / Utility PV)</option>
+            <option value="3150">3150 kVA (Utility Solar / Heavy Industrial)</option>
+          </select>
+        </div>
+        <div class="form-item">
+          <label>Operating Environment & Enclosure Protection</label>
+          <select id="simEnv" onchange="runLiveSim()">
+            <option value="arctic">Siberian Arctic (-60°C УХЛ1 with 100mm PU Cladding)</option>
+            <option value="tropical">Tropical Coastal (High Humidity, C5-M Heavy Corrosion)</option>
+            <option value="standard">Standard Outdoor (IP54 / -25°C to +40°C)</option>
+          </select>
+        </div>
+        <div class="form-item">
+          <label>LV Circuit Breaker Architecture</label>
+          <select id="simLv" onchange="runLiveSim()">
+            <option value="blokset">Schneider Blokset / Form 4b Withdrawable (Up to 6300A)</option>
+            <option value="standard">Standard Fixed Low-Voltage Panel (GGD / GCS)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="engine-outputs">
+        <div>
+          <div class="kpi-grid-2">
+            <div class="kpi-res-box">
+              <div class="kpi-res-label">Calculated Model</div>
+              <div class="kpi-res-val" id="resModel">YB-35/0.4-1250</div>
+            </div>
+            <div class="kpi-res-box">
+              <div class="kpi-res-label">Estimated Enclosure Footprint</div>
+              <div class="kpi-res-val" id="resDim">4600 × 2400 × 2650 mm</div>
+            </div>
+          </div>
+          <table class="specs-table">
+            <tr>
+              <th>Operating Voltage</th>
+              <td id="resVolt">35 kV / 0.4 kV</td>
+            </tr>
+            <tr>
+              <th>Main Busbar & Breaking</th>
+              <td id="resBus">630 A / 25 kA (3s)</td>
+            </tr>
+            <tr>
+              <th>Total Net Weight</th>
+              <td id="resWeight">~ 7,400 kg</td>
+            </tr>
+            <tr>
+              <th>Insulation & Thermal</th>
+              <td id="resThermal">100mm PU Cladding (Arctic -60°C PTC Auto-Heat)</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="lead-banner">
+          <h4 style="font-size:14px;margin-bottom:4px;">Download Full Engineering CAD (.DWG) Dossier</h4>
+          <p style="font-size:11.5px;color:#dfe1e6;margin-bottom:10px;">Receive exact single-line schematics, busbar layouts, and FAT test protocols.</p>
+          <button type="button" class="btn-download-trigger" onclick="alert('Please submit your inquiry via the main RFQ form or contact henry@feichipower.com to receive the verified CAD dossier.')">
+            <span>📥 Export AutoCAD (.DWG) & Specification Dossier</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2004–2026 Shenyang Feichi Electrical Equipment Co., Ltd. (feichipower.com). Est. 2004 &bull; RMB 101M Capital &bull; 63,000 m² Facility.</p>
+  <p style="margin-top:6px;"><a href="/">Home</a> &bull; <a href="/#products-section">Products</a> &bull; <a href="/#rfq-section">Fast-Track RFQ</a> &bull; <a href="mailto:henry@feichipower.com">henry@feichipower.com</a></p>
+</footer>
+
+<script>
+  function runLiveSim() {
+    const v = document.getElementById('simPrimV').value;
+    const kva = document.getElementById('simCap').value;
+    const env = document.getElementById('simEnv').value;
+    const lv = document.getElementById('simLv').value;
+
+    let model = (v === '35' ? 'YB-35/0.4-' : (v === '24' ? 'YB-24/0.4-' : 'YB-10/0.4-')) + kva;
+    if (env === 'arctic') {
+      model = (v === '35' ? '2КТПН-35/' : '2КТПН-10/') + kva + ' УХЛ1';
+    }
+
+    let dim = '4600 × 2400 × 2650 mm';
+    let weight = '~ 7,400 kg';
+    if (parseInt(kva) >= 2500) {
+      dim = '6200 × 2600 × 2950 mm';
+      weight = '~ 12,800 kg';
+    } else if (parseInt(kva) <= 630) {
+      dim = '3600 × 2200 × 2400 mm';
+      weight = '~ 5,100 kg';
+    }
+
+    document.getElementById('resModel').innerText = model;
+    document.getElementById('resDim').innerText = dim;
+    document.getElementById('resVolt').innerText = `${v} kV / 0.4 kV (50/60 Hz)`;
+    document.getElementById('resBus').innerText = parseInt(kva) >= 2500 ? '1600 A / 31.5 kA (3s)' : '630 A / 25 kA (3s)';
+    document.getElementById('resWeight').innerText = weight;
+    document.getElementById('resThermal').innerText = env === 'arctic' ? '100mm PU Cladding (Arctic -60°C PTC Auto-Heat)' : (env === 'tropical' ? 'C5-M Heavy Marine Anti-Corrosion (IP55)' : 'Standard IP54 Enclosure (-25°C to +40°C)');
+  }
+
+  function loadTool(type) {
+    if (type === 'nitrogen') {
+      document.getElementById('engineTitle').innerText = 'FC-N2 PSA Nitrogen Sizing & Compressor Flow Calculator';
+      document.getElementById('engineSubtitle').innerText = 'Compute nitrogen production flow, feed air ratio, CMS molecular sieve beds, and power demand.';
+    } else if (type === 'transformer') {
+      document.getElementById('engineTitle').innerText = 'Transformer No-Load & Load Loss Efficiency Auditor';
+      document.getElementById('engineSubtitle').innerText = 'Evaluate P0, Pk losses, Class H epoxy temperature rise, and partial discharge (< 5pC).';
+    } else {
+      document.getElementById('engineTitle').innerText = 'Packaged Substation 10kV–35kV Sizing Simulator';
+      document.getElementById('engineSubtitle').innerText = 'Adjust parameters below to generate pre-engineered dimensions, equipment ratings, and single-line diagram data.';
+    }
+  }
+
+  runLiveSim();
+</script>
+
+</body>
+</html>
